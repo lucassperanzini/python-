@@ -3,7 +3,6 @@ lista_jogadas = ["PEDRA","PAPEL","TESOURA"]
 
 escolha_usuario = input("PEDRA PAPEL OU TESOURA?")
 
-escolha_pc = random.randint(0,3)
 escolha_pc = random.choice(lista_jogadas)
 
 if escolha_usuario not in lista_jogadas:
