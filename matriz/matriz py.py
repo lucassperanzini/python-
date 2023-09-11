@@ -9,13 +9,11 @@ def funcCriarMatriz():
     for i in range(l):
         linha = []
         for j in range(c):
-            num = random.randint(10,30)
+            num = random.randint(1,5)
             linha.append(num)
         m.append(linha)
 
         
-
-
 
 
 def funcSomaLinha4(soma):
@@ -64,43 +62,33 @@ def funcSomaTotal(soma):
 
 
 def funcSomaFormatoInverso():
-    somaLista = []
     somaFinal = 0
 
     index = 1
     for linha in m:
-        somaLista.append(linha[index:])
+        for j in linha[index:]:
+            somaFinal += j     
         index += 1
-
-    for i in somaLista:
-        for j in i:
-            somaFinal += j
 
     return somaFinal
 
 
-def funcSomaFormato(soma,index):
-    somaLista = []
-    soma = 0
+def funcSomaFormato(index):
+    somaFinal = 0
+
 
     for linha in m:
         if m[0] == linha:
             continue
-        else:
-            somaLista.append(linha[index:(index + 1)])
-            print(somaLista)
-            index += 1
+        for j in linha[:index + 1]:
+            somaFinal += j
             
-
-    for i in somaLista:
-        for j in i:
-            soma += j
-
-    return soma
+        index += 1
+            
+    return somaFinal
 
 
 
-    
 
 funcCriarMatriz()
 
@@ -108,12 +96,13 @@ for linha in m:
     print(linha)
 
 
+
 somaPiramideInversa = funcSomaFormatoInverso()
 
-print(somaPiramideInversa , 'é isso')
+print(somaPiramideInversa , 'Soma escada inversa')
 
 
-somaPiramide = funcSomaFormato(soma,index)
+somaPiramide = funcSomaFormato(index)
 
 print(somaPiramide)
 
