@@ -1,9 +1,13 @@
 import jogaDADOS
 import json
 
+
 dado = 0
 força = 0
 provisoes = 10
+
+caminhoPersonagem = 'C:/Users/lucas/DadosPersonagem.json'
+caminhoCriatura = 'C:/Users/lucas/DadosCriatura.json'
 
 
 
@@ -32,14 +36,17 @@ def CriarPersonagem():
 
     StatusIniciais = {
 
-        'habilidade': funcHabilidade(),
-        'energia':funcEnergia(),
-        'sorte':funcSorte(),
-        'provisoes':provisoes
+        'folha de aventura': {
+
+            'habilidade': funcHabilidade(),
+            'energia':funcEnergia(),
+            'sorte':funcSorte(),
+            'provisoes':provisoes
+        }
+
 
     }
-
-    with open('D:/DadosPersonagem.json','w') as f:
+    with open(caminhoPersonagem,'w') as f:
         json.dump(StatusIniciais,f)
         
 
@@ -68,7 +75,7 @@ def criarCriatura(habilidade,energia):
 
     }
 
-    with open('D:/DadosCriatura.json','w') as f:
+    with open(caminhoCriatura,'w') as f:
          json.dump(StatusIniciaisCriatura,f)
 
 
@@ -111,14 +118,14 @@ def Combate():
     print('--------Início do Combate-----------')
     print('\nPersonagem :')
 
-    ForçaPersonagem = ForçaDeAtaque('D:/DadosPersonagem.json')
+    ForçaPersonagem = ForçaDeAtaque(caminhoPersonagem)
 
     print(f'\nForça do Personagem : {ForçaPersonagem}')
     print('------------------------------------------------')
         
     print('Criatura')
 
-    ForçaCriatura = ForçaDeAtaque('D:/DadosCriatura.json')
+    ForçaCriatura = ForçaDeAtaque(caminhoCriatura)
 
     print(f'\nForça Criatura: {ForçaCriatura}')
     print('------------------------------------------------')
@@ -126,12 +133,12 @@ def Combate():
     if ForçaPersonagem > ForçaCriatura:
         print('Você feriu a Criatura!😀\n')
 
-        with open('D:/DadosCriatura.json','r') as f:
+        with open(caminhoCriatura,'r') as f:
             StatusCriatura = json.load(f)
 
         StatusCriatura['energia'] -= 2
 
-        with open('D:/DadosCriatura.json','w') as f:
+        with open(caminhoCriatura,'w') as f:
             json.dump(StatusCriatura,f)
 
 
@@ -141,12 +148,12 @@ def Combate():
     elif ForçaPersonagem < ForçaCriatura:
         print('Você foi ferido pela Criatura!😨')
 
-        with open('D:/DadosPersonagem.json','r') as f:
+        with open(caminhoPersonagem,'r') as f:
             Status = json.load(f)
 
         Status['energia'] -= 2
 
-        with open('D:/DadosPersonagem.json','w') as f:
+        with open(caminhoPersonagem,'w') as f:
             json.dump(Status,f)
            
 
