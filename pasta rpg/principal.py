@@ -1,8 +1,10 @@
 import ex
 
 #Números indicados na história da criatura
-habilidade= 7
-energia = 16
+habilidade= 12
+energia = 22
+
+nomeMonstro = 'Alfredo'
 
 
 
@@ -20,9 +22,9 @@ if aceita_desafio =='sim':
 
     CriaPersonagem = ex.CriarPersonagem()
 
-    Criatura = ex.criarCriatura(habilidade,energia)
+    Criatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
 
-    Combate = ex.Combate()
+    Combate = ex.Combate(nomeMonstro)
 
 
 else:

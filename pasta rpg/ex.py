@@ -3,15 +3,16 @@ import json
 
 
 dado = 0
-força = 0
 provisoes = 10
 
-caminhoPersonagem = 'C:/Users/lucas/DadosPersonagem.json'
-caminhoCriatura = 'C:/Users/lucas/DadosCriatura.json'
+
+caminhoFolhaDeAventura = 'D:/DadosPersonagemInicial.json'
+caminhoFolhaDeAventuraAtual = 'D:/DadosPersonagemAtual.json'
 
 
 
 def CriarPersonagem():
+
 
     def funcHabilidade():
         habilidade = JogaDado  + 6
@@ -36,50 +37,68 @@ def CriarPersonagem():
 
     StatusIniciais = {
 
-        'folha de aventura': {
-
+        'FolhaDeAventura':{
             'habilidade': funcHabilidade(),
             'energia':funcEnergia(),
             'sorte':funcSorte(),
             'provisoes':provisoes
         }
-
+        
 
     }
-    with open(caminhoPersonagem,'w') as f:
+    #mandando o dicionario com o status para json imutável(inicial)
+    with open(caminhoFolhaDeAventura,'w') as f:
+        json.dump(StatusIniciais,f)
+
+    # mandando dicionario com status inicial que mudará durante a partida
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
         json.dump(StatusIniciais,f)
         
 
     print('\n-------------------INFORMAÇÕES INICIAIS--------------------------')
     print(f'\n    Dado1 : {JogaDado}\n')
     print(f'    Dado2 : {JogaDado2}\n')
-    print(f'''   Habilidade : {StatusIniciais['habilidade']}
+    print(f'''   Habilidade : {StatusIniciais['FolhaDeAventura']['habilidade']}
           
-    Energia : {StatusIniciais['energia']}
+    Energia : {StatusIniciais['FolhaDeAventura']['energia']}
 
-    Sorte: {StatusIniciais['sorte']}
+    Sorte: {StatusIniciais['FolhaDeAventura']['sorte']}
 
-    Provisões: {StatusIniciais['provisoes']} 
+    Provisões: {StatusIniciais['FolhaDeAventura']['provisoes']} 
 --------------------------------------------------------------------------------
 ''')
     
 
 
-def criarCriatura(habilidade,energia):
+def criarCriatura(habilidade,energia,nomeMonstro):
 
+    #LOAD em todo o json personagem/ vai cria criatura
+    with open(caminhoFolhaDeAventuraAtual, 'r') as f:
+         StatusIniciaisCriatura = json.load(f)
 
-    StatusIniciaisCriatura = {
+    # SE nao encontra a chave dentro do json, vai cria uma chave EncontrosMonstros
+    if 'EncontrosMonstros' not in StatusIniciaisCriatura:
+         StatusIniciaisCriatura['EncontrosMonstros'] = {}
+    
+    
 
-        'habilidade':habilidade ,
-        'energia':energia,
+    # Dentro da chave EncontrosMonstros vou adicionar a key 'nome monstro' e add suas caractertisticas
+    StatusIniciaisCriatura['EncontrosMonstros'][nomeMonstro] = {
 
-    }
+            'habilidade':habilidade ,
+            'energia':energia,
+           
 
-    with open(caminhoCriatura,'w') as f:
+         }
+    
+    
+
+    # Enviando para folha de aventura as informações das criaturas
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
          json.dump(StatusIniciaisCriatura,f)
 
 
-def ForçaDeAtaque(Caminho):
+def ForçaDeAtaque(Caminho,setor,nomeMonstro=None):
         
         Jogada = jogaDADOS.jogaDados(dado)
         Jogada2 = jogaDADOS.jogaDados(dado)
@@ -88,80 +107,78 @@ def ForçaDeAtaque(Caminho):
         print(F'\n 🎲 : {Jogada}\n\n🎲 : {Jogada2}')
 
 
-
-        # Atualizar a habilidade de acordo com a soma dos dados ( habilidade)
         with open(Caminho,'r') as f:
           Status = json.load(f)
 
-
-        força = Status['habilidade'] + (Jogada + Jogada2)
+        if nomeMonstro:
+            força = Status[setor][nomeMonstro]['habilidade'] + (Jogada + Jogada2)
+        else:
+            força = Status[setor]['habilidade'] + (Jogada + Jogada2)
 
         return força
     
-def Combate():
+def Combate(nomeMonstro):
 
-    # with open('D:/DadosPersonagem.json','r') as f:
-    #     StatusAtualP = json.load(f)
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f)
 
-    # energiaPersonagem = StatusAtualP['energia']
+    EnergiaPersonagem = StatusGerais['FolhaDeAventura']['energia']
+    EnergiaCriatura = StatusGerais['EncontrosMonstros'][nomeMonstro]['energia']
 
-    # with open('D:/DadosCriatura.json','r') as f:
-    #     StatusAtualC = json.load(f)
-
-    # energiaCriatura  = StatusAtualC['energia']
     
+    while EnergiaPersonagem > 0 and EnergiaCriatura > 0: 
 
-    # while energiaPersonagem or energiaCriatura != 0:
+        print('--------Início do Combate-----------')
+        print('\nPersonagem :')
 
-    #     print(energiaPersonagem,energiaCriatura)
+        ForçaPersonagem = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'FolhaDeAventura')
 
-    print('--------Início do Combate-----------')
-    print('\nPersonagem :')
-
-    ForçaPersonagem = ForçaDeAtaque(caminhoPersonagem)
-
-    print(f'\nForça do Personagem : {ForçaPersonagem}')
-    print('------------------------------------------------')
-        
-    print('Criatura')
-
-    ForçaCriatura = ForçaDeAtaque(caminhoCriatura)
-
-    print(f'\nForça Criatura: {ForçaCriatura}')
-    print('------------------------------------------------')
-
-    if ForçaPersonagem > ForçaCriatura:
-        print('Você feriu a Criatura!😀\n')
-
-        with open(caminhoCriatura,'r') as f:
-            StatusCriatura = json.load(f)
-
-        StatusCriatura['energia'] -= 2
-
-        with open(caminhoCriatura,'w') as f:
-            json.dump(StatusCriatura,f)
-
-
-        print(f'Criatura perdeu 2 pontos de Energia, energia atual : {StatusCriatura["energia"]}')
-
+        print(f'\nForça do Personagem : {ForçaPersonagem}')
+        print('------------------------------------------------')
             
-    elif ForçaPersonagem < ForçaCriatura:
-        print('Você foi ferido pela Criatura!😨')
+        print('Criatura')
 
-        with open(caminhoPersonagem,'r') as f:
-            Status = json.load(f)
+        ForçaCriatura = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'EncontrosMonstros',nomeMonstro)
 
-        Status['energia'] -= 2
+        print(f'\nForça Criatura: {ForçaCriatura}')
+        print('------------------------------------------------')
 
-        with open(caminhoPersonagem,'w') as f:
-            json.dump(Status,f)
+        if ForçaPersonagem > ForçaCriatura:
+            print('Você feriu a Criatura!😀\n')
+
+            EnergiaCriatura -= 2
+
+            with open(caminhoFolhaDeAventuraAtual,'w') as f:
+                StatusGerais['EncontrosMonstros'][nomeMonstro]['energia'] -= 2
+                json.dump(StatusGerais,f)
+
+
+            print(f'Criatura perdeu 2 pontos de Energia, energia atual : {EnergiaCriatura}')
+
            
 
-        print(f'Você perdeu 2 pontos de Energia, energia atual : {Status["energia"]}')
-        
+                
+        elif ForçaPersonagem < ForçaCriatura:
+            print('Você foi ferido pela Criatura!😨')
 
-    elif ForçaPersonagem == ForçaCriatura:
-        print('Golpé Neutralizado, forças iguais!')
+            EnergiaPersonagem -= 2
+
+            with open(caminhoFolhaDeAventuraAtual,'w') as f:
+                StatusGerais['FolhaDeAventura']['energia'] -= 2
+                json.dump(StatusGerais,f)
+
+
+            print(f'Você perdeu 2 pontos de Energia, energia atual : {EnergiaPersonagem}')
+
+            
+            
+
+        elif ForçaPersonagem == ForçaCriatura:
+            print('Golpé Neutralizado, forças iguais!')
+            print('Que começe a próxima série de ataque!')
+
+          
+
 
  
         
