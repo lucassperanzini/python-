@@ -22,9 +22,11 @@ if aceita_desafio =='sim':
 
     CriaPersonagem = ex.CriarPersonagem()
 
-    Criatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
+    CriaCriatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
 
     Combate = ex.Combate(nomeMonstro)
+
+    Sorte = ex.Sorte()
 
 
 else:
