@@ -126,7 +126,7 @@ def Fuga():
     #pode escapar de um combate
     # perde -2 de energia por ser covarde
     #pode usar sorte no ferimento
-    # so pod fugir de acordo com instruções específicas
+    # so pode fugir de acordo com instruções específicas
     pass
 
 def Sorte():

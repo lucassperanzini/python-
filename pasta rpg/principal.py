@@ -19,7 +19,7 @@ aceita_desafio = input('Você quer desafiar a morte? ').lower()
 
 
 if aceita_desafio =='sim':
-
+    
     CriaPersonagem = ex.CriarPersonagem()
 
     CriaCriatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
