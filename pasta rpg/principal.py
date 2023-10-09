@@ -1,10 +1,13 @@
 import ex
+import historia
 
 #Números indicados na história da criatura
 habilidade= 12
 energia = 22
 
 nomeMonstro = 'Alfredo'
+
+opção_incorreta = print('opção incorreta, você perdeu!')
 
 
 
@@ -19,14 +22,53 @@ aceita_desafio = input('Você quer desafiar a morte? ').lower()
 
 
 if aceita_desafio =='sim':
-    
+
     CriaPersonagem = ex.CriarPersonagem()
 
-    CriaCriatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
+    H1 = historia.item_1()
+    decisao = int(input('decisão :'))
 
-    Combate = ex.Combate(nomeMonstro)
+    
+    if decisao == 270:
+        H270 = historia.item_270()
+    elif decisao == 66:
+        H66 = historia.item_66()
+        decisao = int(input('decisao :'))
 
-    Sorte = ex.Sorte()
+        if decisao == 293:
+            H293 = historia.item_293()
+            decisao = int(input('decisao :'))
+
+            if decisao == 137:
+                H137 = historia.item_137()
+                decisao = int(input('decisao :'))
+
+                if decisao == 220:
+                    H220 = historia.item_220()
+                elif decisao == 362:
+                    H362 = historia.item_362()
+                else:
+                    opção_incorreta
+            
+            elif decisao == 387:
+                H387 = historia.item_387()
+
+            else:
+                opção_incorreta
+
+        elif decisao == 119:
+            H119 = historia.item_119()
+        else:
+            opção_incorreta
+    else:
+        opção_incorreta
+    
+
+    # CriaCriatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
+
+    # Combate = ex.Combate(nomeMonstro)
+
+    # Sorte = ex.Sorte()
 
 
 else:
