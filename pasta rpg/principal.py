@@ -1,11 +1,9 @@
 import ex
 import historia
 
-#Números indicados na história da criatura
-habilidade= 12
-energia = 22
 
-nomeMonstro = 'Alfredo'
+
+
 
 opção_incorreta = print('opção incorreta, você perdeu!')
 
@@ -52,6 +50,20 @@ if aceita_desafio =='sim':
             
             elif decisao == 387:
                 H387 = historia.item_387()
+                #informações do Monstro
+                nomeMonstro = 'HOMEM DA CAVERNA'
+                habilidade = 7
+                energia = 7
+                
+                CriaCriatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
+                Combate = ex.Combate(nomeMonstro)
+
+                if Combate:
+                    print('Você venceu!!')
+                    H114 = historia.item_114()
+                else:
+                    print('perdeu')
+                
 
             else:
                 opção_incorreta

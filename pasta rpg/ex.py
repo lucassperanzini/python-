@@ -201,7 +201,7 @@ def Combate(nomeMonstro):
         print(f'\nForça do Personagem : {ForçaPersonagem}')
         print('------------------------------------------------')
             
-        print('Criatura')
+        print(nomeMonstro)
 
         #Função que determina a força da criatura
         ForçaCriatura = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'EncontrosMonstros',nomeMonstro)
@@ -249,6 +249,12 @@ def Combate(nomeMonstro):
         print('-------------------------------------------')
         
         contadorBatalhas +=1
+
+    
+    if EnergiaPersonagem > EnergiaCriatura:
+        return True
+    else:
+        return False
 
           
 
