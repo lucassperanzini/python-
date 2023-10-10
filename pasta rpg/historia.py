@@ -783,7 +783,18 @@ Adiante, você pode ver um grande obstáculo no chão do túnel, embora esteja e
 
 
 
+def item_130():
+    print('''
+        Os Hobgoblins param de lutar imediatamente. Eles não entendem o que você está dizendo e rosnam agressivamente. Em seguida, desembainham as espadas curtas e avançam para □taca- lo. Lute com um de cada vez. 
 
+Primeiro HOBGOBLIN  HABILIDADE 7   ENERGIA 5
+
+Segundo HOBGOBLIN   HABILIDADE 6   ENERGIA 5
+
+ 
+Se você vencer, volte para 9. 
+
+''')
 
 
 
@@ -846,7 +857,14 @@ Tentará abafar o sino com sua bota?	Vá para 346
 
 
 
+def item_264():
+    print('''
+Adiante, na penumbra, você vê dois HOBGOBLINS se engalfinhando. Há uma bolsa de couro jogada no chão, e parece ser ela a razão da luta. Você: 
 
+Tentará conversar com eles?	Volte para 130 
+Vai atacá-los com sua espada?	Volte para 51 
+Tentará passar sem ser percebido?	Vá para 355 
+''')
 
 
 
@@ -874,7 +892,10 @@ escrito num pequeno pedaço de pergaminho, endereçado a você. Depois de coloca
 
 
 
-
+def item_279():
+    print('''
+Você chega a um cruzamento no túnel. Uma nova ramificação leva para o oeste, mas as pegadas molhadas que você vem seguindo continuam para o norte. Você decide continuar seguindo as pegadas. Volte para 32
+''')
 
 
 
@@ -922,6 +943,22 @@ Seguindo os três pares de pegadas molhadas pela passagem oeste do túnel, você
 
 
 
+def item_298():
+    print('''
+Há uma mochila encostada na parede do túnel. Você se pergunta se ela pertenceria a um de seus rivais. Se você quiser olhar dentro da mochila, vá para 304. Se preferir continuar para o norte, volte para 279.
+''')
+
+
+
+
+
+
+
+def item_304():
+    print('''
+Há uma única Peça de Ouro no fundo da mochila. Quando você tenta pegá-la, sente um leve movimento que faz cócegas nas costas, da sua mão. Você retira a mão lentamente, tentando controlar o pânico crescente, e fica horrorizado ao ver uma ARANHA VIÚVA NEGRA. Antes que possa afastá-la, ela crava as presas venenosas profundamente no seu pulso. Você perde 6 pontos de ENERGIA. Se ainda estiver vivo, volte para 20.
+
+''')
 
 
 
@@ -934,15 +971,12 @@ Seguindo os três pares de pegadas molhadas pela passagem oeste do túnel, você
 
 
 
+def item_336():
+    print('''
 
+A munhequeira foi feita e amaldiçoada por uma Bruxa. Ela torna suas reações mais lentas e embota-lhe os sentidos. Reduza sua HABILIDADE em 4 pontos. Furioso, você chuta a parede do túnel e segue para o norte. Volte para 298.
 
-
-
-
-
-
-
-
+''')
 
 
 
@@ -976,7 +1010,8 @@ Seguindo os três pares de pegadas molhadas pela passagem oeste do túnel, você
 
 def item_362():
     print('''
-    O túnel dá uma guinada acentuada para a direita e continua para o norte até onde a vista alcança. A distância, você ouve uma tremenda comoção: grunhidos, rosnados, uivos. Você desembainha a espada e parte na direção do tumulto. Volte para 264.
+    O túnel dá uma guinada acentuada para a direita e continua para o norte até onde a vista alcança. A distância, você ouve uma tremenda comoção: grunhidos, rosnados, uivos. Você desembainha a espada e parte na direção do tumulto. 
+    Volte para 264.
 ''')
 
 
