@@ -977,6 +977,9 @@ def item_336():
 A munhequeira foi feita e amaldiçoada por uma Bruxa. Ela torna suas reações mais lentas e embota-lhe os sentidos. Reduza sua HABILIDADE em 4 pontos. Furioso, você chuta a parede do túnel e segue para o norte. Volte para 298.
 
 ''')
+    
+
+    
 
 
 

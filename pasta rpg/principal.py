@@ -1,7 +1,8 @@
 import ex
 import historia
-
 import json
+
+
 
 
 
@@ -99,18 +100,8 @@ if aceita_desafio =='sim':
                         else:
                             print('perdeu')
                             
-                    elif decisao == 355:
-                        H355 = historia.item_355()
-                        H110 = historia.item_110()
-                        
-                        decisao = int(input('decisao : '))
-                        
-                        if decisao == 58:
-                            H58 = historia.item_58()
-                        elif decisao == 223:
-                            H223 = historia.item_223()
-                        else:
-                            print(opção_incorreta)
+                    # elif decisao == 9:
+                       
                     else:
                         print(opção_incorreta)
                 else:
@@ -131,68 +122,63 @@ if aceita_desafio =='sim':
                     print('Você venceu!!')
                     H114 = historia.item_114()
 
-                    decisao = int(input('decisao : '))
+                    decisaoNaoCerta = True
 
-                    if decisao == 336:
-                        H336 = historia.item_336()
-
-                        with open(ex.caminhoFolhaDeAventuraAtual,'r') as f:
-                            StatusGerais = json.load(f) 
-                    
-                        #perde habilidade
-                        habilidade = StatusGerais['FolhaDeAventura']['habilidade']
-
-                        print('Habilidade anterior',habilidade)
-                
-                        habilidade -= 4
-
-                        StatusGerais['FolhaDeAventura']['habilidade'] = habilidade
-
-                        print('Habilidade atual',habilidade)
-
-                        with open(ex.caminhoFolhaDeAventuraAtual,'w') as f:
-                            json.dump(StatusGerais,f)
-
-                        #Volta para 298 Está com erro!! ele volta pra função mas nao pro elif
-                        H298 = historia.item_298()
-                    
-
-                
-                    elif decisao == 298:
-                        H298 = historia.item_298()
+                    while decisaoNaoCerta:
                         decisao = int(input('decisao : '))
-
-
-                        if decisao == 304:
-                            H304 = historia.item_304()
-                            #Aranha -- -6 pontos de energia
-
-                            with open(ex.caminhoFolhaDeAventuraAtual,'r') as f:
-                                    StatusGerais = json.load(f) 
-                    
-                            #perde habilidade
-                            energia = StatusGerais['FolhaDeAventura']['energia']
-
-                            print('Energia anterior',energia)
+                        if decisao == 336:
+                            H336 = historia.item_336()
                 
-                            energia -= 6
+                            PerdeHabilidade = ex.PerdeHabilidade(4)
 
-                            StatusGerais['FolhaDeAventura']['energia'] = energia
+                            continue
+                        
 
-                            with open(ex.caminhoFolhaDeAventuraAtual,'w') as f:
-                                json.dump(StatusGerais,f)
+                            #Volta para 298 Está com erro!! ele volta pra função mas nao pro elif
+                        
+                            
 
-                            if energia <= 0:
-                                print('Acabou sua energia! Você perdeu')
-                            else:
-                                print('energia atual',energia)
+                        
+                        elif decisao == 298:
+                            H298 = historia.item_298()
+                            decisao = int(input('decisao : '))
+                            decisaoNaoCerta = False
+                       
 
-                               
+                            if decisao == 304:
+                                H304 = historia.item_304()
+                                #Aranha -- -6 pontos de energia
+
+                                AranhaPerigosa = ex.AranhaPerigosa()
+
+                                input('Aperte Enter para continuar')
+
+                                H20 = historia.item_20()
+
+                                PerdeHabilidade = ex.PerdeHabilidade(1)
+
+                                input('Aperte Enter para continuar')
 
 
 
-                        elif decisao == 279:
-                            H279 = historia.item_279()
+                                
+
+
+
+                            elif decisao == 279:
+                                H279 = historia.item_279()
+                                input('Aperte ENTER para continuar!')
+                                H32 = historia.item_32()
+                                input('Aperte ENTER para continuar!')
+                                H37 = historia.item_37()
+                                input('Aperte ENTER para continuar!')
+
+                            # decisao = int(input('decisao :'))
+
+                            # if decisao == 351:
+
+
+
 
                         
 
@@ -217,6 +203,19 @@ if aceita_desafio =='sim':
         print(opção_incorreta)
     
 
+
+
+else:
+    print('Fracassado!! está com medinho?')
+
+
+
+
+
+
+
+
+
     # CriaCriatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
 
     # Combate = ex.Combate(nomeMonstro)
@@ -224,5 +223,5 @@ if aceita_desafio =='sim':
     # Sorte = ex.Sorte()
 
 
-else:
-    print('Fracassado!! está com medinho?')
+
+

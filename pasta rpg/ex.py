@@ -215,15 +215,14 @@ def Combate(nomeMonstro):
 
             EnergiaCriatura -= 2
 
+
             #energia perdida, vou mandar para o json dados atualizados da energia
             with open(caminhoFolhaDeAventuraAtual,'w') as f:
                 StatusGerais['EncontrosMonstros'][nomeMonstro]['energia'] -= 2
                 json.dump(StatusGerais,f)
 
 
-            print(f'Criatura perdeu 2 pontos de Energia, energia atual : {EnergiaCriatura}')
-
-           
+            print(f'Criatura perdeu 2 pontos de Energia, energia atual : {EnergiaCriatura}') 
 
         # se a força for menor que da criatura, personagem perde pontos
         elif ForçaPersonagem < ForçaCriatura:
@@ -236,10 +235,10 @@ def Combate(nomeMonstro):
                 StatusGerais['FolhaDeAventura']['energia'] -= 2
                 json.dump(StatusGerais,f)
 
-
+           
             print(f'Você perdeu 2 pontos de Energia, energia atual : {EnergiaPersonagem}')
 
-            
+    
             
         # se for igual, nao acontece nada
         elif ForçaPersonagem == ForçaCriatura:
@@ -251,21 +250,60 @@ def Combate(nomeMonstro):
         contadorBatalhas +=1
 
     
+
+    
     if EnergiaPersonagem > EnergiaCriatura:
         return True
     else:
         return False
 
           
+############# Funções específicas da história ###############################
 
+def AranhaPerigosa():
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f) 
+                    
+    #perde habilidade
+    energia = StatusGerais['FolhaDeAventura']['energia']
+
+    print('Energia anterior',energia)
+
+    energia -= 6
+
+    StatusGerais['FolhaDeAventura']['energia'] = energia
+
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
+        json.dump(StatusGerais,f)
+
+    if energia <= 0:
+        print('Acabou sua energia! Você perdeu')
+
+    else:
+        print('Você sobreviveu a Aranha VIUVA NEGRA')
+        print('energia atual',energia)
 
  
         
 
 
+def PerdeHabilidade(valor):
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f) 
+                    
+    #perde habilidade
+    habilidade = StatusGerais['FolhaDeAventura']['habilidade']
 
+    print('Habilidade anterior',habilidade)
 
+    habilidade -= valor
 
+    StatusGerais['FolhaDeAventura']['habilidade'] = habilidade
+
+    print('Habilidade atual',habilidade)
+
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
+        json.dump(StatusGerais,f)
 
 
 
