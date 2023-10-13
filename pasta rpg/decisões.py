@@ -21,6 +21,7 @@ def decisao_1():
 
     else:
         print(opção_incorreta)
+        arte.GameOver()
 
 
 
@@ -39,6 +40,7 @@ def decisao_66():
 
     else:
         print(opção_incorreta)
+        arte.GameOver()
 
 
 
@@ -63,6 +65,7 @@ def decisao_293():
 
     else:
         print(opção_incorreta)
+        arte.GameOver()
 
 
 def decisao_119():
@@ -80,6 +83,7 @@ def decisao_119():
     
     else:
         print(opção_incorreta)
+        arte.GameOver()
 
 
 def decisao_56():
@@ -91,6 +95,9 @@ def decisao_56():
         decisao_373()
     elif decisao == 215():
         decisao_215()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
 
 
 
@@ -110,6 +117,7 @@ def decisao_137():
       
     else:
         print(opção_incorreta)
+        arte.GameOver()
 
 
 def decisao_220():
@@ -125,6 +133,7 @@ def decisao_220():
     
     else:
         print(opção_incorreta)
+        arte.GameOver()
 
 
 def decisao_61():
@@ -132,7 +141,7 @@ def decisao_61():
     H61 = historia.item_61()
 
     print("Foi de comes e bebes")
-    exit()
+    arte.GameOver()
 
 
 def decisao_346():
@@ -156,6 +165,7 @@ def decisao_264():
 
     else:
         print(opção_incorreta)
+        arte.GameOver()
 
 
 def decisao_355():
@@ -185,7 +195,8 @@ def decisao_387():
         print('Você venceu!!')
         decisao_114()
     else:
-        print('perdeu')
+        print('Perdeu o combate, Você MORREU!')
+        arte.GameOver()
 
 
 def decisao_114():
@@ -205,6 +216,7 @@ def decisao_114():
             
     else:
         print(opção_incorreta)
+        arte.GameOver()
     
 
 
@@ -237,9 +249,11 @@ def decisao_130():
             decisao_9()
 
         else:
-            print('perdeu')
+            print(' Você perdeu o segundo combate! Você morreu!')
+            arte.GameOver()
     else:
-        print('perdeu')
+        print('Você perdeu o primeiro combate! Você Morreu!')
+        arte.GameOver()
 
 def decisao_9():
     H9 = historia.item_9()
@@ -253,6 +267,7 @@ def decisao_9():
     
     else:
         print(opção_incorreta)
+        arte.GameOver()
 
 
 def decisao_375():
@@ -273,12 +288,14 @@ def decisao_110():
     
     else:
         print(opção_incorreta)
+        arte.GameOver()
 
 
 def decisao_58():
     H58 = historia.item_58()
     
     #Compara: se soma dos dados <= habilidade vai para 80, senão vai para 246
+    #Corrigir função
     
     dado = 0
     dado1 = jogaDADOS.jogaDados(dado)
@@ -311,7 +328,8 @@ def decisao_246():
         print('Você sobreviveu!')
         decisao_313()
     else:
-        print('perdeu')
+        print('As farpas foram letais, VOCÊ PERDEU')
+        arte.GameOver()
 
 
 
@@ -327,7 +345,8 @@ def decisao_223():
         print('Você sobreviveu!')
         decisao_313()
     else:
-        print('perdeu')
+        print('Acabou sua energia!')
+        arte.GameOver()
 
 def decisao_313():
     H313 =  historia.item_313()
@@ -356,7 +375,8 @@ def decisao_158():
         #se tiver energia vai para 275
         decisao_275()
     else:
-        print('perdeu')
+        print('Acabou sua Energia!')
+        arte.GameOver()
 
 def decisao_32():
     H32 = historia.item_32()
@@ -375,11 +395,67 @@ def decisao_37():
     if decisao == 239:
         decisao_239()
     elif decisao == 351:
-        decisa_351()
+        decisao_351()
     else:
         print(opção_incorreta)
 
 
+def decisao_239():
+
+    H239 = ex.item_239()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 102:
+        decisao_102()
+
+    elif decisao == 344:
+        decisao_344()
+    
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_102():
+
+    H102 = historia.item_102()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 133:
+        decisao_133()
+    elif decisao == 251:
+        decisao_251()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_344():
+    H344 = historia.item_344()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 229:
+        decisao_229()
+    elif decisao == 107:
+        decisao_107()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_351():
+    H351 = historia.item_351()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 396:
+        decisao_396()
+    elif decisao == 186:
+        decisao_186()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
 
 def decisao_275():
     H275 = historia.item_275()
@@ -417,16 +493,15 @@ def decisao_309():
           print('Você foi redirecionado para 193!')
           decisao_193()
   else:
-      print('perdeu')
+    print('Acabou sua energia!')
+    arte.GameOver()
       
 
 
 def decisao_193():
     H193  = historia.item_193()
 
-    print('Você Perdeu!')
-    
-    arte.draw_skull()
+    arte.GameOver()
 
 
 
@@ -446,4 +521,5 @@ def decisao_51():
         #feito
         decisao_9()
     else:
-        print('perdeu')
+          print('Você perdeu o Combate!')
+          arte.GameOver()

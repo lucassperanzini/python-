@@ -875,6 +875,19 @@ def item_231():
     print('''
 Você encontra uma poça atrás dos Hobglobins mortos e toma grandes goles de água fresca o mais rápido possível. Isso neutraliza o ácido e, lentamente, você começa a se recuperar. Ainda com dor, você se levanta e parte para o norte. Volte para 110
 ''')
+    
+
+
+def item_239():
+    print('''
+
+Não muito adiante, o túnel chega a uma porta fechada à sua esquerda. Colocando o ouvido na porta, você escuta, mas não ouve nada. Se você quiser abrir a porta, volte para 102. Se desejar prosseguir para o norte, vá para 344.
+
+
+
+
+
+''')
 
 
 
@@ -1019,6 +1032,12 @@ O túnel termina em uma encruzilhada. As pegadas que você vem seguindo viram pa
 
 
 
+def item_344():
+    print('''
+
+O túnel faz curvas e reviravoltas, mas continua sempre para o norte. À sua frente, um facho de luz azul desce do teto para o chão. Ele faísca e cintila, e você pode ver imagens de rostos que riem na luz. Se você quiser passar através da luz, volte para 229. Se preferir contornar o facho, volte para 107.
+
+''')
 
 
 
@@ -1033,6 +1052,13 @@ A munhequeira foi feita e amaldiçoada por uma Bruxa. Ela torna suas reações m
 
 
 
+
+def item_351():
+    print('''
+          
+Não muito adiante, o túnel chega a uma porta fechada à sua esquerda. Colocando o ouvido na porta, você escuta, mas não ouve nada. Se você quiser abrir a porta, volte para 102. Se desejar prosseguir para o norte, vá para 344.
+
+''')
 
 
 
