@@ -816,7 +816,11 @@ Caminhando pelo túnel, você se surpreende com um grande sino de ferro pendurad
 
 
 
+def item_141():
+    print('''
 
+O Demônio do Espelho está quase em cima de você quando, reunindo todas as suas forças, você desfere um golpe decisivo contra o espelho com a espada. Jogue dois dados. Se o total for igual ou menor que a sua HABILIDADE, volte para 72. Se o total for maior que a sua HABILIDADE, volte para 96.
+''')
 
 
 
@@ -831,7 +835,10 @@ def item_158():
 
 
 
-
+def item_182():
+    print('''
+A temperatura continua a subir, e você começa a pingar suor. Adiante, o calor se intensifica. Parece que você está numa fornalha. A situação é tão insuportável que você começa a desfalecer. Se você tiver bebido o líquido do tubo de bambu, volte para 25. Se não tiver parado para beber o líquido, vá para 242
+''')
 
 def item_193():
     print('''
@@ -842,7 +849,10 @@ O ácido queima a parede do seu estômago, penetrando nos seus órgãos vitais. 
 
 
 
-
+def item_215():
+    print('''
+Sua espada arrebenta facilmente a fina casca externa da gigantesca bola de esporos. Uma espessa nuvem de esporos saída da bola se espalha e o envolve. Alguns dos esporos grudam- se à sua pele, que começa a coçar terrivelmente. Aparecem grandes caroços no seu rosto e braços, e sua pele parece estar em fogo. Você perde 2 pontos de ENERGIA. Coçando freneticamente os caroços, você passa por cima da bola de esporos, agora murcha, e segue para o oeste. Volte para 13.
+''')
 
 
 
@@ -1098,7 +1108,10 @@ def item_362():
 
 
 
-
+def item_373():
+    print('''
+Você sobe pelo rochedo macio, temendo ser absorvido por ele a qualquer momento. É difícil passar por cima da coisa, pois seus membros afundam na casca mole, mas, por fim, você consegue chegar ao outro lado. Aliviado por estar de novo em terreno firme, você se dirige para o leste. Volte para 13.
+''')
 
 
 def item_375():

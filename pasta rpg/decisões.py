@@ -100,6 +100,68 @@ def decisao_56():
         arte.GameOver()
 
 
+def decisao_373():
+    H373 = historia.item_373()
+
+    input('Aperte ENTER para seguir para 13')
+
+    decisao_13()
+
+
+def decisao_215():
+
+    H215 = historia.item_215()
+
+    SobreviveuPerdaEnergia = ex.PerdeEnergia(2)
+
+    if SobreviveuPerdaEnergia:
+        input('Aperte ENTER para seguir para 13')
+        decisao_13()
+    else:
+        arte.GameOver()
+
+def decisao_13():
+    H13 = historia.item_13()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 141:
+        decisao_141()
+    elif decisao == 182:
+        decisao_182()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_141():
+    H141 = historia.item_141()
+
+    
+    ComparaHabilidade = ex.ComparaHabilidade()
+    # Se habilidade for menor que a soma dos dados, sege 71 se nao segue 96
+    if ComparaHabilidade:
+        input('Siga para 72:')
+        decisao_72()
+    else:
+        decisao_96()
+
+
+def decisao_182():
+    H182 = historia.item_182()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 25:
+        decisao_25()
+
+    elif decisao == 242:
+        decisao_242()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
 
 
 

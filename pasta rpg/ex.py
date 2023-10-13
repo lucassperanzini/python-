@@ -392,12 +392,31 @@ def farpasMenosEnergia():
         return False
 
 
-   
+def ComparaHabilidade():
 
-   
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f) 
 
+    habilidade = StatusGerais['FolhaDeAventura']['habilidade']
 
+    Jogada =jogaDADOS.jogaDados(dado)
+    Jogada2 = jogaDADOS.jogaDados(dado)
+                    
+
+    print(f"Você esta com {habilidade} de habilidade! ")
 
     print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
+
+    somaDados = Jogada + Jogada2
+
+    if somaDados <= habilidade:
+        print(f'soma de dados é : {somaDados} que é menor que sua habilidade : {habilidade} ')
+        return True
+    else:
+        print(f'soma de dados maior que sua habilidade : {habilidade} ')
+        return False
+   
+
+ 
 
 
