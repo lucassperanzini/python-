@@ -824,7 +824,10 @@ Caminhando pelo túnel, você se surpreende com um grande sino de ferro pendurad
 
 
 
-
+def item_158():
+    print('''
+    Você leva a moringa aos lábios e toma um gole. O líquido queima tanto que você larga a moringa e segura a garganta em agonia. Você engoliu ácido! Perde 1 ponto de HABILIDADE e 4 de ENERGIA. Se ainda estiver vivo, vá para 275
+''')
 
 
 
@@ -977,9 +980,6 @@ def item_336():
 A munhequeira foi feita e amaldiçoada por uma Bruxa. Ela torna suas reações mais lentas e embota-lhe os sentidos. Reduza sua HABILIDADE em 4 pontos. Furioso, você chuta a parede do túnel e segue para o norte. Volte para 298.
 
 ''')
-    
-
-    
 
 
 
@@ -992,7 +992,10 @@ A munhequeira foi feita e amaldiçoada por uma Bruxa. Ela torna suas reações m
 
 
 
-
+def item_355():
+    print('''
+   Você se aproxima silenciosamente por trás dos Hobglobins que lutam e, saltando das sombras, empurra-os contra a parede e foge correndo. Você olha para trás e os vê esparramados no chão. Rindo, você segue depressa para o norte. Volte para 110. 
+''')
 
 
 
@@ -1023,7 +1026,10 @@ def item_362():
 
 
 
-
+def item_375():
+    print('''
+    Uma fumaça acre emana da moringa quando você enfia o pano nela. O líquido é indubitavelmente ácido. Você arrolha a moringa de novo e a coloca na mochila, esperando que venha a ter utilidade mais tarde. Você recoloca a espada na bainha e prossegue rumo ao norte. Volte para 110.
+''')
 
 
 

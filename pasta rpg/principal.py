@@ -1,5 +1,6 @@
 import ex
 import historia
+import decisões
 import json
 
 
@@ -24,7 +25,8 @@ if aceita_desafio =='sim':
 
     CriaPersonagem = ex.CriarPersonagem()
 
-    H1 = historia.item_1()
+    decisões.decisao_1()
+
     decisao = int(input('decisão :'))
 
     

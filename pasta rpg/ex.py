@@ -310,4 +310,27 @@ def PerdeHabilidade(valor):
 
 
 
+def PerdeEnergia(valor):
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f) 
+                    
+    #perde energia
+    energia = StatusGerais['FolhaDeAventura']['energia']
+
+    print('Energia anterior',energia)
+
+    energia -= valor
+
+    StatusGerais['FolhaDeAventura']['energia'] = energia
+
+    print('Energia atual',energia)
+
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
+        json.dump(StatusGerais,f)
+
+
+
+
+
+
 
