@@ -1,5 +1,5 @@
 def item_1():
-    print('O clamor dos espectadores excitados some gradualmente atrás de você, que se aventura cada vez mais fundo na penumbra do túnel da caverna.')
+    print('O clamor dos espectadores funçõescitados some gradualmente atrás de você, que se aventura cada vez mais fundo na penumbra do túnel da caverna.')
     print('Grandes cristais pendem do teto do túnel a intervalos de 20 metros, irradiando uma luz suave, apenas suficiente para que se veja por onde anda. À medida que seus olhos vão pouco a pouco se acostumando à quase escuridão, você começa a ver movimentos à sua volta. Aranhas e besouros sobem e descem pelas paredes entalhadas, desaparecendo em frestas e gretas ao sentir sua aproximação; ratazanas e ratos correm pelo chão à sua frente. Pingos de água caem em pequenas poças com um sinistro som gotejante que ecoa pelo túnel. O ar é frio, úmido e pesado. Depois de caminhar lentamente pelo túnel por uns cinco minutos, você chega a uma mesa de pedra encostada contra a parede à sua esquerda. Nela há seis caixas, uma das quais tem o seu nome pintado na tampa. Se você quiser abrir a caixa, vá para 270. Se preferir continuar caminhando para o norte, vá para 66.')
 def item_2():
    print('O Escorpião consegue prendê-lo nas garras por tempo suficiente para mover a cauda segmentada para frente, por sobre a cabeça, e cravar em você o ferrão venenoso. O efeito é fatal, e você desaba no chão da Arena da Morte, imaginando se Throm conseguirá vencer.')
@@ -68,7 +68,7 @@ Se quiser agora retirar o olho direito, vá para 140. Se preferir descer do ído
 
 def item_12():
     print('''
-A porta abre para um grande aposento iluminado por velas, repleto das mais extraordinárias estátuas, de aparência real, representando guerreiros e cavaleiros.
+A porta abre para um grande aposento iluminado por velas, repleto das mais funçõestraordinárias estátuas, de aparência real, representando guerreiros e cavaleiros.
 Um velho de cabelos brancos, trajando trapos esfarrapados, salta de trás de uma das estátuas e começa a dar risinhos.
 Uma centelha nos olhos dele faz com que você pense que algo se esconde por trás daquela aparência de idiota.
 Numa voz estridente, ele diz: "Bom, mais uma pedra para meu jardim. Fico feliz que você tenha vindo se juntar a seus amigos. Sou um homem justo, e por isso vou lhe fazer uma pergunta.
@@ -125,7 +125,7 @@ Safira	    |   Diamante	|    Esmeralda  |   Vá para 249 |
 
 def item_17():
     print('''
-Você não é forte o bastante para forçar e abrir a pesada porta. A água já está na cintura agora, e você está exausto por causa dos esforços.')
+Você não é forte o bastante para forçar e abrir a pesada porta. A água já está na cintura agora, e você está funçõesausto por causa dos esforços.')
     O nível da água sobe rapidamente, e você se vê boiando cada vez mais alto. Até que seu rosto fica imprensado contra o teto.
     Logo fica completamente imerso e não tem como prender a respiração por mais tempo. Sua aventura termina aqui.
     ''')
@@ -156,7 +156,7 @@ O ferimento não teve qualquer efeito sobre a Besta Sangrenta, que continua a at
 def item_22():
     print('''
 Embora vocês fiquem um pouco perturbados na companhia um do outro, sabendo que só pode haver um vencedor na Prova dos Campeões, ambos estão contentes por compartilhar os benefícios de uma aliança temporária.
-Contam um ao outro as explorações que fizeram até agora, falam dos monstros e armadilhas que encontraram e dos perigos que venceram.
+Contam um ao outro as funçõesplorações que fizeram até agora, falam dos monstros e armadilhas que encontraram e dos perigos que venceram.
 Caminhando em frente, vocês logo chegam à borda de um poço largo. É profundo e escuro demais para verem-lhe o fundo. O Bárbaro se oferece para ajudá-lo descer ao fundo com a corda dele, dizendo que tem uma tocha com a qual você poderá iluminar o caminho.
 Você:
 Aceitará a oferta do Bárbaro? Vá para 63
@@ -202,7 +202,7 @@ e tentou escapar. Lástima, não teve êxito e foi capturado pelos Orcas, os
 guardas volantes do Juiz da Prova. Como corretivo, cortaram-lhe uma das mãos 
 e condenaram-no a um ano de prisão nessa cela. Você pergunta se ele tem alguma 
 informação que lhe possa ser útil. Ele coça a cabeça: “Bem, não cheguei a me sair 
-exatamente bem aqui, mas, de fato, sei que você precisa juntar gemas e pedras 
+funçõesatamente bem aqui, mas, de fato, sei que você precisa juntar gemas e pedras 
 preciosas, se espera escapar. Não sei por que, mas é isso.
 ” Sem mais dizer, o esfarrapado prisioneiro dispara para fora do aposento, 
 virando à esquerda no túnel. Você resolve prosseguir para o norte e vira à direita 
@@ -279,7 +279,7 @@ Se você vencer, vá para 111. Você pode Fugir, correndo de volta para o túnel
 ''')
     
 def item_40():
-    print(''' Você chama o Anão, dizendo que está pronto para lutar contra o MINOTAURO. A porta de madeira se ergue lentamente, e você vê a assustadora fera, meio homem, meio touro, entrar na arena. Ele bufa e expele vapor pelas narinas, enquanto vai ficando mais e mais furioso, pronto para atacar. Súbito, arranca adiante, girando uma acha de dois gumes.
+    print(''' Você chama o Anão, dizendo que está pronto para lutar contra o MINOTAURO. A porta de madeira se ergue lentamente, e você vê a assustadora fera, meio homem, meio touro, entrar na arena. Ele bufa e funçõespele vapor pelas narinas, enquanto vai ficando mais e mais furioso, pronto para atacar. Súbito, arranca adiante, girando uma acha de dois gumes.
 
 MINOTAURO	HABILIDADE 9	ENERGIA 9
 
@@ -347,7 +347,7 @@ Você dá uma espiada, virando a esquina, e vê duas pequenas criaturas correndo
 
 def item_50():
     print('''
-Você acorda e vê Throm puxando o anel do seu dedo. Ele joga o anel no chão e o esmaga com a acha de guerra. Em seguida, grunhindo para expressar que desaprova sua atitude, sai caminhando para o leste. Com esforço, você se levanta e o segue cambaleante. Vá para 221.
+Você acorda e vê Throm puxando o anel do seu dedo. Ele joga o anel no chão e o esmaga com a acha de guerra. Em seguida, grunhindo para funçõespressar que desaprova sua atitude, sai caminhando para o leste. Com esforço, você se levanta e o segue cambaleante. Vá para 221.
 ''')
 
 def item_51():
@@ -363,7 +363,7 @@ Se você vencer, volte para 9.
     
 def item_52():
     print('''
-Ao abrir o livro, você vê que ele começa a se desintegrar. As páginas se transformando em poeira nas suas mãos. Mas você consegue salvar alguns fragmentos e ler o manuscrito. O livro parece ser sobre monstros, e, do que você pode concluir, contém uma descrição completa de um ser chamado Besta Sangrenta. É uma horrível criatura inchada, com pele grossa e coberta de espinhos e úlceras faciais que se abrem para se tornar falsos olhos, cujo objetivo é esconder o único ponto fraco da Besta Sangrenta - seus olhos verdadeiros. Essas monstruosidades geralmente habitam poços de lodo fétido que exalam gás venenoso, tão forte que pode facilmente deixar uma pessoa inconsciente. A Besta Sangrenta, embora pesada demais para sair da poça de lodo, tem uma língua longa e poderosa que se enrosca em torno de suas vítimas para arrastá-las para o interior da poça. Quando a carne das vítimas começa a apodrecer no lodo abjeto, a Besta Sangrenta a devora. Você conta a Throm sobre a grotesca Besta Sangrenta, mas ele simplesmente sacode os ombros e lhe diz para seguir adiante. Se você ainda não o fez, poderá abrir o livro preto - vá para 138. Do contrário, você deve prosseguir para o norte com Throm - vá para 369.
+Ao abrir o livro, você vê que ele começa a se desintegrar. As páginas se transformando em poeira nas suas mãos. Mas você consegue salvar alguns fragmentos e ler o manuscrito. O livro parece ser sobre monstros, e, do que você pode concluir, contém uma descrição completa de um ser chamado Besta Sangrenta. É uma horrível criatura inchada, com pele grossa e coberta de espinhos e úlceras faciais que se abrem para se tornar falsos olhos, cujo objetivo é esconder o único ponto fraco da Besta Sangrenta - seus olhos verdadeiros. Essas monstruosidades geralmente habitam poços de lodo fétido que funçõesalam gás venenoso, tão forte que pode facilmente deixar uma pessoa inconsciente. A Besta Sangrenta, embora pesada demais para sair da poça de lodo, tem uma língua longa e poderosa que se enrosca em torno de suas vítimas para arrastá-las para o interior da poça. Quando a carne das vítimas começa a apodrecer no lodo abjeto, a Besta Sangrenta a devora. Você conta a Throm sobre a grotesca Besta Sangrenta, mas ele simplesmente sacode os ombros e lhe diz para seguir adiante. Se você ainda não o fez, poderá abrir o livro preto - vá para 138. Do contrário, você deve prosseguir para o norte com Throm - vá para 369.
 ''')
 
 def item_53():
@@ -379,7 +379,7 @@ O laço se solta e você consegue tirá-lo do pescoço do ídolo com uma sacudid
 
 def item_55():
     print('''
-Com a velocidade de um raio, você estica a mão e segura a naja logo abaixo da boca aberta. Você a ergue e, como braço estendido, sacode-a na frente do Anão. Ele fica impassível, mas, com seu jeito calmo e sem expressão, diz: “Por favor, coloque a naja de volta na cesta e prepare-se para a parte final do teste. Siga-me.” Você faz o que ele disse e o segue de volta para a câmara, onde Throm está andando de um lado para o outro, evidentemente nervoso. Você acena para ele, enquanto o Anão abre uma segunda porta secreta e manda que você entre por ela e espere por ele. Outra vez você obedece, e se vê em outro aposento circular, embora este se assemelhe a uma pequena arena. O chão é coberto de areia, e uma pequena sacada circunda a parede da arena. No lado oposto ao da porta secreta pela qual você entrou, há uma porta de madeira de aparência agourenta. De repente, você ouve um grito, e olha para cima, vendo o Anão sorridente na sacada. Ele joga dois pedaços de papel para você. Num deles, estão escritas as palavras SEI PORCÃO, e no outro, RUIM NO ATO. Com a voz sempre calma, ele diz: “Se você rearrumar as letras das palavras, descobrirá os nomes de duas criaturas. Você pode escolher com qual delas quer lutar na minha Arena da Morte.” Se você puder identificar a criatura rearrumando as letras de SEI PORCÃO, vá para 143. Se puder identificar a criatura rearrumando as letras de RUIM NO ATO, volte para 40. Se você não puder identificar nenhuma das duas criaturas, vá para 347.
+Com a velocidade de um raio, você estica a mão e segura a naja logo abaixo da boca aberta. Você a ergue e, como braço estendido, sacode-a na frente do Anão. Ele fica impassível, mas, com seu jeito calmo e sem funçõespressão, diz: “Por favor, coloque a naja de volta na cesta e prepare-se para a parte final do teste. Siga-me.” Você faz o que ele disse e o segue de volta para a câmara, onde Throm está andando de um lado para o outro, evidentemente nervoso. Você acena para ele, enquanto o Anão abre uma segunda porta secreta e manda que você entre por ela e espere por ele. Outra vez você obedece, e se vê em outro aposento circular, embora este se assemelhe a uma pequena arena. O chão é coberto de areia, e uma pequena sacada circunda a parede da arena. No lado oposto ao da porta secreta pela qual você entrou, há uma porta de madeira de aparência agourenta. De repente, você ouve um grito, e olha para cima, vendo o Anão sorridente na sacada. Ele joga dois pedaços de papel para você. Num deles, estão escritas as palavras SEI PORCÃO, e no outro, RUIM NO ATO. Com a voz sempre calma, ele diz: “Se você rearrumar as letras das palavras, descobrirá os nomes de duas criaturas. Você pode escolher com qual delas quer lutar na minha Arena da Morte.” Se você puder identificar a criatura rearrumando as letras de SEI PORCÃO, vá para 143. Se puder identificar a criatura rearrumando as letras de RUIM NO ATO, volte para 40. Se você não puder identificar nenhuma das duas criaturas, vá para 347.
 ''')
 
 def item_56():
@@ -389,7 +389,7 @@ Você vê que a obstrução é causada por um objeto grande e marrom, parecendo 
 
 def item_57():
     print('''
-Embora você já tenha examinado a arca cuidadosamente, em busca de quaisquer mecanismos ocultos, não consegue ver a armadilha dentro dela. Ao levantar a tampa, uma bola de ferro pendente de uma corda é lançada para trás, partindo a cápsula de vidro fixada no lado de dentro da tampa. Uma nuvem de gás venenoso é instantaneamente liberado no ar, e você cambaleia, recuando, enquanto tosse e se engasga. Você perde 4 pontos de ENERGIA. Se ainda estiver vivo, vá para 198.
+Embora você já tenha funçõesaminado a arca cuidadosamente, em busca de quaisquer mecanismos ocultos, não consegue ver a armadilha dentro dela. Ao levantar a tampa, uma bola de ferro pendente de uma corda é lançada para trás, partindo a cápsula de vidro fixada no lado de dentro da tampa. Uma nuvem de gás venenoso é instantaneamente liberado no ar, e você cambaleia, recuando, enquanto tosse e se engasga. Você perde 4 pontos de ENERGIA. Se ainda estiver vivo, vá para 198.
 ''')
 
 def item_58():
@@ -416,7 +416,7 @@ Apesar do terrível ruído de campainha nos seus ouvidos, você ouve passos desc
 
 def item_62():
     print('''
-O Gnomo pula no ar, gritando: “Belo trabalho – ninguém jamais conseguiu encontrar todas as três gemas antes! Agora, prepare-separa o teste final, o qual eu explicarei uma vez e somente uma vez. Como você pode ver, a fechadura desta porta tem três ranhuras, com as etiquetas A, B e C, cada uma delas construída para aceitar uma gema específica. Você tem porque pôr uma das suas três gemas em cada uma das ranhuras na ordem certa. Se conseguir isso na primeira tentativa, ótimo. Porém, se puser as gemas nas ranhuras erradas, você será atingido por um raio de energia da fechadura, o que lhe causará ferimentos. De qualquer maneira, como eu disse, tenho permissão para ajudá-lo um pouco. Se você colocar uma gema em sua ranhura correta, mas puser as outras duas erradas, eu gritarei: ‘Uma coroa e dois crânios.’ Se você colocar todas as três gemas incorretamente, eu gritarei: ‘Três crânios.’ Você terá permissão para tentar repetidamente até que tenha êxito ou morra. Está pronto?” Você faz um aceno de cabeça e caminha adiante para colocar as três gemas nas ranhuras. Resolva que gemas colocará nas ranhuras com etiquetas:
+O Gnomo pula no ar, gritando: “Belo trabalho – ninguém jamais conseguiu encontrar todas as três gemas antes! Agora, prepare-separa o teste final, o qual eu funçõesplicarei uma vez e somente uma vez. Como você pode ver, a fechadura desta porta tem três ranhuras, com as etiquetas A, B e C, cada uma delas construída para aceitar uma gema específica. Você tem porque pôr uma das suas três gemas em cada uma das ranhuras na ordem certa. Se conseguir isso na primeira tentativa, ótimo. Porém, se puser as gemas nas ranhuras erradas, você será atingido por um raio de energia da fechadura, o que lhe causará ferimentos. De qualquer maneira, como eu disse, tenho permissão para ajudá-lo um pouco. Se você colocar uma gema em sua ranhura correta, mas puser as outras duas erradas, eu gritarei: ‘Uma coroa e dois crânios.’ Se você colocar todas as três gemas incorretamente, eu gritarei: ‘Três crânios.’ Você terá permissão para tentar repetidamente até que tenha êxito ou morra. Está pronto?” Você faz um aceno de cabeça e caminha adiante para colocar as três gemas nas ranhuras. Resolva que gemas colocará nas ranhuras com etiquetas:
 
 A	        B	        C	
 Esmeralda	Diamante	Safira	    Fique em 16
@@ -429,7 +429,7 @@ Safira	    Diamante	Esmeralda	Vá para 249
 ''')
     
 def item_63():
-    print('''Você amarra a corda na cintura e segura a tocha que Throm, seu aliado Bárbaro, lhe dá, já acesa. Segurando a corda frouxa, Throm o vai descendo-o lentamente por sobre a borda do poço até as profundezas escuras. Você pode ver, com a luz da tocha, que os lados do poço são extremamente lisos. Você desce por uns 20 metros antes de chegar ao fundo do poço. Ali, vê um outro túnel que segue para o norte, e chama Throm para contar-lhe a descoberta. Ele responde, dizendo que vai amarrar a corda em uma rocha proeminente na borda do poço e descerá. Você ouve o Bárbaro descendo, e logo estão juntos de novo. Throm recupera a corda, sacudindo-a para soltá-la da rocha, e vocês partem para o norte pelo novo túnel. Vá para 194.''')
+    print('''Você amarra a corda na cintura e segura a tocha que Throm, seu aliado Bárbaro, lhe dá, já acesa. Segurando a corda frouxa, Throm o vai descendo-o lentamente por sobre a borda do poço até as profundezas escuras. Você pode ver, com a luz da tocha, que os lados do poço são funçõestremamente lisos. Você desce por uns 20 metros antes de chegar ao fundo do poço. Ali, vê um outro túnel que segue para o norte, e chama Throm para contar-lhe a descoberta. Ele responde, dizendo que vai amarrar a corda em uma rocha proeminente na borda do poço e descerá. Você ouve o Bárbaro descendo, e logo estão juntos de novo. Throm recupera a corda, sacudindo-a para soltá-la da rocha, e vocês partem para o norte pelo novo túnel. Vá para 194.''')
 
 
 def item_64():
@@ -509,12 +509,12 @@ Atacará o Demônio do Espelho com sua espada?	            Vá para 327
     
 def item_75():
     print('''
-Você esfrega o líquido nos seus ferimentos, mas eles não saram. Olhando fixamente para a garrafa vazia, você fica se perguntando o que o líquido seria exatamente. Se você ainda não o tiver feito, poderá abrir o livro vermelho - volte para 52. Do contrário, você deve continuar para o norte com Throm - vá para 369.
+Você esfrega o líquido nos seus ferimentos, mas eles não saram. Olhando fixamente para a garrafa vazia, você fica se perguntando o que o líquido seria funçõesatamente. Se você ainda não o tiver feito, poderá abrir o livro vermelho - volte para 52. Do contrário, você deve continuar para o norte com Throm - vá para 369.
 ''')
 
 def item_76():
     print('''
-Você dá a volta pela enorme massa morta do Verme da Rocha e dá uma espiada dentro da escuridão de seu buraco perfurado. Você só consegue ver alguns metros, mas pode notar que ele se inclina levemente e é tímido por causa da gosma secretada pelo Verme da Rocha. Se você quiser explorar o buraco de broca, vá para 317. Se preferir caminhar para o oeste pelo túnel, vá para 117.
+Você dá a volta pela enorme massa morta do Verme da Rocha e dá uma espiada dentro da escuridão de seu buraco perfurado. Você só consegue ver alguns metros, mas pode notar que ele se inclina levemente e é tímido por causa da gosma secretada pelo Verme da Rocha. Se você quiser funçõesplorar o buraco de broca, vá para 317. Se preferir caminhar para o oeste pelo túnel, vá para 117.
 ''')
 
 def item_77():
@@ -623,7 +623,7 @@ A porta se abre para um pequeno e escuro aposento, contendo apenas, na parede do
 
 def item_94():
     print('''
-Respirando fundo, você se debruça sobre o poço e mergulha o braço na massa de vermes que se contorcem. Eles são frios e viscosos, e o contato é extremamente desagradável, mas, pelo menos, são inofensivos, e você consegue pegar o punhal pelo cabo. Ao sacudi-lo firmemente, ele sai da rachadura em que a ponta estava cravada. Admirando-lhe a beleza, e imaginando se ele teria um dia pertencido a um competidor de pouca sorte, você põe o punhal ornamentado de opala firmemente no cinto e sai da caverna. Vá para 174.
+Respirando fundo, você se debruça sobre o poço e mergulha o braço na massa de vermes que se contorcem. Eles são frios e viscosos, e o contato é funçõestremamente desagradável, mas, pelo menos, são inofensivos, e você consegue pegar o punhal pelo cabo. Ao sacudi-lo firmemente, ele sai da rachadura em que a ponta estava cravada. Admirando-lhe a beleza, e imaginando se ele teria um dia pertencido a um competidor de pouca sorte, você põe o punhal ornamentado de opala firmemente no cinto e sai da caverna. Vá para 174.
 ''')
 
 def item_95():
@@ -680,7 +680,7 @@ Reagindo rapidamente, você consegue saltar por cima da língua estendida e corr
 
 def item_105():
     print('''
-Seus reflexos são precisos, e você rapidamente pula de lado. O dardo passa assobiando, por pouco não o atingindo, e se choca contra a parede do outro lado. Você vê a taça jogada no chão, e o líquido vermelho escorrendo pela pedra cinzenta como pequenos riachos. Pelo menos a raça pode ser de alguma utilidade, portanto você a põe na mochila. Se você ainda não o tiver feito, poderá caminhar de volta para revistar o Bárbaro - vá para 126. Do contrário, saia da câmara para continuar para o oeste - volte para 83.
+Seus reflfunçõesos são precisos, e você rapidamente pula de lado. O dardo passa assobiando, por pouco não o atingindo, e se choca contra a parede do outro lado. Você vê a taça jogada no chão, e o líquido vermelho escorrendo pela pedra cinzenta como pequenos riachos. Pelo menos a raça pode ser de alguma utilidade, portanto você a põe na mochila. Se você ainda não o tiver feito, poderá caminhar de volta para revistar o Bárbaro - vá para 126. Do contrário, saia da câmara para continuar para o oeste - volte para 83.
     ''')
 
 def item_106():
@@ -756,7 +756,7 @@ Seu corpo continua a vibrar intensamente, e você se sente como se estivesse pre
 
 def item_119():
     print('''
-Adiante, você pode ver um grande obstáculo no chão do túnel, embora esteja escuro demais para saber exatamente o que é. As pegadas molhadas que você vem seguindo continuam até a obstrução. Se você quiser continuar para o leste, volte para 56. Se preferir voltar para a encruzilhada e seguir para o oeste, vá para 293.
+Adiante, você pode ver um grande obstáculo no chão do túnel, embora esteja escuro demais para saber funçõesatamente o que é. As pegadas molhadas que você vem seguindo continuam até a obstrução. Se você quiser continuar para o leste, volte para 56. Se preferir voltar para a encruzilhada e seguir para o oeste, vá para 293.
 ''')
 
 
@@ -844,6 +844,12 @@ def item_158():
     print('''
     Você leva a moringa aos lábios e toma um gole. O líquido queima tanto que você larga a moringa e segura a garganta em agonia. Você engoliu ácido! Perde 1 ponto de HABILIDADE e 4 de ENERGIA. Se ainda estiver vivo, vá para 275
 ''')
+    
+
+def item_164():
+    print('''
+Enquanto você caminha, pingos de água voltam a cair do teto do túnel. Você vê pegadas úmidas, feitas pelas mesmas botas que você havia seguido anteriormente, se dirigindo para o oeste. As pegadas conduzem a uma porta de ferro fechada na parede do lado direito do túnel, mas não parecem continuar a partir dali. Se quiser abrir a porta, vá para 299. Se preferir continuar em frente para o oeste, volte para 83.
+''')
 
 def item_171():
     print('''
@@ -856,6 +862,20 @@ A porta abre para um pequeno aposento, mas, antes que saiba o que está acontece
 def item_182():
     print('''
 A temperatura continua a subir, e você começa a pingar suor. Adiante, o calor se intensifica. Parece que você está numa fornalha. A situação é tão insuportável que você começa a desfalecer. Se você tiver bebido o líquido do tubo de bambu, volte para 25. Se não tiver parado para beber o líquido, vá para 242
+''')
+
+
+def item_189():
+    print('''
+          
+As pontas da maça do Orca penetram dolorosamente na sua coxa esquerda. Você perde 3 pontos de ENERGIA. Você cambaleia para trás, mas consegue recuperar o equilíbrio a tempo de se defender. Felizmente, o túnel é estreito demais para que ambos os Orcas ataquem-no a um só tempo. Lute com um de cada vez.
+
+	HABILIDADE	ENERGIA
+Primeiro ORCA	5	5
+Segundo ORCA    6	4
+
+Se você vencer, vá para 257.	
+
 ''')
 
 def item_193():
@@ -887,7 +907,7 @@ A porta abre para o aposento; você toma distância e salta sobre o poço. Coloc
 
 def item_215():
     print('''
-Sua espada arrebenta facilmente a fina casca externa da gigantesca bola de esporos. Uma espessa nuvem de esporos saída da bola se espalha e o envolve. Alguns dos esporos grudam- se à sua pele, que começa a coçar terrivelmente. Aparecem grandes caroços no seu rosto e braços, e sua pele parece estar em fogo. Você perde 2 pontos de ENERGIA. Coçando freneticamente os caroços, você passa por cima da bola de esporos, agora murcha, e segue para o oeste. Volte para 13.
+Sua espada arrebenta facilmente a fina casca funçõesterna da gigantesca bola de esporos. Uma espessa nuvem de esporos saída da bola se espalha e o envolve. Alguns dos esporos grudam- se à sua pele, que começa a coçar terrivelmente. Aparecem grandes caroços no seu rosto e braços, e sua pele parece estar em fogo. Você perde 2 pontos de ENERGIA. Coçando freneticamente os caroços, você passa por cima da bola de esporos, agora murcha, e segue para o oeste. Volte para 13.
 ''')
 
 
@@ -953,6 +973,13 @@ Apesar de toda a cautela, sua perna raspa em um dos postes, que imediatamente so
 
 ''')
 
+
+def item_257():
+    print('''
+
+Dentro dos bolsos de um dos Orcas, você acha uma Peça de Ouro e um tubo oco de madeira. Você guarda na mochila o que encontrou e parte para o oeste. Volte para 164.
+
+''')
 
 
 
@@ -1177,7 +1204,19 @@ def item_375():
 
 
 
+def item_380():
+    print('''
 
+A maça de ferro do Orca se choca contra o escudo e resvala sem causar dano. O túnel é estreito demais para que os dois o ataquem ao mesmo tempo, por isso você pode lutar com um de cada vez.
+
+	HABILIDADE	ENERGIA
+Primeiro ORCA	5	5
+Segundo ORCA	6	4
+
+Se você vencer, volte para 257.
+
+
+''')
 
 
 
