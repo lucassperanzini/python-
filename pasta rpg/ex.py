@@ -3,7 +3,7 @@ import json
 
 
 dado = 0
-provisoes = 10
+
 
 
 caminhoFolhaDeAventura = 'D:/DadosPersonagemInicial.json'
@@ -41,7 +41,7 @@ def CriarPersonagem():
             'habilidade': funcHabilidade(),
             'energia':funcEnergia(),
             'sorte':funcSorte(),
-            'provisoes':provisoes
+            'provisoes':10
         }
         
 
@@ -417,6 +417,5 @@ def ComparaHabilidade():
         return False
    
 
- 
 
 

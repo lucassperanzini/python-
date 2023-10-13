@@ -4,6 +4,7 @@ import jogaDADOS
 import arte
 import json
 
+dado=0
 opção_incorreta = print('opção incorreta, você perdeu!')
 
 
@@ -145,6 +146,7 @@ def decisao_141():
         input('Siga para 72:')
         decisao_72()
     else:
+        input('Siga para 96')
         decisao_96()
 
 
@@ -158,6 +160,146 @@ def decisao_182():
 
     elif decisao == 242:
         decisao_242()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_25():
+    H25 = historia.item_25()
+    input(' Aperte ENTER para seguir para 197')
+
+    decisao_197()
+
+
+def decisao_242():
+    H242 = historia.item_242()
+
+    ComparaHabilidade = ex.ComparaHabilidade()
+
+    if ComparaHabilidade:
+        input('Siga para 48')
+        decisao_48()
+    else:
+        input('Siga para 366')
+        decisao_366()
+
+def decisao_48():
+    H48 = historia.item_48()
+
+    input('Siga para 197')
+
+    decisao_197()
+
+def decisao_366():
+
+    H366 = historia.item_366()
+
+    arte.GameOver()
+
+
+def decisao_197():
+    H197 = historia.item_197()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 171:
+   
+        decisao_171()
+
+    elif decisao == 156:
+      
+        decisao_156()
+
+    elif decisao == 326:
+    
+        decisao_326()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_171():
+    H171 = historia.item_171()
+
+    PerdeEnergia = ex.PerdeEnergia(4)
+
+    input('Siga para 326')
+
+    decisao_326()
+
+
+def decisao_156():
+    H156 = historia.item_156()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 208:
+   
+        decisao_208()
+
+    elif decisao == 326:
+      
+        decisao_326()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_208():
+    H208 = historia.item_208()
+
+    input('Siga para 326')
+
+    decisao_326()
+
+
+def decisao_326():
+    H326 = historia.item_326()
+    
+    ValorDado = jogaDADOS.jogaDados(dado)
+
+    print(ValorDado)
+
+    if ValorDado == 1 or ValorDado == 2:
+        decisao_91()
+    elif ValorDado == 3 or ValorDado == 4:
+        decisao_189()
+    elif ValorDado == 5 or ValorDado == 6:
+        decisao_380()
+
+
+
+def decisao_72():
+    H72 = historia.item_72()
+
+    PerdeHabilidade = ex.PerdeHabilidade(2)
+
+    input('Vá para 122')
+
+    decisao_122()
+
+
+def decisao_96():
+    H96 = historia.item_96()
+
+    arte.GameOver()
+
+
+
+def decisao_122():
+    H122 = historia.item_122()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 176:
+        decisao_176()
+
+    elif decisao == 362:
+        decisao_384()
       
     else:
         print(opção_incorreta)

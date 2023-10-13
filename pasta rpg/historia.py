@@ -763,6 +763,15 @@ Adiante, você pode ver um grande obstáculo no chão do túnel, embora esteja e
 
 
 
+def item_122():
+
+    print('''
+À sua frente, há dois lances de escadas de pedra, separados por um corrimão de crânios de ratazana. Você pode subir pelo lance de escadas da esquerda - vá para 176 - ou pelo da direita
+- vá para 384.
+
+''')
+
+
 
 
 
@@ -825,12 +834,21 @@ O Demônio do Espelho está quase em cima de você quando, reunindo todas as sua
 
 
 
-
+def item_156():
+    print('''
+A pequena placa desliza e se abre facilmente, e você divisa um aposento com um poço profundo no chão atrás da porta. Na parede do outro lado, há dois ganchos de ferro, num dos quais está pendurado um rolo de corda. Se você quiser abrir a porta, pular por cima do poço e pegar a corda, vá para 208. Se preferir continuar para o norte pelo túnel, vá para 326.
+''')
 
 
 def item_158():
     print('''
     Você leva a moringa aos lábios e toma um gole. O líquido queima tanto que você larga a moringa e segura a garganta em agonia. Você engoliu ácido! Perde 1 ponto de HABILIDADE e 4 de ENERGIA. Se ainda estiver vivo, vá para 275
+''')
+
+def item_171():
+    print('''
+A porta abre para um pequeno aposento, mas, antes que saiba o que está acontecendo, você despenca no vazio havia um poço atrás da porta e você não o viu. Você cai pesadamente no fundo e se contorce em dores. Perde 4 pontos de ENERGIA. As paredes do poço são rugosas e têm muitos pontos onde apoiar os pés e as mãos; por isso, você consegue fazer a escalada e sair com bastante facilidade. Você amaldiçoa sua própria ansiedade e diz a si mesmo que doravante será mais cuidadoso. No interior do aposento, você vê dois ganchos de ferro numa das paredes. Há um rolo de corda pendurado em um deles; você o coloca na mochila, salta de volta por cima do poço e sai do aposento, dirigindo-se ao norte. Vá para 326.
+
 ''')
 
 
@@ -847,6 +865,24 @@ O ácido queima a parede do seu estômago, penetrando nos seus órgãos vitais. 
 ''')
 
 
+def item_197():
+    print('''
+
+Graças aos céus, a temperatura agora começa a cair rapidamente, e logo parece quase fresca de novo. No lado esquerdo do túnel, há uma porta fechada e nela, uma pequena placa de ferro que talvez possa ser aberta. Você:
+
+Tentará abrir a porta?	Volte para 171
+Tentará fazer deslizar a placa de ferro?	Volte para 156
+Continuará para o norte, subindo o túnel?	Vá para 326
+
+
+''')
+
+def item_208():
+    print('''
+A porta abre para o aposento; você toma distância e salta sobre o poço. Coloca a corda na mochila e salta de volta por sobre o poço para sair do aposento e prosseguir para o norte. Vá para 326.
+
+
+''')
 
 
 def item_215():
@@ -897,6 +933,12 @@ Não muito adiante, o túnel chega a uma porta fechada à sua esquerda. Colocand
 
 
 
+''')
+    
+
+def item_242():
+    print('''
+Você sacode a cabeça, tentando desesperadamente manter a consciência, mas o calor é intenso demais, e você perde os sentidos. Jogue dois dados. Se o total for igual ou menor que a sua HABILIDADE, volte para 48. Se o total for maior que a sua HABILIDADE, vá para 366.
 ''')
 
 
@@ -1039,7 +1081,14 @@ O túnel termina em uma encruzilhada. As pegadas que você vem seguindo viram pa
 
 
 ''')
+    
+def item_326():
 
+    print('''
+Adiante, o túnel faz uma curva fechada para a esquerda. Ao □obra-la, você quase bate de frente em dois ORCAS de aspecto feroz, armados de maças com pontas de ferro e usando armaduras de couro. Você está totalmente despreparado, e, enquanto desembainha a espada, um deles desfere-lhe um golpe de maça. Jogue um dado. Se você obtiver 1 ou 2, volte para
+91. Se obtiver 3 ou 4, volte para 189. Se obtiver 5 ou 6, vá para 380.
+
+''')
 
 
 def item_344():
@@ -1105,6 +1154,13 @@ def item_362():
     Volte para 264.
 ''')
 
+
+def item_366():
+
+    print('''
+A temperatura continua a subir, muito além dos limites de tolerância humanos. Estendido no chão quase derretido do túnel, você não consegue recuperar a consciência. Sua aventura termina aqui.
+''')
+    
 
 
 

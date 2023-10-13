@@ -21,7 +21,7 @@ if aceita_desafio =='sim':
 
     CriaPersonagem = ex.CriarPersonagem()
 
-    decisões.decisao_141()
+    decisões.decisao_326()
 
     # decisao = int(input('decisão :'))
 
