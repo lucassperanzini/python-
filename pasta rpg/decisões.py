@@ -173,24 +173,29 @@ def decisao_387():
 
     if Combate:
         print('Você venceu!!')
-        H114 = historia.item_114()
-        decisao = int(input('decisao :'))
-
-        if decisao == 336:
-            H336 = historia.item_336()
-
-            MaldicaoBruxa  = ex.MaldicaoBruxa()
-            
-            #Volta para 298 Está com erro!! ele volta pra função mas nao pro elif
-        
-        elif decisao == 298:
-            H298 = historia.item_298()
-            decisao = int(input('decisao : '))
-            
-        else:
-            print(opção_incorreta)
+        decisao_114()
     else:
         print('perdeu')
+
+
+def decisao_114():
+    H114 = historia.item_114()
+    decisao = int(input('decisao :'))
+
+    if decisao == 336:
+        H336 = historia.item_336()
+
+        PerdeHabilidade  = ex.PerdeHabilidade(4)
+            
+        decisao_220()
+        
+    elif decisao == 298:
+        H298 = historia.item_298()
+        decisao = int(input('decisao : '))
+            
+    else:
+        print(opção_incorreta)
+    
 
 
 def decisao_130():
@@ -253,7 +258,6 @@ def decisao_110():
         decisao_58()
     
     elif decisao == 223:
-        #Não feito
         decisao_223()
     
     else:
@@ -284,6 +288,20 @@ def decisao_58():
         print("Total dos dados maior que HABILIDADE, vá para 246")
         #Não feito
         decisao_246()
+
+def decisao_223():
+    H223 = historia.item_223()
+
+
+    PerdeSorte = ex.PerdeSorte(2)
+
+    SobreviveuFarpas = ex.farpasMenosEnergia()
+
+    if SobreviveuFarpas:
+        print('Você sobreviveu!')
+        decisao_313()
+    else:
+        print('perdeu')
 
 
 def decisao_80():

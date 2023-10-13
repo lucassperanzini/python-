@@ -855,6 +855,22 @@ Tentará abafar o sino com sua bota?	Vá para 346
 
 
 ''')
+    
+
+
+def item_223():
+    print('''
+
+Você pisa com confiança no primeiro poste e avança para o próximo. Ao tocar o terceiro poste, ele imediatamente solta uma chuva de farpas afiadas, cada uma com vários centímetros de comprimento. Você perde 2 pontos de SORTE. As farpas voam em todas as direções a grande velocidade, e você não consegue evitá-las. Jogue dois dados para saber o número de farpas que lhe penetram a pele. Cada uma delas reduz sua ENERGIA em 1 ponto. Se você ainda estiver vivo, consegue arrastar-se por sobre os postes restantes e se senta para a dolorosa tarefa de retirar as farpas do corpo. Depois de descansar um pouco, você segue para o leste. Vá para 313.
+
+''')
+
+
+
+
+
+
+
 
 
 
@@ -883,7 +899,7 @@ escrito num pequeno pedaço de pergaminho, endereçado a você. Depois de coloca
 ''')
     input('Digite ENTER para voltar para 66')
 
-    item_66()
+    
 
 
 

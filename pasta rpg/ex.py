@@ -330,7 +330,70 @@ def PerdeEnergia(valor):
 
 
 
+def PerdeSorte(valor):
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f) 
+                    
+    #Pegando do Json sorte
+    sorte = StatusGerais['FolhaDeAventura']['sorte']
+
+    print('Sorte anterior',sorte)
+
+    sorte -= valor
+
+    StatusGerais['FolhaDeAventura']['sorte'] = sorte
+
+    print('Sorte atual',sorte)
+
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
+        json.dump(StatusGerais,f)
 
 
+
+def farpasMenosEnergia():
+
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f) 
+                    
+    energia = StatusGerais['FolhaDeAventura']['energia']
+
+    print(f"Você estava com {energia} de energia ! ")
+
+
+    Jogada =jogaDADOS.jogaDados(dado)
+    Jogada2 = jogaDADOS.jogaDados(dado)
+
+    somaDados = Jogada + Jogada2
+
+
+    print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
+    
+    print(f'A soma dos Dados é {somaDados}')
+
+    EnergiaPerdida = somaDados
+
+    energia = (energia - EnergiaPerdida)
+
+    print(f'Agora Você perdeu {somaDados} de energia')
+    print(f'Engergia Atual: {energia}')
+
+    StatusGerais['FolhaDeAventura']['energia'] = energia
+
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
+        json.dump(StatusGerais,f)
+
+    if energia > 0:
+        return True
+    else:
+        return False
+
+
+   
+
+   
+
+
+
+    print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
 
 
