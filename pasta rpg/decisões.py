@@ -1,5 +1,5 @@
 import historia
-import ex
+import funções
 import jogaDADOS
 import arte
 import json
@@ -113,7 +113,7 @@ def decisao_215():
 
     H215 = historia.item_215()
 
-    SobreviveuPerdaEnergia = ex.PerdeEnergia(2)
+    SobreviveuPerdaEnergia = funções.PerdeEnergia(2)
 
     if SobreviveuPerdaEnergia:
         input('Aperte ENTER para seguir para 13')
@@ -140,7 +140,7 @@ def decisao_141():
     H141 = historia.item_141()
 
     
-    ComparaHabilidade = ex.ComparaHabilidade()
+    ComparaHabilidade = funções.ComparaHabilidade()
     # Se habilidade for menor que a soma dos dados, sege 71 se nao segue 96
     if ComparaHabilidade:
         input('Siga para 72:')
@@ -176,7 +176,7 @@ def decisao_25():
 def decisao_242():
     H242 = historia.item_242()
 
-    ComparaHabilidade = ex.ComparaHabilidade()
+    ComparaHabilidade = funções.ComparaHabilidade()
 
     if ComparaHabilidade:
         input('Siga para 48')
@@ -224,7 +224,7 @@ def decisao_197():
 def decisao_171():
     H171 = historia.item_171()
 
-    PerdeEnergia = ex.PerdeEnergia(4)
+    PerdeEnergia = funções.PerdeEnergia(4)
 
     input('Siga para 326')
 
@@ -272,11 +272,154 @@ def decisao_326():
         decisao_380()
 
 
+def decisao_91():
+    H91 = historia.item_91()
 
+    PerdeHabilidade = funções.PerdeHabilidade(4)
+
+
+    #info do monstro 1
+    nomeMonstro = 'ORCA'
+    habilidade = 5
+    energia = 5
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
+
+    if Combate:
+        print('Você venceu o primeiro ORCA!!')
+        print('Agora enfrenará o segundo ORCA!')
+
+        #info do monstro 2
+        nomeMonstro2 = 'ORCA2'
+        habilidade2 = 6
+        energia2 = 4
+
+        CriaCriatura = funções.criarCriatura(habilidade2,energia2,nomeMonstro2)
+        Combate1 = funções.Combate(nomeMonstro2)
+
+        if Combate1:
+            print('Você venceu os dois ORCA! Vá para 257')
+            decisao_257()
+
+        else:
+            print(' Você perdeu o segundo combate! Você morreu!')
+            arte.GameOver()
+    else:
+        print('Você perdeu o primeiro combate! Você Morreu!')
+        arte.GameOver()
+
+def decisao_257():
+    H257 = historia.item_257()
+
+    input('Volte para 164')
+
+    decisao_164()
+
+
+def decisao_164():
+    H164 = historia.item_164()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 299:
+        decisao_299()
+
+    elif decisao == 83:
+        decisao_83()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_189():
+    H189 = historia.item_189()
+
+    SobreviveuPerdaEnergia = funções.PerdeEnergia(3)
+
+    if SobreviveuPerdaEnergia:
+
+        #info do monstro 1
+        nomeMonstro = 'ORCA'
+        habilidade = 5
+        energia = 5
+
+        CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+        Combate = funções.Combate(nomeMonstro)
+
+        if Combate:
+            print('Você venceu o primeiro ORCA!!')
+            print('Agora enfrenará o segundo ORCA!')
+
+            #info do monstro 2
+            nomeMonstro2 = 'ORCA2'
+            habilidade2 = 6
+            energia2 = 4
+
+            CriaCriatura = funções.criarCriatura(habilidade2,energia2,nomeMonstro2)
+            Combate1 = funções.Combate(nomeMonstro2)
+
+            if Combate1:
+                print('Você venceu os dois ORCA! Vá para 257')
+                decisao_257()
+
+            else:
+                print(' Você perdeu o segundo combate! Você morreu!')
+                arte.GameOver()
+        else:
+            print('Você perdeu o primeiro combate! Você Morreu!')
+            arte.GameOver()
+
+    else:
+        arte.GameOver()
+
+
+    
+def decisao_380():
+    H380 = historia.item_380()
+
+    #info do monstro 1
+    nomeMonstro = 'ORCA'
+    habilidade = 5
+    energia = 5
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
+
+    if Combate:
+        print('Você venceu o primeiro ORCA!!')
+        print('Agora enfrenará o segundo ORCA!')
+
+        #info do monstro 2
+        nomeMonstro2 = 'ORCA2'
+        habilidade2 = 6
+        energia2 = 4
+
+        CriaCriatura = funções.criarCriatura(habilidade2,energia2,nomeMonstro2)
+        Combate1 = funções.Combate(nomeMonstro2)
+
+        if Combate1:
+            print('Você venceu os dois ORCA! Vá para 257')
+            decisao_257()
+
+        else:
+            print(' Você perdeu o segundo combate! Você morreu!')
+            arte.GameOver()
+    else:
+        print('Você perdeu o primeiro combate! Você Morreu!')
+        arte.GameOver()
+
+  
 def decisao_72():
     H72 = historia.item_72()
 
-    PerdeHabilidade = ex.PerdeHabilidade(2)
+    PerdeHabilidade = funções.PerdeHabilidade(2)
+
+    energia = habilidade = 'DESCONHECIDA'
+    nomeMonstro = 'Demonio do Espelho'
+
+    funções.criarCriatura(habilidade,energia,nomeMonstro)
 
     input('Vá para 122')
 
@@ -298,7 +441,7 @@ def decisao_122():
     if decisao == 176:
         decisao_176()
 
-    elif decisao == 362:
+    elif decisao == 384:
         decisao_384()
       
     else:
@@ -392,8 +535,8 @@ def decisao_387():
     habilidade = 7
     energia = 7
 
-    CriaCriatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
-    Combate = ex.Combate(nomeMonstro)
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
 
     if Combate:
         print('Você venceu!!')
@@ -408,21 +551,76 @@ def decisao_114():
     decisao = int(input('decisao :'))
 
     if decisao == 336:
-        H336 = historia.item_336()
-
-        PerdeHabilidade  = ex.PerdeHabilidade(4)
+       decisao_336()
             
-        decisao_220()
         
     elif decisao == 298:
-        H298 = historia.item_298()
-        decisao = int(input('decisao : '))
+        decisao_298()
             
     else:
         print(opção_incorreta)
         arte.GameOver()
     
 
+def decisao_336():
+
+    H336 = historia.item_336()
+
+    PerdeHabilidade  = funções.PerdeHabilidade(4)
+
+    energia = habilidade = "DESCONHECIDA"
+
+    funções.criarCriatura(energia,habilidade,'Bruxa')
+
+    input('Volte para 298')
+
+    decisao_298()
+
+
+def decisao_298():
+    H298= historia.item_298()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 304:
+       decisao_304()
+            
+        
+    elif decisao == 298:
+        decisao_279()
+            
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_304():
+    H304 = historia.item_304()
+
+    SobreviveuPerdaEnergia = funções.PerdeEnergia(6)
+
+    if SobreviveuPerdaEnergia:
+        decisao_20()
+    else:
+        arte.GameOver()
+
+def decisao_20():
+    H20 = historia.item_20()
+
+    PerdeHabilidade = funções.PerdeHabilidade(1)
+
+    input('Siga para 279')
+
+    decisao_279()
+
+
+
+def decisao_279():
+    H279 = historia.item_279()
+
+    input('Volte para 32')
+
+    decisao_32()
 
 def decisao_130():
     H130 = historia.item_130()
@@ -432,8 +630,8 @@ def decisao_130():
     habilidade = 7
     energia = 5
 
-    CriaCriatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
-    Combate = ex.Combate(nomeMonstro)
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
 
     if Combate:
         print('Você venceu o primeiro HOBGOBLIN!!')
@@ -444,8 +642,8 @@ def decisao_130():
         habilidade1 = 6
         energia1 = 5
 
-        CriaCriatura = ex.criarCriatura(habilidade1,energia1,nomeMonstro1)
-        Combate1 = ex.Combate(nomeMonstro1)
+        CriaCriatura = funções.criarCriatura(habilidade1,energia1,nomeMonstro1)
+        Combate1 = funções.Combate(nomeMonstro1)
 
         if Combate1:
             print('Você venceu os dois HOBGOBLIN! Vá para 9')
@@ -507,7 +705,7 @@ def decisao_58():
 
     dadoTotal = dado1 + dado2
 
-    with open(ex.caminhoFolhaDeAventuraAtual,'r') as f:
+    with open(funções.caminhoFolhaDeAventuraAtual,'r') as f:
         StatusGerais = json.load(f)
     
     habilidade = StatusGerais['FolhaDeAventura']['habilidade']
@@ -524,9 +722,9 @@ def decisao_58():
 def decisao_246():
     H246 = historia.item_246()
 
-    PerdeSorte = ex.PerdeSorte(2)
+    PerdeSorte = funções.PerdeSorte(2)
 
-    SobreviveuFarpas = ex.farpasMenosEnergia()
+    SobreviveuFarpas = funções.farpasMenosEnergia()
 
     if SobreviveuFarpas:
         print('Você sobreviveu!')
@@ -541,9 +739,9 @@ def decisao_223():
     H223 = historia.item_223()
 
 
-    PerdeSorte = ex.PerdeSorte(2)
+    PerdeSorte = funções.PerdeSorte(2)
 
-    SobreviveuFarpas = ex.farpasMenosEnergia()
+    SobreviveuFarpas = funções.farpasMenosEnergia()
 
     if SobreviveuFarpas:
         print('Você sobreviveu!')
@@ -572,8 +770,8 @@ def decisao_158():
     # PERDE 1 de habilidade e 4 de energia
     H158 = historia.item_158()
 
-    PerdeHabilidade = ex.PerdeHabilidade(1)
-    SobreviveuPerdeEnergia = ex.PerdeEnergia(4)
+    PerdeHabilidade = funções.PerdeHabilidade(1)
+    SobreviveuPerdeEnergia = funções.PerdeEnergia(4)
 
     if SobreviveuPerdeEnergia:
         #se tiver energia vai para 275
@@ -606,7 +804,7 @@ def decisao_37():
 
 def decisao_239():
 
-    H239 = ex.item_239()
+    H239 = funções.item_239()
 
     decisao = int(input('decisão : '))
 
@@ -666,7 +864,7 @@ def decisao_275():
 
     #checagem de sorte
 
-    if ex.Sorte():
+    if funções.Sorte():
         decisao_231()
     else:
         #Não feito
@@ -684,11 +882,11 @@ def decisao_231():
 def decisao_309():
   H309 = historia.item_309()
 
-  SobreviveuPerdaEnergia = ex.PerdeEnergia(3)
+  SobreviveuPerdaEnergia = funções.PerdeEnergia(3)
 
 
   if SobreviveuPerdaEnergia:
-      Sorte = ex.Sorte()
+      Sorte = funções.Sorte()
       print('----------------------------------------------')
       if Sorte:
           print('Você foi redirecionado para 231!')
@@ -717,8 +915,8 @@ def decisao_51():
     habilidade = 6
     energia = 5
 
-    CriaCriatura = ex.criarCriatura(habilidade,energia,nomeMonstro)
-    Combate = ex.Combate(nomeMonstro)
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
 
     if Combate:
         print('Você venceu!')
