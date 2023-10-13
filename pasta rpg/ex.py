@@ -328,6 +328,10 @@ def PerdeEnergia(valor):
     with open(caminhoFolhaDeAventuraAtual,'w') as f:
         json.dump(StatusGerais,f)
 
+    if energia <= 0:
+        return False
+    else:
+        return True
 
 
 def PerdeSorte(valor):

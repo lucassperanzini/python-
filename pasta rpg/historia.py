@@ -833,7 +833,11 @@ def item_158():
 
 
 
-
+def item_193():
+    print('''
+O ácido queima a parede do seu estômago, penetrando nos seus órgãos vitais. Você tomba inconsciente para nunca mais se recuperar. Sua aventura termina aqui.
+ 
+''')
 
 
 
@@ -867,10 +871,22 @@ Você pisa com confiança no primeiro poste e avança para o próximo. Ao tocar 
 
 
 
+def item_231():
+    print('''
+Você encontra uma poça atrás dos Hobglobins mortos e toma grandes goles de água fresca o mais rápido possível. Isso neutraliza o ácido e, lentamente, você começa a se recuperar. Ainda com dor, você se levanta e parte para o norte. Volte para 110
+''')
 
 
 
 
+def item_246():
+    print('''
+
+Apesar de toda a cautela, sua perna raspa em um dos postes, que imediatamente solta uma chuva de farpas afiadas, cada uma com vários centímetros de comprimento. Você perde 2 pontos de SORTE. Elas voam em todas as direções com grande velocidade, e você não consegue evitá-las. Jogue dois dados para determinar o número de farpas que se cravam na sua carne. Cada farpa reduz sua ENERGIA em 1 ponto. Se ainda estiver vivo, você senta para a dolorosa tarefa de retirar as farpas do corpo antes de partir para o leste. Vá para 313.
+
+
+
+''')
 
 
 
@@ -902,7 +918,10 @@ escrito num pequeno pedaço de pergaminho, endereçado a você. Depois de coloca
     
 
 
-
+def item_275():
+    print('''
+Você leva a moringa aos lábios e toma um gole. O líquido queima tanto que você larga a moringa e segura a garganta em agonia. Você engoliu ácido! Perde 1 ponto de HABILIDADE e 4 de ENERGIA. Se ainda estiver vivo, vá para 275.
+''')
 
 
 
@@ -980,9 +999,23 @@ Há uma única Peça de Ouro no fundo da mochila. Quando você tenta pegá-la, s
 ''')
 
 
+def item_309():
+    print('''
+
+Você cambaleia desnorteado em busca de uma poça de água, mas não encontra. O ácido queima com uma dor lancinante bem fundo na sua garganta. Você perde 3 pontos de ENERGIA. Se ainda estiver vivo, Teste sua Sorte. Se você tiver sorte, volte para 231. Se não tiver sorte, volte para 193.
+
+
+''')
 
 
 
+def item_313():
+    print('''
+O túnel termina em uma encruzilhada. As pegadas que você vem seguindo viram para o norte, e você resolve manter-se na trilha delas. Volte para 32.
+
+
+
+''')
 
 
 

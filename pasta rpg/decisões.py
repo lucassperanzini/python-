@@ -1,6 +1,7 @@
 import historia
 import ex
 import jogaDADOS
+import arte
 import json
 
 opção_incorreta = print('opção incorreta, você perdeu!')
@@ -32,8 +33,8 @@ def decisao_66():
         decisao_293()
        
     elif decisao == 119:
-        #AINDA N
-        H119 = historia.item_119()
+        #FEITO
+        decisao_119()
 
 
     else:
@@ -57,6 +58,7 @@ def decisao_293():
         decisao_137()
 
     elif decisao == 387:
+        #FEITO
         decisao_387()
 
     else:
@@ -69,7 +71,7 @@ def decisao_119():
     decisao = int(input('decisao :'))
 
     if decisao == 56:
-        #não feito
+        #feito
         decisao_56()
 
     elif decisao == 293:
@@ -83,6 +85,14 @@ def decisao_119():
 def decisao_56():
     H56 = historia.item_56()
 
+    decisao = int(input('decisao :'))
+
+    if decisao == 373:
+        decisao_373()
+    elif decisao == 215():
+        decisao_215()
+
+
 
 
 
@@ -91,7 +101,7 @@ def decisao_137():
     decisao = int(input('decisao :'))
 
     if decisao == 220:
-        #AINDA N
+        #feito
         decisao_220()
 
     elif decisao == 362:
@@ -228,7 +238,8 @@ def decisao_130():
 
         else:
             print('perdeu')
-
+    else:
+        print('perdeu')
 
 def decisao_9():
     H9 = historia.item_9()
@@ -289,6 +300,21 @@ def decisao_58():
         #Não feito
         decisao_246()
 
+def decisao_246():
+    H246 = historia.item_246()
+
+    PerdeSorte = ex.PerdeSorte(2)
+
+    SobreviveuFarpas = ex.farpasMenosEnergia()
+
+    if SobreviveuFarpas:
+        print('Você sobreviveu!')
+        decisao_313()
+    else:
+        print('perdeu')
+
+
+
 def decisao_223():
     H223 = historia.item_223()
 
@@ -303,10 +329,16 @@ def decisao_223():
     else:
         print('perdeu')
 
+def decisao_313():
+    H313 =  historia.item_313()
 
+    input('Aperte ENTER para seguir para 32')
+
+    decisao_32()
+  
 def decisao_80():
     H80 = historia.item_80()
-    #Não feito
+
     decisao_313()
 
 
@@ -317,11 +349,36 @@ def decisao_158():
     # PERDE 1 de habilidade e 4 de energia
     H158 = historia.item_158()
 
-    ex.PerdeHabilidade(1)
-    ex.PerdeEnergia(4)
+    PerdeHabilidade = ex.PerdeHabilidade(1)
+    SobreviveuPerdeEnergia = ex.PerdeEnergia(4)
 
-    #se tiver energia vai para 275
-    decisao_275()
+    if SobreviveuPerdeEnergia:
+        #se tiver energia vai para 275
+        decisao_275()
+    else:
+        print('perdeu')
+
+def decisao_32():
+    H32 = historia.item_32()
+
+    input('Aperte ENTER para seguir para 37')
+
+    decisao_37()
+
+
+
+def decisao_37():
+    H37 = historia.item_37()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 239:
+        decisao_239()
+    elif decisao == 351:
+        decisa_351()
+    else:
+        print(opção_incorreta)
+
 
 
 def decisao_275():
@@ -339,7 +396,38 @@ def decisao_275():
 def decisao_231():
     H231 = historia.item_231()
 
+    input('Aperte ENTER para seguir para 110')
+
     decisao_110()
+
+
+def decisao_309():
+  H309 = historia.item_309()
+
+  SobreviveuPerdaEnergia = ex.PerdeEnergia(3)
+
+
+  if SobreviveuPerdaEnergia:
+      Sorte = ex.Sorte()
+      print('----------------------------------------------')
+      if Sorte:
+          print('Você foi redirecionado para 231!')
+          decisao_231()
+      else:
+          print('Você foi redirecionado para 193!')
+          decisao_193()
+  else:
+      print('perdeu')
+      
+
+
+def decisao_193():
+    H193  = historia.item_193()
+
+    print('Você Perdeu!')
+    
+    arte.draw_skull()
+
 
 
 def decisao_51():

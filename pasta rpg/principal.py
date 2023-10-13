@@ -7,10 +7,6 @@ import json
 
 
 
-opção_incorreta = print('opção incorreta, você perdeu!')
-
-
-
 print('''       Bem vindo ao CALABOUÇO DA MORTE!
     
        Nessa aventura em um labirinto com diversas criaturas, testaremos você até o limite!
@@ -25,7 +21,7 @@ if aceita_desafio =='sim':
 
     CriaPersonagem = ex.CriarPersonagem()
 
-    decisões.decisao_1()
+    decisões.decisao_193()
 
     # decisao = int(input('decisão :'))
 
