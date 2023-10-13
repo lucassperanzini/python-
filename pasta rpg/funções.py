@@ -5,33 +5,93 @@ import json
 dado = 0
 
 
-
-
 caminhoFolhaDeAventura = 'D:/DadosPersonagemInicial.json'
 caminhoFolhaDeAventuraAtual = 'D:/DadosPersonagemAtual.json'
+
+
+def ComparacaoStatusIniciais():
+    with open(caminhoFolhaDeAventura,'r') as f:
+        StatusIniciais = json.load(f)
+    
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusAtuais = json.load(f)
+
+    energiaAtual = StatusAtuais['FolhaDeAventura']['energia']
+    energiaInicial = StatusIniciais['FolhaDeAventura']['energia']
+
+    habilidadeAtual = StatusAtuais['FolhaDeAventura']['habilidade']
+    habilidadeInicial = StatusIniciais['FolhaDeAventura']['habilidade']
+
+    SorteAtual = StatusAtuais['FolhaDeAventura']['sorte']
+    SorteInicial = StatusIniciais['FolhaDeAventura']['sorte']
+
+    if energiaAtual > energiaInicial:
+        energiaAtual = energiaInicial
+    if habilidadeAtual > habilidadeInicial:
+        habilidadeAtual = habilidadeInicial
+    if SorteAtual > SorteInicial:
+        SorteAtual = SorteInicial
+
+    
+    StatusAtuais['FolhaDeAventura']['energia'] = energiaAtual
+
+    StatusAtuais['FolhaDeAventura']['energia'] = habilidadeAtual
+
+    StatusAtuais['FolhaDeAventura']['energia'] = SorteAtual
+
+    #NAO FINALIZADO
+    # with open(caminhoFolhaDeAventuraAtual,'w') as f:
+
+
+
+    
 
 
 #Função para criar os status do personagem
 def CriarPersonagem():
 
-
     def funcHabilidade():
-        habilidade = JogaDado  + 6
+        habilidade = Jogada  + 6
 
         return habilidade
     
     def funcEnergia():
-       energia = JogaDado + JogaDado2 + 12
+       energia = Jogada + Jogada2 + 12
 
        return energia
     
     def funcSorte():
-        sorte = JogaDado + 6
+        sorte = Jogada + 6
 
         return sorte
     
-    JogaDado = jogaDADOS.jogaDados(dado)
-    JogaDado2 = jogaDADOS.jogaDados(dado)
+    def funcPocao():
+       
+
+       Escolha_Pocao = int(input('''
+
+           (1) Poção da Habilidade - repõe os pontos de HABILIDADE. Poção da Força - repõe os pontos de ENERGIA.
+           (2) Poção da Força - repõe os pontos de ENERGIA
+           (3)Poção da Fortuna - repõe os pontos de SORTE e acrescenta 1 ponto à SORTE Inicial.
+
+            '''))
+       if Escolha_Pocao == 1:
+           return pocaoHabilidade
+       elif Escolha_Pocao == 2:
+           return pocaoForça
+       elif Escolha_Pocao == 3:
+           return pocaoFortuna
+    
+    pocaoHabilidade = 'Poção Habilidade'
+    pocaoForça = 'Poção Habilidade'
+    pocaoFortuna = 'Poção Sorte'
+
+    
+    Jogada = jogaDADOS.jogaDados(dado)
+    Jogada2 = jogaDADOS.jogaDados(dado)
+
+    TipoPoção = funcPocao()
+    print(TipoPoção)
 
 
     # dicionario que guarda Status do personagem
@@ -42,6 +102,7 @@ def CriarPersonagem():
             'energia':funcEnergia(),
             'sorte':funcSorte(),
             'provisoes':10,
+            TipoPoção:1
             
         }
         
@@ -59,15 +120,16 @@ def CriarPersonagem():
 
     # print das informações do dicionario
     print('\n-------------------INFORMAÇÕES INICIAIS--------------------------')
-    print(f'\n    Dado1 : {JogaDado}\n')
-    print(f'    Dado2 : {JogaDado2}\n')
-    print(f'''   Habilidade : {StatusIniciais['FolhaDeAventura']['habilidade']}
+    print(F'\n   🎲 : {Jogada}\n\n   🎲 : {Jogada2}\n')
+    print(f'''    Habilidade : {StatusIniciais['FolhaDeAventura']['habilidade']}
           
     Energia : {StatusIniciais['FolhaDeAventura']['energia']}
 
     Sorte: {StatusIniciais['FolhaDeAventura']['sorte']}
 
     Provisões: {StatusIniciais['FolhaDeAventura']['provisoes']} 
+
+    {TipoPoção} : {StatusIniciais['FolhaDeAventura'][TipoPoção]}
 
     
 
