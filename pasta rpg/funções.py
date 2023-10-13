@@ -6,6 +6,7 @@ dado = 0
 
 
 
+
 caminhoFolhaDeAventura = 'D:/DadosPersonagemInicial.json'
 caminhoFolhaDeAventuraAtual = 'D:/DadosPersonagemAtual.json'
 
@@ -28,8 +29,7 @@ def CriarPersonagem():
         sorte = JogaDado + 6
 
         return sorte
-        
-   
+    
     JogaDado = jogaDADOS.jogaDados(dado)
     JogaDado2 = jogaDADOS.jogaDados(dado)
 
@@ -41,7 +41,8 @@ def CriarPersonagem():
             'habilidade': funcHabilidade(),
             'energia':funcEnergia(),
             'sorte':funcSorte(),
-            'provisoes':10
+            'provisoes':10,
+            
         }
         
 
@@ -67,8 +68,13 @@ def CriarPersonagem():
     Sorte: {StatusIniciais['FolhaDeAventura']['sorte']}
 
     Provisões: {StatusIniciais['FolhaDeAventura']['provisoes']} 
+
+    
+
 --------------------------------------------------------------------------------
 ''')
+    
+
     
 
 
