@@ -817,6 +817,10 @@ Mais uma vez, a voz misteriosa ecoa, só que agora num tom cheio de desprezo e e
 
 
 
+def item_134():
+    print('''
+O túnel leva a um amplo aposento cujo teto é sustentado por diversos pilares de mármore. Ao entrar no aposento, você depara com uma estranha fera à sua direita. Tem corpo de leão, asas de dragão, rabo de escorpião e cabeça de velho barbudo. Se você tiver lido o poema escrito no Pergaminho do Guerreiro Esqueleto, vá para 222 Se não tiver lido esse poema, vá para 247.
+''')
 
 
 
@@ -837,6 +841,18 @@ def item_141():
 O Demônio do Espelho está quase em cima de você quando, reunindo todas as suas forças, você desfere um golpe decisivo contra o espelho com a espada. Jogue dois dados. Se o total for igual ou menor que a sua HABILIDADE, volte para 72. Se o total for maior que a sua HABILIDADE, volte para 96.
 ''')
 
+
+def item_151():
+    print('''
+          
+Quando toca o olho de esmeralda do ídolo, você ouve um rangido abaixo. Ao olhar, fica abismado ao ver os dois pássaros empalhados voando. As asas das criaturas batem aos arrancos, mas logo estão acima de você e parecem prontos para atacar. Lute com um dos GUARDIÃES VOADORES de cada vez, mas reduza sua HABILIDADE em 2 pontos durante este combate, pois a posição restringe-lhe os movimentos.
+
+	HABILIDADE	ENERGIA
+Primeiro GUARDIÃOVOADOR	7	8
+Segundo GUARDIÃO VOADOR	8	8
+Se você vencer, vá para 240.		
+
+''')
 
 
 
@@ -883,6 +899,13 @@ A porta não resiste às violentas pancadas que  você desfere. A placa central 
 def item_182():
     print('''
 A temperatura continua a subir, e você começa a pingar suor. Adiante, o calor se intensifica. Parece que você está numa fornalha. A situação é tão insuportável que você começa a desfalecer. Se você tiver bebido o líquido do tubo de bambu, volte para 25. Se não tiver parado para beber o líquido, vá para 242
+''')
+    
+
+def item_186():
+    print('''
+Lenta e cuidadosamente, você começa a escalar o ídolo. Quando está prestes a segurar na grande orelha, seu pé escorrega, Teste sua Sorte. Se você tiver sorte, vá para 260. Se não tiver sorte, vá para 358.
+ 
 ''')
 
 
@@ -947,7 +970,10 @@ Tentará abafar o sino com sua bota?	Vá para 346
 
 ''')
     
-
+def item_222():
+    print('''
+Você reconhece a fera - é um MANTÉCORA. Levando a sério a advertência do poema, você fica atento para a cauda dele, de cuja ponta sai uma profusão de espinhos afiados, grossos e duros como dardos de ferro. Se você tiver um escudo, volte para 196. Se não estiver carregando um escudo, volte para 6.
+''')
 
 def item_223():
     print('''
@@ -987,6 +1013,11 @@ Não muito adiante, o túnel chega a uma porta fechada à sua esquerda. Colocand
 
 ''')
     
+def item_240():
+    print('''
+Você olha para baixo e vê esparramados no chão os corpos inertes dos Guardiães Voadores. Você começa a forçar o olho esquerdo de esmeralda do ídolo com a ponta da espada. Finalmente, ele se solta e cai na sua mão; o peso da pedra o deixa surpreso. Esperando que seja de utilidade mais tarde, você a guarda na mochila. Se quiser agora forçar o olho direito, volte para 34. Se preferir descer do ídolo, volte para 89.
+''')
+    
 
 def item_242():
     print('''
@@ -1005,7 +1036,16 @@ Apesar de toda a cautela, sua perna raspa em um dos postes, que imediatamente so
 
 ''')
 
+def item_247():
+    print('''
+          
+A fera diante de você é o temível MANTÉCORA. A ponta da cauda da criatura guarda uma profusão de espinhos pontudos, grossos e duros como dardos de ferro. Subitamente, ele sacode a cauda, lançando uma saraivada de espinhos na sua direção. Jogue um dado. O número obtido é a quantidade de espinhos que lhe penetrarão o corpo. Cada espinho custa-lhe 2 pontos de ENERGIA. Se você ainda estiver vivo, avança com dificuldade para atacar o Mantécora com sua espada, antes que ele tenha tempo de disparar mais espinhos.
 
+MANTÉCORA	HABILIDADE 11	ENERGIA 11
+
+Se você vencer, vá para 364.
+
+''')
 
 def item_251():
     print('''
@@ -1029,6 +1069,12 @@ def item_257():
 
 Dentro dos bolsos de um dos Orcas, você acha uma Peça de Ouro e um tubo oco de madeira. Você guarda na mochila o que encontrou e parte para o oeste. Volte para 164.
 
+''')
+    
+
+def item_261():
+    print('''
+Apesar de todos os esforços, você não consegue tirar o Laço do pescoço do ídolo. Finalmente, você desiste e o abandona para quem quer que venha depois de você. Não há nada mais de interesse na caverna, portanto você caminha até a parede norte e entra no túnel. Volte para 239.
 ''')
 
 
@@ -1298,4 +1344,11 @@ HOMEM DA CAVERNA	HABILIDADE 7      ENERGIA 7
 Se você vencer, volte para 114.
 
 
+''')
+    
+
+
+def item_396():
+    print('''
+Você faz um laço com a corda, gira-o acima de si e o lança na cabeça do ídolo, sorrindo com alegria quando ele cai em torno do pescoço da estátua. Você então aperta o nó e começa a içar-se pela corda. Logo chega ao topo, sentando-se em cima do nariz do ídolo enquanto continua a segurar a corda. Você desembainha a espada e fica pensando de que olho arrancar a jóia primeiro. Se você quiser arrancar primeiro a do olho esquerdo, volte para 151. Se preferir arrancar a do olho direito, volte para 34.
 ''')
