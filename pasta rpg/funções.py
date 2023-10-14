@@ -84,9 +84,9 @@ def CriarPersonagem():
        elif Escolha_Pocao == 3:
            return pocaoFortuna
     
-    pocaoHabilidade = 'Poção Habilidade'
-    pocaoForça = 'Poção Habilidade'
-    pocaoFortuna = 'Poção Sorte'
+    pocaoHabilidade = 'Pocao Habilidade'
+    pocaoForça = 'Pocaoo Habilidade'
+    pocaoFortuna = 'Pocao Sorte'
 
     
     Jogada = jogaDADOS.jogaDados(dado)
@@ -241,7 +241,6 @@ def Sorte():
     return tiveSorte
     
 def Combate(nomeMonstro):
-    #USo da sorte no combate IMPLEMENTAR
 
     # numero de rounds
     contadorBatalhas = 1
@@ -295,16 +294,19 @@ def Combate(nomeMonstro):
 
                 if testeSorte:
                     EnergiaCriatura -= DanoCrítico
-                    print(f'Dano Crítico! -4 pontos de energia da {nomeMonstro}| Energia atual⚡{EnergiaCriatura}')
+                    print(f'Dano Crítico! -4 pontos de energia da {nomeMonstro}| Energia atual {nomeMonstro}⚡{EnergiaCriatura}')
+                    print(f'Energia do Personagem : ⚡{EnergiaPersonagem}')
                 else:
                     EnergiaCriatura -= DanoReduzido
-                    print(f'Dano reduzido! -1 ponto de energia | Energia atual⚡{EnergiaCriatura}')
+                    print(f'Dano reduzido! -1 ponto de energia | Energia atual {nomeMonstro}⚡{EnergiaCriatura}')
+                    print(f'Energia do Personagem : ⚡{EnergiaPersonagem}')
 
             else:
                  EnergiaCriatura -= DanoComum
                  print(f' {nomeMonstro} sofreu -2 pontos de energia | Energia atual⚡{EnergiaCriatura}')
+                 print(f'Energia do Personagem : ⚡{EnergiaPersonagem}')
 
-            #energia perdida, vou mandar para o json dados atualizados da energia
+            
             # with open(caminhoFolhaDeAventuraAtual,'w') as f:
             #     StatusGerais['EncontrosMonstros'][nomeMonstro]['energia'] -= 2
             #     json.dump(StatusGerais,f)
@@ -322,15 +324,18 @@ def Combate(nomeMonstro):
                 testeSorte = Sorte()
 
                 if testeSorte:
-                    EnergiaPersonagem -= DanoComum
+                    EnergiaPersonagem -= DanoReduzido
                     print(f'Minimizou o ferimento! -1 pontos de energia do personagem | Energia atual⚡{EnergiaPersonagem}')
+                    print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
                 else:
                     EnergiaPersonagem -= DanoCríticoP
                     print(f'Ferimento grave! -3 ponto de energia | Energia atual⚡{EnergiaPersonagem}')
+                    print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
 
             else:
-                EnergiaCriatura -= DanoComum
-                print(f' {nomeMonstro} sofreu -2 pontos de energia | Energia atual⚡{EnergiaPersonagem}')
+                EnergiaPersonagem -= DanoComum
+                print(f' Você sofreu -2 pontos de energia | Energia atual⚡{EnergiaPersonagem}')
+                print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
 
 
              # mando para json energia do personagem atualizada
@@ -494,8 +499,10 @@ def ComparaHabilidade():
    
 
 
-def PerdeEnergiaNoDado():
-    jogada = jogaDADOS.jogaDados(dado)
+def PerdeEnergiaNoDado(multiplicador=None):
+    Jogada = jogaDADOS.jogaDados(dado)
+
+    print(F'\n🎲 : {Jogada}')
 
     with open(caminhoFolhaDeAventuraAtual,'r') as f:
         StatusGerais = json.load(f)
@@ -505,7 +512,10 @@ def PerdeEnergiaNoDado():
 
     print('Energia anterior ⚡',energia)
 
-    energia -= jogada
+    if multiplicador:
+        energia -= (Jogada * multiplicador)
+    else:
+        energia -= Jogada
 
     StatusGerais['FolhaDeAventura']['energia'] = energia
 
