@@ -7,6 +7,8 @@ import json
 dado=0
 opção_incorreta = print('opção incorreta, você perdeu!')
 
+#### Decisões não feitas ainda (em aberto): 396, 186, 329, 135, 30, 212, 271, 176, 384
+
 
 def decisao_1():
     H1 = historia.item_1()
@@ -698,27 +700,18 @@ def decisao_58():
     
     #Compara: se soma dos dados <= habilidade vai para 80, senão vai para 246
     #Corrigir função
-    
-    dado = 0
-    dado1 = jogaDADOS.jogaDados(dado)
-    dado2 = jogaDADOS.jogaDados(dado)
+    ComparaHabilidade = funções.ComparaHabilidade()
 
-    dadoTotal = dado1 + dado2
-
-    with open(funções.caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f)
-    
-    habilidade = StatusGerais['FolhaDeAventura']['habilidade']
-
-    if dadoTotal <= habilidade:
-        print("Total dos dados menor ou igual a HABILIDADE, vá para 80")
+    if ComparaHabilidade:
+        print("Vá para 80")
         decisao_80()
-
+    
     else:
-        print("Total dos dados maior que HABILIDADE, vá para 246")
-        #Não feito
+        print("Vá para 246")
+        #Feito
         decisao_246()
-
+    
+    
 def decisao_246():
     H246 = historia.item_246()
 
@@ -832,6 +825,44 @@ def decisao_102():
         print(opção_incorreta)
         arte.GameOver()
 
+def decisao_251():
+    H251 = historia.item_251()
+
+    input('Aperte ENTER para seguir para 344')
+
+    decisao_344()
+
+
+
+def decisao_133():
+    H133 = historia.item_133()
+
+    ComparaHabilidade = funções.ComparaHabilidade()
+
+    if ComparaHabilidade:
+        print("Vá para 178")
+        decisao_178()
+    
+    else:
+        print("Vá para 17")
+        decisao_17()
+
+
+def decisao_178():
+    H178 = historia.item_178()
+
+    input('Aperte ENTER para seguir para 344')
+
+    decisao_344()
+
+
+def decisao_17():
+   H17 = historia.item_17()
+
+   arte.GameOver()
+
+
+
 def decisao_344():
     H344 = historia.item_344()
 
@@ -845,6 +876,223 @@ def decisao_344():
         print(opção_incorreta)
         arte.GameOver()
 
+
+
+def decisao_107():
+    H107 = historia.item_107()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 168:
+        decisao_168()
+    
+    elif decisao == 267:
+        decisao_267()
+    
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_267():
+    H267 = historia.item_267()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 352:
+        decisao_352()
+    
+    elif decisao == 68:
+        decisao_68()
+    
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_352():
+    H352 = historia.item_352()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 254:
+        decisao_254()
+    
+    elif decisao == 68:
+        decisao_68()
+    
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_68():
+    H68 = historia.item_68()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 271:
+        decisao_271()
+    
+    elif decisao == 30:
+        decisao_30()
+    
+    elif decisao == 212:
+        decisao_212()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_254():
+    H254 = historia.item_254()
+
+    #informações do Monstro
+    nomeMonstro = 'VERME DA ROCHA'
+    habilidade = 7
+    energia = 11
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
+
+    ### Pode fugir para 117 após duas séries de ataque
+
+    if Combate:
+        print('Você venceu!!')
+        decisao_76()
+    else:
+        print('Perdeu o combate, Você MORREU!')
+        arte.GameOver()
+
+
+def decisao_76():
+    H76 = historia.item_76()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 317:
+        decisao_317()
+    
+    elif decisao == 117:
+        decisao_117()
+    
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_117():
+    H117 = historia.item_117()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 329:
+        decisao_329()
+    
+    elif decisao == 135:
+        decisao_135()
+    
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_317():
+    H317 = historia.item_317()
+
+    energia = habilidade = 'DESCONHECIDA'
+    nomeMonstro = 'VERME DA ROCHA'
+
+    funções.criarCriatura(habilidade,energia,nomeMonstro)
+
+    arte.GameOver()
+
+
+
+def decisao_168():
+    H168 = historia.item_168()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 94:
+        decisao_94()
+    
+    elif decisao == 267:
+        decisao_267()
+    
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_94():
+    H94 = historia.item_94()
+    
+    input('Aperte ENTER para seguir para 174')
+
+    decisao_174()
+
+
+def decisao_174():
+    H174 = historia.item_174()
+
+    Sorte = funções.Sorte()
+
+    if Sorte:
+        decisao_39()
+    
+    else:
+        decisao_350()
+
+
+
+def decisao_350():
+    H350 = historia.item_350()
+
+    PerdeEnergia = funções.PerdeEnergiaNoDado()
+
+    if PerdeEnergia:
+        decisao_39()
+    
+    else:
+        arte.GameOver()
+
+
+def decisao_39():
+    H39 = historia.item_39()
+
+    #informações do Monstro
+    nomeMonstro = 'MOSCA GIGANTE'
+    habilidade = 7
+    energia = 8
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
+
+    if Combate:
+        print('Você venceu!!')
+        decisao_111()
+    else:
+        print('Perdeu o combate, Você MORREU!')
+        arte.GameOver()
+
+    ##### FUGA para 267 #####
+
+
+def decisao_111():
+    H111 = historia.item_111()
+
+    input('Aperte ENTER para seguir para 267')
+
+    decisao_267()
+
+
+def decisao_229():
+    H229 = historia.item_229()
+
+    input('Aperte ENTER para seguir para 107')
+
+    decisao_107()
 
 def decisao_351():
     H351 = historia.item_351()

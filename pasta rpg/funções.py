@@ -27,17 +27,19 @@ def ComparacaoStatusIniciais():
 
     if energiaAtual > energiaInicial:
         energiaAtual = energiaInicial
+
     if habilidadeAtual > habilidadeInicial:
         habilidadeAtual = habilidadeInicial
+
     if SorteAtual > SorteInicial:
         SorteAtual = SorteInicial
 
     
     StatusAtuais['FolhaDeAventura']['energia'] = energiaAtual
 
-    StatusAtuais['FolhaDeAventura']['energia'] = habilidadeAtual
+    StatusAtuais['FolhaDeAventura']['habilidade'] = habilidadeAtual
 
-    StatusAtuais['FolhaDeAventura']['energia'] = SorteAtual
+    StatusAtuais['FolhaDeAventura']['sorte'] = SorteAtual
 
     #NAO FINALIZADO
     # with open(caminhoFolhaDeAventuraAtual,'w') as f:
@@ -492,4 +494,27 @@ def ComparaHabilidade():
    
 
 
+def PerdeEnergiaNoDado():
+    jogada = jogaDADOS.jogaDados(dado)
 
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f)
+                    
+    #perde energia
+    energia = StatusGerais['FolhaDeAventura']['energia']
+
+    print('Energia anterior ⚡',energia)
+
+    energia -= jogada
+
+    StatusGerais['FolhaDeAventura']['energia'] = energia
+
+    print('Energia atual ⚡',energia)
+
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
+        json.dump(StatusGerais,f)
+
+    if energia <= 0:
+        return False
+    else:
+        return True

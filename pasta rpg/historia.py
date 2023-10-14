@@ -741,7 +741,10 @@ Seu corpo continua a vibrar intensamente, e você se sente como se estivesse pre
 
 
 
-
+def item_117():
+    print('''
+Depois de longa caminhada túnel abaixo, você chega a um beco sem saída. Um grande espelho, que vai do chão até o teto, está colocado na parede do fundo e, na penumbra, você só consegue visualizar vagamente o seu próprio reflexo. Se quiser olhar o espelho mais de perto, vá para 329. Se preferir fazer a longa caminhada de volta para a última encruzilhada no túnel, a fim de prosseguir para o leste, vá para 135.
+''')
 
 
 
@@ -807,7 +810,10 @@ Se você vencer, volte para 9.
 
 
 
-
+def item_133():
+    print('''
+Mais uma vez, a voz misteriosa ecoa, só que agora num tom cheio de desprezo e escárnio. "Então, temos uma erva daninha em nosso meio, não?", zomba a voz. "Meu senhor tem um presente especial para você, verme abjeto." Súbito, começa a entrar água no aposento por um buraco no teto. Logo sobe até a altura dos seus tornozelos, e não parece haver qualquer meio de escapar. Você caminha na água até a porta. Está firmemente trancada, mas, no desespero, você tenta arrombá-la, batendo com o ombro. Jogue dois dados. Se o total for igual ou menor que o seu índice de HABILIDADE, vá para 178. Se o total for maior que o seu índice de HABILIDADE, volte para 17.
+''')
 
 
 
@@ -850,13 +856,28 @@ def item_164():
     print('''
 Enquanto você caminha, pingos de água voltam a cair do teto do túnel. Você vê pegadas úmidas, feitas pelas mesmas botas que você havia seguido anteriormente, se dirigindo para o oeste. As pegadas conduzem a uma porta de ferro fechada na parede do lado direito do túnel, mas não parecem continuar a partir dali. Se quiser abrir a porta, vá para 299. Se preferir continuar em frente para o oeste, volte para 83.
 ''')
+    
+def item_168():
+    print('''
+Levantando o trinco e empurrando a pesada porta de pedra, você se vê em uma grande caverna. A luz é fraca e sombria, mas seus olhos logo se adaptam e você vê que as paredes são úmidas e revestidas de algas verdes. O chão está coberto de palha. A atmosfera é quente, úmida e fétida, e um zumbido suave enche o ar. Com cautela, você avança pela palha na direção de um dos cantos da caverna, onde parece haver um poço raso. Espiando com cuidado para dentro do poço, você fica enojado ao ver uma massa de vermes esbranquiçados que se contorcem, alguns deles chegando a meio metro de comprimento. Nauseado, você está prestes a ir embora quando repara que os corpos ondulantes dos vermes estão amontoados em torno de um punhal, cuja ponta está firmemente presa a uma fenda no fundo do poço. O cabo é envolto em couro negro com incrustações de opalas, e a lâmina é feita de um estranho metal lustrado preto-avermelhado. Você fica doido para pegar a arma, mas isso significaria enfiar a mão no meio daqueles vermes. Você tenta apanhar o punhal - volte para 94 - ou recua enojado e sai da caverna - vá para 267.
+''')
 
 def item_171():
     print('''
 A porta abre para um pequeno aposento, mas, antes que saiba o que está acontecendo, você despenca no vazio havia um poço atrás da porta e você não o viu. Você cai pesadamente no fundo e se contorce em dores. Perde 4 pontos de ENERGIA. As paredes do poço são rugosas e têm muitos pontos onde apoiar os pés e as mãos; por isso, você consegue fazer a escalada e sair com bastante facilidade. Você amaldiçoa sua própria ansiedade e diz a si mesmo que doravante será mais cuidadoso. No interior do aposento, você vê dois ganchos de ferro numa das paredes. Há um rolo de corda pendurado em um deles; você o coloca na mochila, salta de volta por cima do poço e sai do aposento, dirigindo-se ao norte. Vá para 326.
 
 ''')
+    
+def item_174():
+    print('''
+Quando você está retornando para a porta, o zumbido aumenta de intensidade, e você procura desesperadamente descobrir de onde ele vem. Ao olhar para o alto, você vê num relance a imensa e grotesca forma negra de uma MOSCA GIGANTE surgindo de uma reentrância no alto da parede da caverna. Ao se aproximar, você se dá conta de que ela tem pelo menos um metro e meio de comprimento. As asas opacas vibram, produzindo o abominável zumbido que você vem ouvindo; as seis pernas peludas estão posicionadas para agarrá-lo; abaixo dos olhos multifacetados, há uma longa probóscida, negra e lustrosa, que se movimenta malignamente para dentro e para fora. Você retirou o tesouro da Mosca Gigante do ninho de larvas, e agora deve enfrentar as consequências. Teste sua Sorte. Se você tiver sorte, volte para 39. Se não tiver sorte, vá para 350.
+''')
 
+
+def item_178():
+    print('''
+A porta não resiste às violentas pancadas que  você desfere. A placa central racha e se despedaça; você abre a pontapés um buraco grande o bastante para por ele se esgueirar. Molhado, mas feliz por ter sobrevivido a essa ameaça, você parte para o norte de novo. Vá para 344.
+''')
 
 
 def item_182():
@@ -936,6 +957,17 @@ Você pisa com confiança no primeiro poste e avança para o próximo. Ao tocar 
 ''')
 
 
+def item_229():
+    print('''
+Logo que sua cabeça entra embaixo da luz azul, você ouve o som de vozes abafadas. Os rostos já não riem, e as expressões são agora máscaras de desespero e angústia. O rosto triste de uma menina paira à sua frente, ela começa a sussurrar um poema. Em transe, você ouve atentamente, acreditando que ela tem uma mensagem especial para você, enquanto ela recita:
+
+“Quando o corredor a água encontrar, Não se apresse em recuar.
+Mergulhe depois dos pulmões encher, Se sua Prova espera vencer.”
+
+Guardando de cor o poema da garota-espírito, você atravessa o raio de luz e se dirige rapidamente para o norte. Volte para 107.
+
+''')
+
 
 def item_231():
     print('''
@@ -974,6 +1006,24 @@ Apesar de toda a cautela, sua perna raspa em um dos postes, que imediatamente so
 ''')
 
 
+
+def item_251():
+    print('''
+Mais uma vez, ouve-se a voz misteriosa, só que agora, para sua grande surpresa, num tom bem menos ameaçador: “Bom, meu senhor gosta daqueles que demonstram ter espírito. Tome este presente para ajudá-lo. Isto lhe concederá um desejo, mas somente um desejo. Adeus.” Um anel de ouro, magicamente saído do nada, cai a seus pés com um tinido suave. Você o põe num dedo. A porta se abre e você entra de novo no túnel, rumo ao norte. Vá para 344.
+''')
+
+
+def item_254():
+    print('''
+Você desembainha a espada e avança lentamente na direção do imenso e viscoso Verme da Rocha.
+
+VERME DA ROCHA	HABILIDADE 7	ENERGIA 11
+
+Se você vencer, volte para 76. Você poderá fugir depois de duas Séries de Ataque, correndo para o oeste pelo túnel. Volte para 117.
+
+''')
+
+
 def item_257():
     print('''
 
@@ -996,7 +1046,10 @@ Tentará passar sem ser percebido?	Vá para 355
 
 
 
-
+def item_267():
+    print('''
+O túnel logo termina em uma encruzilhada. Olhando para a esquerda e para a direita, você vê uma passagem estreita que desaparece na penumbra da distância. Se você quiser se dirigir para o oeste, vá para 352. Se preferir seguir para o leste, volte para 68.
+''')
 
 
 
@@ -1109,6 +1162,14 @@ O túnel termina em uma encruzilhada. As pegadas que você vem seguindo viram pa
 
 ''')
     
+
+def item_317():
+    print('''
+Tateando nos lados do buraco perfurado com sua espada, você abre caminho cegamente pelo lodo viscoso. Você segue as curvas e reviravoltas do orifício por um tempo que parece ser uma eternidade e começa a imaginar onde poderia levar. De repente, você ouve o ruído de alguma coisa se arrastando à frente. Você fica gelado de medo, seus olhos tentando desesperadamente rasgar a escuridão impenetrável. Antes que você se dê conta do que está acontecendo, seu pescoço é abocanhado pelas fortíssimas mandíbulas de outro Verme da Rocha. E o companheiro daquele que você matou, o qual foi atraído pelo cheiro de sangue na sua espada. Ele aperta mais forte. Seu pescoço estala como um ramo seco. Sua aventura termina aqui.
+''')
+    
+
+    
 def item_326():
 
     print('''
@@ -1136,7 +1197,10 @@ A munhequeira foi feita e amaldiçoada por uma Bruxa. Ela torna suas reações m
 ''')
 
 
-
+def item_350():
+    print('''
+A Mosca Gigante mergulha na sua direção e agarra-o com quatro patas. Rapidamente ela retorna ao teto da caverna, e você se encontra indefeso pendurado no ar. Súbito, para seu horror, ela o solta. Você despenca de 10 metros de altura, estatelando-se no solo. Jogue um dado e deduza o número de seu índice de ENERGIA. Se ainda estiver vivo, você desembainha a espada; bem a tempo, pois a Mosca Gigante vem descendo para tentar capturá- lo mais uma vez. Volte para 39
+''')
 
 
 def item_351():
@@ -1147,7 +1211,10 @@ Não muito adiante, o túnel chega a uma porta fechada à sua esquerda. Colocand
 ''')
 
 
-
+def item_352():
+    print('''
+Você ouve o som de rochas sendo trituradas e esmagadas à sua frente. O ruído cresce e, subitamente, você se dá conta de que a parede do seu lado direito começa a desabar. Apavorado, você vê uma enorme e horrorosa criatura, com mandíbulas incrivelmente poderosas, deslizar por um buraco na parede. A enorme boca da criatura mastiga rocha enquanto ela vira a cabeça devagar de um lado para outro, sentindo o ar fresco do túnel. O VERME DA ROCHA parece ser cego, mas dá a impressão de estar ciente de sua presença, talvez sentindo o calor de seu corpo. Ele se arrasta na sua direção com as mandíbulas bem abertas, pronto para o ataque. Se você quiser lutar contra o Verme da Rocha, volte para 254. Se preferir correr de volta pelo túnel para o cruzamento e depois se dirigir para o leste, volte para 68.
+''')
 
 
 
