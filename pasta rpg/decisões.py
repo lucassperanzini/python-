@@ -335,6 +335,158 @@ def decisao_164():
         arte.GameOver()
 
 
+def decisao_83():
+    H83 = historia.item_83()
+
+    input('Volte para 37')
+
+    decisao_37()
+
+
+def decisao_299():
+    H299 = historia.item_299()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 126:
+        decisao_126()
+
+    elif decisao == 41:
+        decisao_41()
+
+    elif decisao == 83:
+        decisao_83()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_126():
+    H126 = historia.item_126()
+
+    
+    decisao = int(input('decisao :'))
+
+    if decisao == 226:
+        decisao_226()
+
+    elif decisao == 41:
+        decisao_41()
+
+    elif decisao == 83:
+        decisao_83()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_226():
+    H226 = historia.item_226()
+
+    GanhaEnergia = funções.GanhaEnergia(3)
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 41:
+        decisao_41()
+
+    elif decisao == 83:
+        decisao_83()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
+def decisao_41():
+    H41 = historia.item_41()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 98:
+        decisao_98()
+
+    elif decisao == 126:
+        decisao_126()
+
+    elif decisao == 83:
+        decisao_83()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_98():
+    H98 = historia.item_98()
+
+    testeSorte = funções.Sorte()
+
+    if testeSorte:
+        input('Vá para 105')
+        decisao_105()
+    else:
+        input('Vá para 160')
+        decisao_235()
+
+
+
+def decisao_105():
+    H105 = historia.item_105()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 126:
+        decisao_126()
+
+    elif decisao == 83:
+        decisao_83()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_235():
+    H235 = historia.item_235()
+
+    SobreviveuPerdaEnergia = funções.PerdeEnergia(2)
+
+    if SobreviveuPerdaEnergia:
+        decisao_73()
+    else:
+        arte.GameOver()
+
+
+def decisao_73():
+    H73 = historia.item_73()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 126:
+        decisao_126()
+
+    elif decisao == 83:
+        decisao_83()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
+
+
+
+def decisao_135():
+    H135 = historia.item_135()
+
+    input('Volte para 68')
+
+    decisao_68()
+
+
 def decisao_189():
     H189 = historia.item_189()
 
@@ -449,6 +601,51 @@ def decisao_122():
     else:
         print(opção_incorreta)
         arte.GameOver()
+
+
+def decisao_176():
+    H176 = historia.item_176()
+
+    input('Vá para 277')
+
+    decisao_277()
+
+
+def decisao_384():
+    H384 = historia.item_384()
+
+    SobreviveuPerdaEnergia = funções.PerdeEnergia(2)
+
+    if SobreviveuPerdaEnergia:
+        input('Volte para 277')
+        decisao_277()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_277():
+    H277 = historia.item_277()
+
+    input('Vá para 338')
+
+    decisao_338()
+
+
+def decisao_338():
+    H338 = historia.item_338()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 123:
+        decisao_123()
+
+    elif decisao == 282:
+        decisao_282()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
 
 
 
@@ -943,6 +1140,27 @@ def decisao_68():
     else:
         print(opção_incorreta)
         arte.GameOver()
+
+def decisao_30():
+    H30 = historia.item_30()
+
+    testeSorte = funções.Sorte()
+
+    if testeSorte:
+        input('Vá para 160')
+        decisao_160()
+    else:
+        input('Vá para 160')
+        decisao_319()
+
+
+
+def decisao_212():
+    H212 = historia.item_212()
+
+    input('Va para 285')
+
+    decisao_285()
 
 
 def decisao_254():

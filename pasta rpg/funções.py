@@ -419,6 +419,34 @@ def PerdeEnergia(valor):
         return True
 
 
+def GanhaEnergia(valor):
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f) 
+                    
+    #perde energia
+    energia = StatusGerais['FolhaDeAventura']['energia']
+
+    print('Energia anterior ⚡',energia)
+
+    energia += valor
+
+    StatusGerais['FolhaDeAventura']['energia'] = energia
+
+    with open(caminhoFolhaDeAventura,'r') as f:
+        StatusInicias = json.load(f)
+        energiainicial =  StatusInicias['FolhaDeAventura']['energia']
+    
+
+    if energia > energiainicial :
+        print('Energia ultrapassou valor Inicial.')
+        energia = energiainicial
+        
+    print('Energia atual ⚡',energia)
+
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
+        json.dump(StatusGerais,f)
+
+   
 def PerdeSorte(valor):
     with open(caminhoFolhaDeAventuraAtual,'r') as f:
         StatusGerais = json.load(f) 

@@ -776,6 +776,18 @@ def item_122():
 
 
 
+def item_126():
+
+    print('''
+A bolsa no cinto do Bárbaro contém apenas uma porção de carne seca de aparência estranha, embrulhada num pano. Você:
+
+Comerá a carne seca?	Vá para 226
+Deixará a carne e caminhará para a alcova
+(se ainda não tiver feito isso)?	Volte para 41
+Deixará a câmara e seguirá para o oeste?	Volte para 83
+
+''')
+
 
 
 
@@ -823,7 +835,10 @@ O túnel leva a um amplo aposento cujo teto é sustentado por diversos pilares d
 ''')
 
 
-
+def item_135():
+    print('''
+Passando pelo buraco perfurado do Verme da Rocha, à sua esquerda, você logo chega à encruzilhada. Dá uma olhada rápida no túnel que conduz ao sul, mas não vê ninguém se aproximando. Apressando o passo, você segue velozmente para o leste. Volte para 68.
+''')
 
 def item_137():
     print('''
@@ -887,6 +902,11 @@ A porta abre para um pequeno aposento, mas, antes que saiba o que está acontece
 def item_174():
     print('''
 Quando você está retornando para a porta, o zumbido aumenta de intensidade, e você procura desesperadamente descobrir de onde ele vem. Ao olhar para o alto, você vê num relance a imensa e grotesca forma negra de uma MOSCA GIGANTE surgindo de uma reentrância no alto da parede da caverna. Ao se aproximar, você se dá conta de que ela tem pelo menos um metro e meio de comprimento. As asas opacas vibram, produzindo o abominável zumbido que você vem ouvindo; as seis pernas peludas estão posicionadas para agarrá-lo; abaixo dos olhos multifacetados, há uma longa probóscida, negra e lustrosa, que se movimenta malignamente para dentro e para fora. Você retirou o tesouro da Mosca Gigante do ninho de larvas, e agora deve enfrentar as consequências. Teste sua Sorte. Se você tiver sorte, volte para 39. Se não tiver sorte, vá para 350.
+''')
+    
+def item_176():
+    print('''
+Caminhando cuidadosamente, você vai subindo os degraus devagar. Logo chega ao topo sem problemas. Continue pelo túnel e vá para 277.
 ''')
 
 
@@ -957,6 +977,13 @@ A porta abre para o aposento; você toma distância e salta sobre o poço. Coloc
 
 
 ''')
+    
+
+def item_212():
+    print('''
+Segurando a corda firmemente, você toma distância para o salto. Contudo, sob a luz fraca, você não nota que alguém enfraqueceu a corda, a ponto de parti-la em duas, logo acima do local em que você está segurando. Quando se lança por sobre o poço, a corda rompe e você grita de medo ao despencar de cabeça nas profundezas. Vá para 285.
+''')
+
 
 
 def item_215():
@@ -979,6 +1006,12 @@ Tentará abafar o sino com sua bota?	Vá para 346
 
 
 ''')
+    
+def item_226():
+    print('''
+A carne contém ervas que lhe aumentarão a força. Some 3 pontos seu índice de ENERGIA. Você pode caminhar até a alcova, se ainda não o fez - volte para 41 - ou sair da câmara e continuar para o oeste - volte para 83.
+''')
+
     
 def item_222():
     print('''
@@ -1011,6 +1044,10 @@ Você encontra uma poça atrás dos Hobglobins mortos e toma grandes goles de á
 ''')
     
 
+def item_235():
+    print('''
+Você não tem tempo para reagir antes que o dardo se crave na sua coxa. Você perde 2 pontos de ENERGIA. Se ainda estiver vivo, volte para 73.
+''')
 
 def item_239():
     print('''
@@ -1132,7 +1169,12 @@ Você leva a moringa aos lábios e toma um gole. O líquido queima tanto que voc
 
 
 
+def item_277():
+    print('''
+O túnel faz uma curva fechada para a direita e depois, uns 100 metros adiante, chega a um cruzamento. Olhando para a esquerda, você vê dois corpos caídos no chão. Resolve chegar perto e investigar. Vá para 338.
+ 
 
+''')
 
 
 
@@ -1194,7 +1236,15 @@ Há uma mochila encostada na parede do túnel. Você se pergunta se ela pertence
 
 
 
+def item_299():
+    print('''
+A porta abre para uma grande câmara, onde você se choca ao ver que um de seus rivais obviamente encontrou morte súbita ao ser perfurado. É um dos Bárbaros, e ele está empalado em vários espigões de ferro bem longos, presos a uma tábua projetada de dentro do chão. O piso está coberto de lixo e detritos, escondendo um arame no qual ele deve ter pisado, disparando assim o mecanismo da tábua com espigões. Numa alcova na parede do outro lado, você pode ver uma taça de prata sobre uma pequena mesa de madeira. Você:
 
+Irá até o Bárbaro para revistá-lo?	Volte para 126
+Caminhará na direção da alcova?	Volte para 41
+Fechará a porta e continuará para o oeste?	Volte para 83
+
+''')
 
 
 
@@ -1237,6 +1287,11 @@ def item_326():
 Adiante, o túnel faz uma curva fechada para a esquerda. Ao □obra-la, você quase bate de frente em dois ORCAS de aspecto feroz, armados de maças com pontas de ferro e usando armaduras de couro. Você está totalmente despreparado, e, enquanto desembainha a espada, um deles desfere-lhe um golpe de maça. Jogue um dado. Se você obtiver 1 ou 2, volte para
 91. Se obtiver 3 ou 4, volte para 189. Se obtiver 5 ou 6, vá para 380.
 
+''')
+    
+def item_338():
+    print('''
+Os corpos são de dois guardas Orcas. Pelo menos um de seus rivais na Prova dos Campeões ainda deve estar à sua frente. De uma rápida revista aos corpos nada resulta senão um colar de dentes pendurado no pescoço de um dos Orcas. Se você quiser usar o colar, volte para 123. Se preferir partir para o norte sem o colar, volte para 282.
 ''')
 
 
@@ -1350,6 +1405,10 @@ Se você vencer, volte para 257.
 ''')
 
 
+def item_384():
+    print('''
+O quarto degrau cede sob seu peso. Sua perna afunda num buraco e, antes que você tenha tempo de □etira-la, sente uma terrível dor no pé quando dentes que não pode ver cravam-se nele. Os guinchos agudos que você ouve lá embaixo são produzidos por ratazanas. Elas estão famintas e arrancam-lhe pedaços do pé, ansiosas pela sua carne. Você perde 2 pontos de ENERGIA. Você recupera o equilíbrio e consegue tirar a perna do buraco. Três ratazanas ainda se penduram pelos dentes no seu pé. Chutando freneticamente, você bate com as cabeças delas contra o corrimão até que se soltem. Você então enrola bandagens improvisadas com sua camisa rasgada em torno do pé que sangra e sobe os degraus para partir para o norte de novo. Volte para 277.
+''')
 
 
 def item_387():
