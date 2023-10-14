@@ -211,34 +211,37 @@ def Sorte():
 
     Sorte = StatusGerais['FolhaDeAventura']['sorte']
 
-
-    print('Vamos ver se você tem sorte ou não!!')
-    print(f'Sorte Atual: {Sorte}')
-
-    print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
-
-
-    somaDados = Jogada + Jogada2
-
-    if somaDados <= Sorte:
-        tiveSorte = True
-        print('\nResultado favorável!Teve sorte')
+    if Sorte <= 0:
+        print('Acabou sua Sorte')
     else:
-        tiveSorte = False
-        print('\nPerdeu haha nao foi dessa vez!')
-        print('Você Sofrerá as consequências!')
+
+        print('Vamos ver se você tem sorte ou não!!')
+        print(f'Sorte Atual: {Sorte}')
+
+        print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
 
 
-    StatusGerais['FolhaDeAventura']['sorte'] = Sorte - 1
+        somaDados = Jogada + Jogada2
 
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-        json.dump(StatusGerais,f)
+        if somaDados <= Sorte:
+            tiveSorte = True
+            print('\nResultado favorável!Teve sorte')
+        else:
+            tiveSorte = False
+            print('\nPerdeu haha nao foi dessa vez!')
+            print('Você Sofrerá as consequências!')
 
-    print(f'\nComo usou o recurso Sorte perde 1 ponto | Sorte ATUAL: {StatusGerais["FolhaDeAventura"]["sorte"]} ')
+
+        StatusGerais['FolhaDeAventura']['sorte'] = Sorte - 1
+
+        with open(caminhoFolhaDeAventuraAtual,'w') as f:
+            json.dump(StatusGerais,f)
+
+        print(f'\nComo usou o recurso Sorte perde 1 ponto | Sorte ATUAL: {StatusGerais["FolhaDeAventura"]["sorte"]} ')
 
 
-    #Retorna True ou False se ele teve sorte
-    return tiveSorte
+        #Retorna True ou False se ele teve sorte
+        return tiveSorte
     
 def Combate(nomeMonstro):
 
@@ -290,6 +293,7 @@ def Combate(nomeMonstro):
             resposta = input('Você quer Testar sua sorte? (Sim/Não)').lower()
 
             if resposta == 'sim':
+
                 testeSorte = Sorte()
 
                 if testeSorte:

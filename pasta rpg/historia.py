@@ -927,6 +927,16 @@ def item_193():
 O ácido queima a parede do seu estômago, penetrando nos seus órgãos vitais. Você tomba inconsciente para nunca mais se recuperar. Sua aventura termina aqui.
  
 ''')
+    
+def item_196():
+    print('''
+Você levanta o escudo bem a tempo de se proteger de uma saraivada de espinhos lançados contra seu coração pela cauda do Mantécora. Ileso, com os espinhos cravados no escudo, você desembainha a espada e avança para o Mantécora.
+
+MANTÉCORA	HABILIDADE 11	ENERGIA 11
+
+Se você vencer, vá para 364.
+
+''')
 
 
 def item_197():
@@ -1069,6 +1079,11 @@ def item_257():
 
 Dentro dos bolsos de um dos Orcas, você acha uma Peça de Ouro e um tubo oco de madeira. Você guarda na mochila o que encontrou e parte para o oeste. Volte para 164.
 
+''')
+    
+def item_260():
+    print('''
+Você mal consegue se agarrar à orelha do ídolo e recuperar um ponto de apoio para os pés. Você se desloca pelo rosto da estátua. Sentado no nariz do ídolo, você desembainha a espada e considera qual dos olhos dele arrancará primeiro para levar a jóia. Se quiser arrancar primeiro o olho esquerdo, volte para 166. Se preferir arrancar o olho direito, volte para 140.
 ''')
     
 
@@ -1283,7 +1298,10 @@ def item_355():
 
 
 
-
+def item_358():
+    print('''
+Você perde o equilíbrio e despenca de cabeça no chão. Perde 2 pontos de ENERGIA. Você desiste de tentar escalar o ídolo e corre para seguir pelo túnel na parede norte. Volte para 239.
+''')
 
 
 
