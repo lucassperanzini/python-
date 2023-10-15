@@ -773,6 +773,16 @@ def item_122():
 - vá para 384.
 
 ''')
+    
+
+def item_123():
+
+    print('''
+
+À sua frente, há dois lances de escadas de pedra, separados por um corrimão de crânios de ratazana. Você pode subir pelo lance de escadas da esquerda - vá para 176 - ou pelo da direita
+- vá para 384.
+
+''')
 
 
 
@@ -855,7 +865,14 @@ def item_141():
 
 O Demônio do Espelho está quase em cima de você quando, reunindo todas as suas forças, você desfere um golpe decisivo contra o espelho com a espada. Jogue dois dados. Se o total for igual ou menor que a sua HABILIDADE, volte para 72. Se o total for maior que a sua HABILIDADE, volte para 96.
 ''')
+    
 
+def item_149():
+    print('''
+
+Você solta a corda e ouve ela cair no fundo do poço. O Bárbaro o amaldiçoa, prometendo matá-lo se seus caminhos se cruzarem outra vez. Você recua, toma distância e salta. Cai em segurança do outro lado do poço e continua para o oeste. Mais adiante no túnel, você pisa em uma parte do chão de pedra que se inclina para frente, disparando uma armadilha que solta um rochedo preso frouxamente no teto. Você olha para cima bem no momento em que o rochedo está prestes a cair sobre você. Teste sua Sorte. Se você tiver sorte,volte para 70. Se não tiver sorte, vá para 353.
+''')
+    
 
 def item_151():
     print('''
@@ -869,7 +886,10 @@ Se você vencer, vá para 240.
 
 ''')
 
-
+def item_154():
+    print('''
+Correndo pelo túnel, você logo alcança o Bárbaro e diz a ele que a passagem do leste conduz a um beco sem saída. Ele faz um aceno com a cabeça, num entendimento silencioso, e ambos partem para o oeste. Volte para 22.
+''')
 
 def item_156():
     print('''
@@ -921,6 +941,12 @@ def item_182():
 A temperatura continua a subir, e você começa a pingar suor. Adiante, o calor se intensifica. Parece que você está numa fornalha. A situação é tão insuportável que você começa a desfalecer. Se você tiver bebido o líquido do tubo de bambu, volte para 25. Se não tiver parado para beber o líquido, vá para 242
 ''')
     
+def item_184():
+    print('''
+O Bárbaro, que se diz chamar Throm, amarra a corda em volta da cintura, dando-lhe a outra ponta. Ao acender a tocha, você nota um ar de desconfiança nos olhos do Bárbaro. Lentamente, ele sobe na borda do poço, enquanto você se firma no chão e segura a corda tensa. Ao abaixá-lo aos poucos, você vê os lados lisos do poço iluminados pela tocha de Throm. Ele finalmente chega ao fundo e grita que há um outro túnel rumo ao norte. Manda que você prenda a corda em uma rocha saliente na borda do poço e desça. Se você quiser ficar com o Bárbaro e seguir para o norte pelo túnel inferior, vá para 323. Se desejar abandoná-lo, pulando por cima do poço para se dirigir ao oeste, volte para 149.
+''')
+    
+    
 
 def item_186():
     print('''
@@ -946,6 +972,17 @@ def item_193():
     print('''
 O ácido queima a parede do seu estômago, penetrando nos seus órgãos vitais. Você tomba inconsciente para nunca mais se recuperar. Sua aventura termina aqui.
  
+''')
+    
+def item_194():
+    print('''
+          
+Em uma plataforma de pedra na parede do túnel, você vê dois livros empoeirados encadernado sem couro. Throm expressa seu desprezo pela palavra escrita com um grunhido, insistindo para que você deixe os livros de lado e siga adiante com ele. Você:
+
+Abrirá o livro de couro vermelho?	Volte para 52
+Abrirá o livro de como preto?	Volte para 138
+Continuará para o norte pelo túnel?	Vá para 369
+
 ''')
     
 def item_196():
@@ -1187,6 +1224,11 @@ Você chega a um cruzamento no túnel. Uma nova ramificação leva para o oeste,
 
 
 
+def item_282():
+    print('''
+O túnel logo termina em uma encruzilhada. Parado lá sozinho e sem saber para que lado ir está um de seus rivais. É um dos Bárbaros. Você o chama, mas ele não responde; apenas olha fria e fixamente para você, segurando a acha com firmeza. Você anda até ele e pergunta para que lado está indo. Ele grunhe sua resposta, dizendo que está indo para o oeste, e, se quiser, você pode ir com ele. Se você quiser seguir para o oeste com o Bárbaro, volte para 22. Se preferir recusar a oferta e seguir para o leste sozinho, vá para 388.
+''')
+
 
 
 
@@ -1262,6 +1304,11 @@ Você cambaleia desnorteado em busca de uma poça de água, mas não encontra. O
 
 
 ''')
+    
+def item_311():
+    print('''
+Depois de muito relutar, o Bárbaro concorda com sua alternativa. Vocês dois tomam distância e saltam por sobre o poço. Aterrissando em segurança do outro lado, você continua descendo pelo túnel. O Bárbaro, que vai na frente, subitamente tropeça em uma pedra, que se inclina para frente e dispara o mecanismo de um rochedo preso precariamente ao teto. O rochedo despenca sobre ele, derrubando-o e esmagando-lhe o crânio. Você terá que continuar sua jornada sozinho. Vá para 325.
+''')
 
 
 
@@ -1279,6 +1326,16 @@ def item_317():
 Tateando nos lados do buraco perfurado com sua espada, você abre caminho cegamente pelo lodo viscoso. Você segue as curvas e reviravoltas do orifício por um tempo que parece ser uma eternidade e começa a imaginar onde poderia levar. De repente, você ouve o ruído de alguma coisa se arrastando à frente. Você fica gelado de medo, seus olhos tentando desesperadamente rasgar a escuridão impenetrável. Antes que você se dê conta do que está acontecendo, seu pescoço é abocanhado pelas fortíssimas mandíbulas de outro Verme da Rocha. E o companheiro daquele que você matou, o qual foi atraído pelo cheiro de sangue na sua espada. Ele aperta mais forte. Seu pescoço estala como um ramo seco. Sua aventura termina aqui.
 ''')
     
+def item_323():
+    print('''
+Você se levanta e segue túnel abaixo. De repente, vê a luz do dia no fim do túnel. Enquanto corre na direção da visão mais bela que teve diante de si desde muito tempo, um céu claro e azul, árvores verdes, você sonha com o alegre cenário de pessoas vibrando. Mas não há recepção de herói da parte das pessoas à sua volta. Estão todas mortas. Você está dentro de uma câmara fria repleta de cadáveres e esqueletos com armaduras. A saída para a vitória era apenas uma ilusão. Somente os despojos de aventureiros do passado são reais. Profundamente deprimido, você caminha de volta para o túnel, mas se choca com uma barreira invisível. Você está aprisionado neste sinistro local, fadado a terminar seus dias na câmara dos mortos.
+''')
+
+    
+def item_325():
+    print('''
+Você se levanta e segue túnel abaixo. De repente, vê a luz do dia no fim do túnel. Enquanto corre na direção da visão mais bela que teve diante de si desde muito tempo, um céu claro e azul, árvores verdes, você sonha com o alegre cenário de pessoas vibrando. Mas não há recepção de herói da parte das pessoas à sua volta. Estão todas mortas. Você está dentro de uma câmara fria repleta de cadáveres e esqueletos com armaduras. A saída para a vitória era apenas uma ilusão. Somente os despojos de aventureiros do passado são reais. Profundamente deprimido, você caminha de volta para o túnel, mas se choca com uma barreira invisível. Você está aprisionado neste sinistro local, fadado a terminar seus dias na câmara dos mortos.
+''')
 
     
 def item_326():
@@ -1332,6 +1389,12 @@ def item_352():
 Você ouve o som de rochas sendo trituradas e esmagadas à sua frente. O ruído cresce e, subitamente, você se dá conta de que a parede do seu lado direito começa a desabar. Apavorado, você vê uma enorme e horrorosa criatura, com mandíbulas incrivelmente poderosas, deslizar por um buraco na parede. A enorme boca da criatura mastiga rocha enquanto ela vira a cabeça devagar de um lado para outro, sentindo o ar fresco do túnel. O VERME DA ROCHA parece ser cego, mas dá a impressão de estar ciente de sua presença, talvez sentindo o calor de seu corpo. Ele se arrasta na sua direção com as mandíbulas bem abertas, pronto para o ataque. Se você quiser lutar contra o Verme da Rocha, volte para 254. Se preferir correr de volta pelo túnel para o cruzamento e depois se dirigir para o leste, volte para 68.
 ''')
 
+
+def item_353():
+    print('''
+Você ouve o som de rochas sendo trituradas e esmagadas à sua frente. O ruído cresce e, subitamente, você se dá conta de que a parede do seu lado direito começa a desabar. Apavorado, você vê uma enorme e horrorosa criatura, com mandíbulas incrivelmente poderosas, deslizar por um buraco na parede. A enorme boca da criatura mastiga rocha enquanto ela vira a cabeça devagar de um lado para outro, sentindo o ar fresco do túnel. O VERME DA ROCHA parece ser cego, mas dá a impressão de estar ciente de sua presença, talvez sentindo o calor de seu corpo. Ele se arrasta na sua direção com as mandíbulas bem abertas, pronto para o ataque. Se você quiser lutar contra o Verme da Rocha, volte para 254. Se preferir correr de volta pelo túnel para o cruzamento e depois se dirigir para o leste, volte para 68.
+
+''')
 
 
 
@@ -1423,7 +1486,10 @@ Se você vencer, volte para 114.
 
 ''')
     
-
+def item_388():
+    print('''
+O túnel logo chega a um beco sem saída. Um pedaço de papel, escurecido e enrugado de tão velho, está pregado na parede do fundo. Se você quiser pegá-lo para ver se contém alguma mensagem, volte para 23. Se preferir apressar-se a voltar pelo túnel para reunir-se ao Bárbaro, volte para 154.
+''')
 
 def item_396():
     print('''

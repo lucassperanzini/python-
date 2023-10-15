@@ -9,43 +9,6 @@ caminhoFolhaDeAventura = 'D:/DadosPersonagemInicial.json'
 caminhoFolhaDeAventuraAtual = 'D:/DadosPersonagemAtual.json'
 
 
-def ComparacaoStatusIniciais():
-    with open(caminhoFolhaDeAventura,'r') as f:
-        StatusIniciais = json.load(f)
-    
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusAtuais = json.load(f)
-
-    energiaAtual = StatusAtuais['FolhaDeAventura']['energia']
-    energiaInicial = StatusIniciais['FolhaDeAventura']['energia']
-
-    habilidadeAtual = StatusAtuais['FolhaDeAventura']['habilidade']
-    habilidadeInicial = StatusIniciais['FolhaDeAventura']['habilidade']
-
-    SorteAtual = StatusAtuais['FolhaDeAventura']['sorte']
-    SorteInicial = StatusIniciais['FolhaDeAventura']['sorte']
-
-    if energiaAtual > energiaInicial:
-        energiaAtual = energiaInicial
-
-    if habilidadeAtual > habilidadeInicial:
-        habilidadeAtual = habilidadeInicial
-
-    if SorteAtual > SorteInicial:
-        SorteAtual = SorteInicial
-
-    
-    StatusAtuais['FolhaDeAventura']['energia'] = energiaAtual
-
-    StatusAtuais['FolhaDeAventura']['habilidade'] = habilidadeAtual
-
-    StatusAtuais['FolhaDeAventura']['sorte'] = SorteAtual
-
-    #NAO FINALIZADO
-    # with open(caminhoFolhaDeAventuraAtual,'w') as f:
-
-
-
     
 
 
@@ -275,7 +238,7 @@ def Combate(nomeMonstro):
         #Função que determina a força do personagem
         ForçaPersonagem = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'FolhaDeAventura')
 
-        print(f'\nForça do Personagem : {ForçaPersonagem}')
+        print(f'\nForça do Personagem : 👊{ForçaPersonagem}')
         print('------------------------------------------------')
             
         print(nomeMonstro)
@@ -283,7 +246,7 @@ def Combate(nomeMonstro):
         #Função que determina a força da criatura
         ForçaCriatura = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'EncontrosMonstros',nomeMonstro)
 
-        print(f'\nForça {nomeMonstro}: {ForçaCriatura}')
+        print(f'\nForça {nomeMonstro}: 👊{ForçaCriatura}')
         print('------------------------------------------------')
 
         # Se a força for maior que da criatura : criatura perde pontos
@@ -379,18 +342,43 @@ def PerdeHabilidade(valor):
     #perde habilidade
     habilidade = StatusGerais['FolhaDeAventura']['habilidade']
 
-    print('Habilidade anterior',habilidade)
+    print(f'Habilidade anterior 👊{habilidade}')
 
     habilidade -= valor
 
     StatusGerais['FolhaDeAventura']['habilidade'] = habilidade
 
-    print('Habilidade atual',habilidade)
+    print(f'Habilidade atual 👊{habilidade}')
 
     with open(caminhoFolhaDeAventuraAtual,'w') as f:
         json.dump(StatusGerais,f)
 
 
+def GanhaStatus(valor,elemento):
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f) 
+                    
+    ValorElemento = StatusGerais['FolhaDeAventura'][elemento]
+
+    print(f'\n{elemento} anterior ⚡',ValorElemento)
+
+    ValorElemento += valor
+
+    StatusGerais['FolhaDeAventura'][elemento] = ValorElemento
+
+    with open(caminhoFolhaDeAventura,'r') as f:
+        StatusInicias = json.load(f)
+        Elementoinicial =  StatusInicias['FolhaDeAventura'][elemento]
+    
+
+    if ValorElemento > Elementoinicial :
+        print(f'{elemento} ultrapassou valor Inicial.')
+        ValorElemento = Elementoinicial
+        
+    print(f'{elemento} atual ⚡',ValorElemento)
+
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
+        json.dump(StatusGerais,f)
 
 
 
@@ -418,33 +406,6 @@ def PerdeEnergia(valor):
     else:
         return True
 
-
-def GanhaEnergia(valor):
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f) 
-                    
-    #perde energia
-    energia = StatusGerais['FolhaDeAventura']['energia']
-
-    print('Energia anterior ⚡',energia)
-
-    energia += valor
-
-    StatusGerais['FolhaDeAventura']['energia'] = energia
-
-    with open(caminhoFolhaDeAventura,'r') as f:
-        StatusInicias = json.load(f)
-        energiainicial =  StatusInicias['FolhaDeAventura']['energia']
-    
-
-    if energia > energiainicial :
-        print('Energia ultrapassou valor Inicial.')
-        energia = energiainicial
-        
-    print('Energia atual ⚡',energia)
-
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-        json.dump(StatusGerais,f)
 
    
 def PerdeSorte(valor):
@@ -491,7 +452,7 @@ def farpasMenosEnergia():
 
     energia = (energia - EnergiaPerdida)
 
-    print(f'Agora Você perdeu {somaDados} de energia⚡')
+    print(f'Agora Você perdeu {EnergiaPerdida} de energia⚡')
     print(f'Engergia Atual: {energia} ⚡')
 
     StatusGerais['FolhaDeAventura']['energia'] = energia
@@ -516,17 +477,17 @@ def ComparaHabilidade():
     Jogada2 = jogaDADOS.jogaDados(dado)
                     
 
-    print(f"Você esta com {habilidade} de habilidade! ")
+    print(f"Você esta com 👊{habilidade} de habilidade! ")
 
     print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
 
     somaDados = Jogada + Jogada2
 
     if somaDados <= habilidade:
-        print(f'soma de dados é : {somaDados} que é menor que sua habilidade : {habilidade} ')
+        print(f'soma de dados é : {somaDados} que é menor que sua habilidade : 👊{habilidade} ')
         return True
     else:
-        print(f'soma de dados maior que sua habilidade : {habilidade} ')
+        print(f'soma de dados maior que sua habilidade : 👊{habilidade} ')
         return False
    
 
@@ -560,3 +521,5 @@ def PerdeEnergiaNoDado(multiplicador=None):
         return False
     else:
         return True
+    
+

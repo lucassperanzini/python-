@@ -384,7 +384,7 @@ def decisao_126():
 def decisao_226():
     H226 = historia.item_226()
 
-    GanhaEnergia = funções.GanhaEnergia(3)
+    GanhaEnergia = funções.GanhaStatus(3,'energia')
 
     decisao = int(input('decisao :'))
 
@@ -647,6 +647,225 @@ def decisao_338():
         arte.GameOver()
 
 
+def decisao_123():
+    H123 = historia.item_123()
+
+    funções.GanhaStatus(1,'habilidade')
+
+    funções.GanhaStatus(1,'energia')
+
+    input('Vá para 282')
+
+    decisao_282()
+    
+
+
+def decisao_282():
+    H282 = historia.item_282()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 22:
+        decisao_22()
+
+    elif decisao == 388:
+        decisao_388()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_22():
+    H22 = historia.item_22()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 63:
+        decisao_63()
+
+    elif decisao == 184:
+        decisao_184()
+
+    elif decisao == 311:
+        decisao_311()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_63():
+    H63 = historia.item_63()
+
+    input('Vá para 194')
+
+    decisao_194()
+
+def decisao_184():
+    H184 = historia.item_184()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 323:
+        decisao_323()
+
+    elif decisao == 149:
+        decisao_149()
+
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
+
+def decisao_323():
+    H323 = historia.item_323()
+
+    input('Volte para 194')
+
+    decisao_194()
+
+
+
+def decisao_149():
+    H149 = historia.item_149()
+
+    energia = habilidade = 'DESCONHECIDA'
+    nomeMonstro = 'BARBARO'
+
+    funções.criarCriatura(habilidade,energia,nomeMonstro)
+
+    testeSorte = funções.Sorte()
+
+    if testeSorte:
+        input('Vá para 70')
+        decisao_70()
+    else:
+        input('Vá para 160')
+        decisao_353()
+
+
+
+
+def decisao_70():
+    H70 = historia.item_70()
+
+    arte.GameOver()
+
+
+
+def decisao_353():
+    H70 = historia.item_353()
+
+    PerdaHabilidade = funções.PerdeHabilidade(1)
+
+    SobreviveuPerdaEnergia = funções.PerdeEnergia(4)
+
+    if SobreviveuPerdaEnergia:
+        input('Vá para 325')
+        decisao_325()
+    else:
+        arte.GameOver()
+
+
+
+
+
+
+
+def decisao_311():
+    H311 = historia.item_311()
+
+    input('Vá para 325')
+
+    decisao_325()
+
+
+def decisao_325():
+    H311 = historia.item_325()
+
+    arte.GameOver
+
+    
+
+def decisao_194():
+    H194 = historia.item_194()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 52:
+        decisao_52()
+
+    elif decisao == 138:
+        decisao_138()
+
+    elif decisao == 311:
+        decisao_369()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
+
+
+def decisao_52():
+    H52 = historia.item_52()
+
+    energia = habilidade = 'DESCONHECIDA'
+    nomeMonstro = 'BESTA SANGRENTA'
+    funções.criarCriatura(habilidade,energia,nomeMonstro)
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 138:
+        decisao_138()
+
+    elif decisao == 369:
+        decisao_369()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
+
+
+
+
+
+def decisao_388():
+    H388 = historia.item_388()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 23:
+        decisao_23()
+
+    elif decisao == 154:
+        decisao_154()
+      
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_23():
+    H23 = historia.item_23()
+
+    input('Vá para 154')
+
+    decisao_154()
+
+
+def decisao_154():
+    H154 = historia.item_22()
+
+    input('Volte para 22')
+
+    decisao_22()
 
 
 def decisao_137():
