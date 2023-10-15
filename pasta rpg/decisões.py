@@ -1556,16 +1556,21 @@ def decisao_39():
     energia = 8
 
     CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
-    Combate = funções.Combate(nomeMonstro)
+    
+    Fuga = funções.Fuga()
 
-    if Combate:
-        print('Você venceu!!')
-        decisao_111()
+    if Fuga:
+        input('Aperte ENTER para seguir para 267')
+        decisao_267()
+    
     else:
-        print('Perdeu o combate, Você MORREU!')
-        arte.GameOver()
-
-    ##### FUGA para 267 #####
+        Combate = funções.Combate(nomeMonstro)
+        if Combate:
+            print('Você venceu!!')
+            decisao_111()
+        else:
+            print('Perdeu o combate, Você MORREU!')
+            arte.GameOver()
 
 
 def decisao_111():

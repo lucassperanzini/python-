@@ -154,12 +154,48 @@ def ForçaDeAtaque(Caminho,setor,nomeMonstro=None):
 
         return força
 
+
+
 def Fuga():
     #pode escapar de um combate
     # perde -2 de energia por ser covarde
     #pode usar sorte no ferimento
     # so pode fugir de acordo com instruções específicas
-    pass
+
+    decisao = input("Deseja fugir do combate? ").lower()
+
+    if decisao == 'sim':
+
+        decisao1 = input("Deseja testar a sorte para tomar menos dano? ").lower()
+
+        if decisao1 == 'sim':
+
+            sorte = Sorte()
+
+            if sorte:
+
+                ## Se tiver sorte Perde Energia ??
+                print("A sorte está ao seu lado!!\nSiga seu caminho sem perder Energia!!")
+
+            else:
+                print("hahaha parece que a sorte não está do seu lado\nPerdeu 2 de Energia!!")
+
+                PerdeEnergia(2)
+
+        
+        else:
+            print("Fugiu do combate, medroso!!\n Perdeu 2 de Energia!!")
+
+            PerdeEnergia(2)
+
+        
+        return True
+
+    else:
+        return False
+    
+
+
 
 def Sorte():
     tiveSorte = False
@@ -402,9 +438,9 @@ def PerdeEnergia(valor):
         json.dump(StatusGerais,f)
 
     if energia <= 0:
-        return False
-    else:
-        return True
+        print("\n---Sua energia acabou!!--- \nSua aventura termina aqui!")
+        arte.GameOver()
+        exit()
 
 
    
