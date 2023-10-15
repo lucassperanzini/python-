@@ -832,10 +832,48 @@ def decisao_52():
 
 
 
+def decisao_138():
+    H138 = historia.item_138()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 397:
+        decisao_397()
+
+    elif decisao ==  75:
+        decisao_75()
+
+    elif decisao == 52:
+        decisao_52()
+
+    elif decisao == 369:
+        decisao_369()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
 
 
+def decisao_369():
+    H369 = historia.item_369()
 
+    energia = 11
+    habilidade = 10
+    nomeMonstro = 'TROLL DA CAVERNA'
 
+    funções.criarCriatura(habilidade,energia,nomeMonstro)
+
+    SobreviveuCombate = funções.Combate(nomeMonstro)
+
+    if SobreviveuCombate:
+        print('Você venceu')
+        input('Vote para 288')
+        decisao_288()
+    else:
+        arte.GameOver()
+
+def  decisao_288():
+    H288 = historia.item_288()
 
 def decisao_388():
     H388 = historia.item_388()
@@ -1004,7 +1042,7 @@ def decisao_298():
        decisao_304()
             
         
-    elif decisao == 298:
+    elif decisao == 279:
         decisao_279()
             
     else:

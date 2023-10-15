@@ -238,7 +238,7 @@ def Combate(nomeMonstro):
         #Função que determina a força do personagem
         ForçaPersonagem = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'FolhaDeAventura')
 
-        print(f'\nForça do Personagem : 👊{ForçaPersonagem}')
+        print(f'\nForça do Personagem : 👊 {ForçaPersonagem}')
         print('------------------------------------------------')
             
         print(nomeMonstro)
@@ -246,7 +246,7 @@ def Combate(nomeMonstro):
         #Função que determina a força da criatura
         ForçaCriatura = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'EncontrosMonstros',nomeMonstro)
 
-        print(f'\nForça {nomeMonstro}: 👊{ForçaCriatura}')
+        print(f'\nForça {nomeMonstro}: 👊 {ForçaCriatura}')
         print('------------------------------------------------')
 
         # Se a força for maior que da criatura : criatura perde pontos
@@ -477,17 +477,17 @@ def ComparaHabilidade():
     Jogada2 = jogaDADOS.jogaDados(dado)
                     
 
-    print(f"Você esta com 👊{habilidade} de habilidade! ")
+    print(f"Você esta com 👊 {habilidade} de habilidade! ")
 
     print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
 
     somaDados = Jogada + Jogada2
 
     if somaDados <= habilidade:
-        print(f'soma de dados é : {somaDados} que é menor que sua habilidade : 👊{habilidade} ')
+        print(f'soma de dados é : {somaDados} que é menor que sua habilidade : 👊 {habilidade} ')
         return True
     else:
-        print(f'soma de dados maior que sua habilidade : 👊{habilidade} ')
+        print(f'soma de dados maior que sua habilidade : 👊 {habilidade} ')
         return False
    
 

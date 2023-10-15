@@ -779,8 +779,7 @@ def item_123():
 
     print('''
 
-À sua frente, há dois lances de escadas de pedra, separados por um corrimão de crânios de ratazana. Você pode subir pelo lance de escadas da esquerda - vá para 176 - ou pelo da direita
-- vá para 384.
+O colar é um amuleto de força. Some 1 ponto de HABILIDADE e 1 ponto de ENERGIA e continue na sua missão. Vá para 282.
 
 ''')
 
@@ -857,7 +856,15 @@ Caminhando pelo túnel, você se surpreende com um grande sino de ferro pendurad
 
 ''')
 
+def item_138():
+    print('''
+As páginas do livro estão unidas com lacre, mas um pequeno orifício foi cortado no meio delas, de tamanho suficiente para conter uma pequena garrafa arrolhada, na qual há um líquido de cor clara. Você mostra isso a Throm, que levanta a mão, indicando não querer que você sequer chegue perto dele com aquilo; a desconfiança que ele sente em relação às coisas desconhecidas fica evidente. Você:
 
+Beberá o líquido?	Vá para 397
+Esfregará o líquido nos seus ferimentos?	Volte para 75 Abrirá o livro vermelho (Se ainda não fez isso)?	Volte para 52 Deixará a garrafa e o livro de lado para continuar
+para o norte com Throm?	Vá para 369
+
+''')
 
 
 def item_141():
@@ -1370,6 +1377,11 @@ A munhequeira foi feita e amaldiçoada por uma Bruxa. Ela torna suas reações m
 ''')
 
 
+def item_346():
+    print('''
+Você tira a bota do pé e se esforça para estendê-la até o sino e travar-lhe a vibração. Aos poucos, o sino vai parando de vibrar, e a dor no seu corpo diminui gradualmente. Você consegue se levantar, mas não afasta a bota do sino até que ele esteja completamente imóvel. Você calça a bota e continua a jornada para o oeste. Vá para 362.
+''')
+
 def item_350():
     print('''
 A Mosca Gigante mergulha na sua direção e agarra-o com quatro patas. Rapidamente ela retorna ao teto da caverna, e você se encontra indefeso pendurado no ar. Súbito, para seu horror, ela o solta. Você despenca de 10 metros de altura, estatelando-se no solo. Jogue um dado e deduza o número de seu índice de ENERGIA. Se ainda estiver vivo, você desembainha a espada; bem a tempo, pois a Mosca Gigante vem descendo para tentar capturá- lo mais uma vez. Volte para 39
@@ -1438,7 +1450,15 @@ A temperatura continua a subir, muito além dos limites de tolerância humanos. 
 ''')
     
 
+def item_369():
+    print('''
+O túnel faz uma curva fechada para a direita, continuando para o leste até onde a vista alcança. Throm pára e lhe diz que faça o mesmo. Ele vira a cabeça devagar de um lado para o outro: “Ouço passos descendo pelo túnel na nossa direção”, ele sussurra. “Desembainhe a espada.” Vocês se agacham para se esconder nas sombras, e bem a tempo: duas figuras armadas se aproximam. Throm salta e brada um grito de guerra. Dois TROLLS DA CAVERNA estão diante de vocês. Throm ataca o primeiro com a acha de guerra, e você corre para ajudá-lo, atacando o segundo Troll da Caverna.
 
+TROLL DA CAVERNA	HABILIDADE 10    ENERGIA 11
+
+Se você vencer, volte para 288.
+
+''')
 
 def item_373():
     print('''
