@@ -24,7 +24,9 @@ if aceita_desafio =='sim':
 
     CriaPersonagem = funções.CriarPersonagem()
 
-    decisões.decisao_369()
+    decisões.decisao_1()
+
+    input('Você deseja beber a poção?')
 
    
    

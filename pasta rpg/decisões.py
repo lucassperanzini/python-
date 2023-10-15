@@ -875,6 +875,20 @@ def decisao_369():
 def  decisao_288():
     H288 = historia.item_288()
 
+    decisao = int(input('decisao :'))
+
+    if decisao == 64:
+        decisao_64()
+
+    elif decisao ==  221:
+        decisao_221()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
 def decisao_388():
     H388 = historia.item_388()
 

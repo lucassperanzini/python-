@@ -1243,7 +1243,12 @@ O túnel logo termina em uma encruzilhada. Parado lá sozinho e sem saber para q
 
 
 
+def item_288():
+    print('''
+Você olha para a esquerda e vê Throm de pé sobre o Troll da Caverna que ele liquidou. O sangue que escorre do corte profundo que tem no ombro não parece preocupá-lo. Vocês revistam os corpos dos Trolls da Caverna, mas não encontram nada além de um anel de osso em um cordão de couro no pescoço de um deles. O anel tem um símbolo entalhado. Throm o reconhece e explica que deve ter pertencido a druidas do norte; trata-se de um antigo e poderoso talismã, capaz de aumentar-lhe os poderes, se seu corpo puder aceitá-lo. Throm recusa-se a tocar nele, e aconselha que você também não o faça. Se você quiser pôr o anel, volte para 64. Se preferir continuar para o leste com Throm, volte para 221.
 
+
+''')
 
 
 
