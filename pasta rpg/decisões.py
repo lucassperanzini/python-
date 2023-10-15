@@ -887,6 +887,205 @@ def  decisao_288():
         print(opção_incorreta)
         arte.GameOver()
 
+def decisao_221():
+    H221 = historia.item_221()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 374:
+        decisao_374()
+
+    elif decisao ==  60:
+        decisao_60()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_374():
+    H374 = historia.item_374()
+
+    sorte = funções.Sorte()
+
+    if sorte:
+        input("Vá para 118")
+        decisao_118()
+    
+    else:
+        input("Vá para 295")
+        decisao_295()
+
+
+def decisao_295():
+    H295 = historia.item_295()
+
+    perdeenergia = funções.PerdeEnergia(5)
+
+    if perdeenergia:
+        decisao_206()
+
+
+def decisao_206():
+    H206 = historia.item_206()
+
+    ## Usa Provisões
+
+    decisao_60()
+
+
+
+def decisao_118():
+    H118 = historia.item_118()
+
+    decisao_60()
+
+
+def decisao_60():
+    H60 = historia.item_60()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 365:
+        decisao_365()
+
+    elif decisao ==  179:
+        decisao_179()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_179():
+    H179 = historia.item_179()
+
+    funções.PerdeEnergia(2)
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 290:
+        decisao_290()
+
+    elif decisao == 191:
+        decisao_191()
+
+    elif decisao == 84:
+        decisao_84()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_84():
+    H84 = historia.item_84()
+
+    valorDado = jogaDADOS.jogaDados(dado)
+    valorDado2 = jogaDADOS.jogaDados(dado)
+
+    total = valorDado + valorDado2
+
+    print(valorDado, valorDado2)
+
+    if total > 8:
+        decisao_152()
+
+    elif total <= 8:
+        decisao_121()
+
+
+
+def decisao_290():
+    H290 = historia.item_290()
+
+    valorDado = jogaDADOS.jogaDados(dado)
+    valorDado2 = jogaDADOS.jogaDados(dado)
+
+    total = valorDado + valorDado2
+
+    print(valorDado, valorDado2)
+
+    if total == 8:
+        decisao_152()
+
+    elif total < 8 or total > 8:
+        decisao_121()
+
+
+
+def decisao_191():
+    H191 = historia.item_191()
+
+    valorDado = jogaDADOS.jogaDados(dado)
+    valorDado2 = jogaDADOS.jogaDados(dado)
+
+    total = valorDado + valorDado2
+
+    print(valorDado, valorDado2)
+
+    if total < 8:
+        decisao_152()
+    elif total >= 8:
+        decisao_121()
+
+
+def decisao_152():
+    H152 = historia.item_152()
+
+    ComparaHab = funções.ComparaHabilidade()
+
+    if ComparaHab:
+        decisao_55()
+    
+    else:
+        decisao_202()
+
+def decisao_121():
+    H121 = historia.item_121()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 26:
+        decisao_26()
+
+    elif decisao == 354:
+        decisao_354()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_365():
+    H365 = historia.item_365()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 290:
+        decisao_290()
+
+    elif decisao == 191:
+        decisao_191()
+
+    elif decisao == 84:
+        decisao_84()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_64():
+    H64 = historia.item_64()
+
+    ComparaHab = funções.ComparaHabilidade()
+
+    if ComparaHab:
+        input("Vá para 115")
+        decisao_115()
+    else:
+        input("Vá para 190")
+        decisao_190()
 
 
 def decisao_388():
