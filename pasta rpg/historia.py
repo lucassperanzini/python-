@@ -1862,6 +1862,11 @@ Você olha para a esquerda e vê Throm de pé sobre o Troll da Caverna que ele l
 
 ''')
 
+def item_289():
+    print('''
+A cobertura de pano sobe para o topo da gaiola, e nela, para seu horror, você vê o rosto de uma mulher velha, cujo cabelo é uma massa de serpentes que silvam. É a terrível MEDUSA! Teste sua Sorte. Se você tiver sorte, volte para 216. Se não tiver sorte, volte para 19.
+''')
+
 def item_290():
     print('''Jogue dois dados. Se o total for oito, volte para 152. Se o total for qualquer número diferente de oito, volte para 121.''')
 
