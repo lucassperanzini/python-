@@ -2,12 +2,50 @@ from tkinter.ttk import *
 from tkinter import *
 
 def MudaImagem():
+
+    dic = [
+
+        lanche = {
+            'burger':30,
+            'noodles':10,
+            'pizza':40
+         },
+
+       porcao = {
+            'fritas':15,
+            'nuggets':12,
+            'milho':8
+        },
+
+
+        Bebida =  {
+           'Suco',
+           'Shake',
+        }
+    ]
+       
+    
+
+
     lanche = combo.get()
     porcao = combo2.get()
-    bebida= combo3.get() 
+    bebida= combo3.get()
 
-    nova_imagem = "imagens/" + combo.get() + '.png'
-    imagem['file'] = nova_imagem
+    if lanche:
+        nova_imagem = "cardapio/" + combo.get() + '.png'
+        imagem1['file'] = nova_imagem
+        return PrecoLanche
+
+    if porcao:
+        nova_imagem = "cardapio/" + combo2.get() + '.png'
+        imagem2['file'] = nova_imagem
+        return PrecoPorcao
+
+    if bebida:
+        nova_imagem = "cardapio/" + combo3.get() + '.png'
+        imagem3['file'] = nova_imagem
+        return PrecoBebida
+ 
 
 
 fonte = ("Copper Black","14")
