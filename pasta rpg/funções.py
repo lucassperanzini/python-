@@ -311,9 +311,7 @@ def Combate(nomeMonstro):
                  print(f'Energia do Personagem : ⚡{EnergiaPersonagem}')
 
             
-            # with open(caminhoFolhaDeAventuraAtual,'w') as f:
-            #     StatusGerais['EncontrosMonstros'][nomeMonstro]['energia'] -= 2
-            #     json.dump(StatusGerais,f)
+            
 
 
 
@@ -326,6 +324,7 @@ def Combate(nomeMonstro):
 
             if resposta == 'sim':
                 testeSorte = Sorte()
+
 
                 if testeSorte:
                     EnergiaPersonagem -= DanoReduzido

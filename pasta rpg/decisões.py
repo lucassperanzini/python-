@@ -779,8 +779,6 @@ def decisao_353():
 
 
 
-
-
 def decisao_311():
     H311 = historia.item_311()
 
@@ -838,7 +836,6 @@ def decisao_52():
         arte.GameOver()
 
 
-
 def decisao_138():
     H138 = historia.item_138()
 
@@ -859,6 +856,44 @@ def decisao_138():
     else:
         print(opção_incorreta)
         arte.GameOver()
+
+
+def decisao_397():
+    H397 = historia.item_397()
+
+    funções.GanhaStatus(2,'sorte')
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 52:
+        decisao_52()
+
+    elif decisao ==  369:
+        decisao_369()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_75():
+    H75 = historia.item_75()
+
+    funções.GanhaStatus(2,'sorte')
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 52:
+        decisao_52()
+
+    elif decisao ==  369:
+        decisao_369()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
 
 
 def decisao_369():
@@ -1619,8 +1654,72 @@ def decisao_342():
 
   
 
+def decisao_294():
+    H294 = historia.item_294()
+
+    funções.PerdeHabilidade(2)
+
+    #informações do Monstro
+    nomeMonstro = 'BESTA SANGRENTA'
+    habilidade = 12
+    energia = 10
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
+
+    if Combate:
+        print('Você venceu!!')
+        ######duvida################
+        testeSorte = funções.Sorte()
+
+        if testeSorte:
+            decisao_97()
+        else:
+            decisao_21()
+
+    else:
+        print('Perdeu o combate, Você MORREU!')
+        arte.GameOver()
 
 
+def decisao_97():
+    H97 = historia.item_97()
+
+    input('Vá para 134')
+
+    decisao_134()
+
+
+def decisao_21():
+    H97 = historia.item_21()
+#################################################
+#DUVIDA
+   
+
+def decisao_134():
+    H134 = historia.item_134()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 222:
+        decisao_222()
+
+    elif decisao == 247:
+        decisao_247()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+ 
+   
+
+
+
+def decisao_334():
+    H334 = historia.item_334()
+   
+    arte.GameOver()
 
 
 def decisao_348():
