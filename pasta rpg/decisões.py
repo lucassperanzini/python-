@@ -1158,10 +1158,10 @@ def decisao_347():
     arte.GameOver()
 
 
-def decisao_143():
-    H143 = historia.item_143()
+# def decisao_143():
+#     H143 = historia.item_143()
 
-    ### Combate duplo contra 1 escorpião gigante
+##### DÚVIDA Combate duplo contra 1 escorpião gigante
 
 
 def decisao_40():
@@ -3920,6 +3920,125 @@ def decisao_100():
         print(opção_incorreta)
         arte.GameOver()
 
+def decisao_87():
+    H87 = historia.item_87()
+
+    input('Va para 381')
+
+    decisao_381()
+
+def decisao_217():
+    H217 = historia.item_217()
+
+    input('Va para 36')
+
+    decisao_36()
+
+def decisao_36():
+    H36 = historia.item_36()
+
+    comparaHabeEnergia = funções.ComparaHabilidadeEEnergia()
+
+    if comparaHabeEnergia:
+        input("Vá´para 340")
+        decisao_340()
+
+    else:
+        input("Vá para 7")
+        decisao_7()
+
+def decisao_340():
+    H340 = historia.item_340()
+
+    input('Va para 381')
+
+    decisao_381()
+
+def decisao_381():
+    H381 = historia.item_381()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 331:
+        decisao_331()
+    
+    elif decisao == 128:
+        decisao_128()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_128():
+    H128 = historia.item_128()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 35:
+        decisao_35()
+    
+    elif decisao == 233:
+        decisao_233()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_233():
+    H233 = historia.item_233()
+
+    arte.GameOver()
+
+def decisao_35():
+    H35 = historia.item_35()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 333:
+        decisao_333()
+    
+    elif decisao == 124:
+        decisao_124()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_333():
+    H333 = historia.item_333()
+
+    arte.GameOver()
+
+def decisao_331():
+    H331 = historia.item_331()
+
+    #info do monstro 
+    nomeMonstro = 'GUERREIRO-ESQUELETO'
+    habilidade = 8
+    energia = 6
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
+
+    if Combate:
+        print('Você venceu!')
+        decisao_71()
+    else:
+          print('Você perdeu o Combate!')
+          arte.GameOver()
+
+def decisao_71():
+    H71 = historia.item_71()
+
+    input('Va para 128')
+
+    decisao_128()
+
+def decisao_7():
+    H7 = historia.item_7()
+
+    arte.GameOver()
+
 def decisao_30():
     H30 = historia.item_30()
 
@@ -3932,7 +4051,20 @@ def decisao_30():
         input('Vá para 160')
         decisao_319()
 
+def decisao_160():
+    H160 = historia.item_160()
 
+    input('Va para 237')
+
+    decisao_237()
+
+
+def decisao_319():
+    H319 = historia.item_319()
+
+    input('Va para 285')
+
+    decisao_285()
 
 def decisao_212():
     H212 = historia.item_212()
@@ -3940,6 +4072,18 @@ def decisao_212():
     input('Va para 285')
 
     decisao_285()
+
+
+
+def decisao_285():
+    H285 = historia.item_285()
+
+    funções.PerdeEnergia(2)
+    funções.PerdeHabilidade(1)
+
+    input('Va para 237')
+
+    decisao_237()
 
 
 def decisao_254():
@@ -3951,13 +4095,16 @@ def decisao_254():
     energia = 11
 
     CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
-    Combate = funções.Combate(nomeMonstro)
+    Combate = funções.Combate_254(nomeMonstro)
 
     ### Pode fugir para 117 após duas séries de ataque
 
-    if Combate:
+    if Combate == 2:
         print('Você venceu!!')
         decisao_76()
+    elif Combate == 1:
+        input("Você fugiu, vá para 117")
+        decisao_117()
     else:
         print('Perdeu o combate, Você MORREU!')
         arte.GameOver()
@@ -3993,6 +4140,10 @@ def decisao_117():
         print(opção_incorreta)
         arte.GameOver()
 
+def decisao_329():
+    H329 = historia.item_329()
+
+    arte.GameOver()
 
 def decisao_317():
     H317 = historia.item_317()
@@ -4334,6 +4485,66 @@ def decisao_260():
         print(opção_incorreta)
         arte.GameOver()
 
+def decisao_166():
+    H166 = historia.item_166()
+
+    funções.PerdeHabilidade(3)
+
+    #info do monstro 1
+    nomeMonstro = 'GUARDIÃO VOADOR'
+    habilidade = 7
+    energia = 8
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
+
+    if Combate:
+        print('Você venceu o primeiro GUARDIÃO VOADOR!!')
+        print('Agora enfrenará o segundo GUARDIÃO VOADOR!')
+
+        #info do monstro 2
+        nomeMonstro1 = 'GUARDIÃO VOADOR'
+        habilidade1 = 8
+        energia1 = 8
+
+        CriaCriatura = funções.criarCriatura(habilidade1,energia1,nomeMonstro1)
+        Combate1 = funções.Combate(nomeMonstro1)
+
+        if Combate1:
+            print('Você venceu os dois GUARDIÃO VOADOR! Vá para 9')
+            decisao_11()
+
+        else:
+            print(' Você perdeu o segundo combate! Você morreu!')
+            arte.GameOver()
+    else:
+        print('Você perdeu o primeiro combate! Você Morreu!')
+        arte.GameOver()
+
+def decisao_11():
+    H11 = historia.item_11()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 140:
+        decisao_140()
+
+    elif decisao == 46:
+        decisao_46()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_46():
+    H46 = historia.item_46()
+
+    input('volte para 239')
+    decisao_239()
+
+def decisao_140():
+    H140 = historia.item_140()
+
+    arte.GameOver()
 
 def decisao_358():
     H358 = historia.item_358()
