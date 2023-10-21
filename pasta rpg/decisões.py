@@ -7,7 +7,7 @@ import json
 dado=0
 opção_incorreta = print('opção incorreta, você perdeu!')
 
-escolha_367_feita = escolha_345_feita = escolha_257_feita = escolha_162_feita = escolha_201_feita = False
+escolha_171_feita = escolha_367_feita = escolha_345_feita = escolha_257_feita = escolha_162_feita = escolha_201_feita = escolha_75_feita = escolha_94_feita = False
 
 
 
@@ -230,7 +230,10 @@ def decisao_197():
 def decisao_171():
     H171 = historia.item_171()
 
-    PerdeEnergia = funções.PerdeEnergia(4)
+    global escolha_171_feita
+    escolha_171_feita = True
+
+    funções.PerdeEnergia(4)
 
     input('Siga para 326')
 
@@ -1665,14 +1668,15 @@ def decisao_294():
     energia = 10
 
     CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
-    Combate = funções.Combate(nomeMonstro)
+    Combate = funções.Combate_294(nomeMonstro)
 
     if Combate:
-        print('Você venceu!!')
-        ######duvida################
-        testeSorte = funções.Sorte()
+        print('Você venceu uma rodada!!')
 
-        if testeSorte:
+        input("Agora teste sua sorte!\n")
+        sorte = funções.Sorte()
+
+        if sorte:
             decisao_97()
         else:
             decisao_21()
@@ -1691,9 +1695,35 @@ def decisao_97():
 
 
 def decisao_21():
-    H97 = historia.item_21()
-#################################################
-#DUVIDA
+    H21 = historia.item_21()
+
+    #informações do Monstro
+    nomeMonstro = 'BESTA SANGRENTA (continuação)'
+    habilidade = 12
+    energia = 10
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate_294(nomeMonstro)
+
+    if Combate:
+        print('Você venceu uma rodada!!')
+
+        input("Agora teste sua sorte!\n")
+        sorte = funções.Sorte()
+
+        if sorte:
+            decisao_97()
+        else:
+            decisao_116()
+
+    else:
+        print('Perdeu o combate, Você MORREU!')
+        arte.GameOver()
+
+def decisao_116():
+    H116 = historia.item_116()
+
+    arte.GameOver()
    
 
 def decisao_134():
@@ -1734,15 +1764,48 @@ def decisao_348():
         input('Siga para 159')
         decisao_159()
 
+def decisao_225():
+    H225 = historia.item_225()
 
+    #informações do Monstro
+    nomeMonstro = 'BESTA SANGRENTA'
+    habilidade = 12
+    energia = 10
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate_294(nomeMonstro)
+
+    if Combate:
+        print('Você venceu uma rodada!!')
+
+        input("Agora teste sua sorte!\n")
+        sorte = funções.Sorte()
+
+        if sorte:
+            decisao_97()
+        else:
+            decisao_21()
+
+    else:
+        print('Perdeu o combate, Você MORREU!')
+        arte.GameOver()
+
+
+def decisao_159():
+    H159 = historia.item_159()
+
+    if escolha_94_feita:
+        input("Vá para 294")
+        decisao_294()
+    
+    else:
+        input("Vá para 294")
+        decisao_334()
 
 def decisao_272():
     H53 = historia.item_272()
 
     arte.GameOver()
-
-
-    
     
 
    
@@ -2577,6 +2640,112 @@ def decisao_305():
     else:
         decisao_148()
 
+def decisao_253():
+    H253 = historia.item_253()
+
+    input("Vá para 315")
+
+    decisao_315()
+
+def decisao_148():
+    H148 = historia.item_148()
+
+    #info do monstro 1
+    nomeMonstro = 'CÃO DE GUARDA'
+    habilidade = 7
+    energia = 7
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
+
+    if Combate:
+        print('Você venceu o primeiro CÃO DE GUARDA!!')
+
+        fuga = funções.Fuga()
+
+        if fuga:
+            input("Vá para 315")
+            decisao_315()
+        
+        else:        
+            print('Agora enfrentará o segundo CÃO DE GUARDA!')
+
+            #info do monstro 2
+            nomeMonstro1 = 'CÃO DE GUARDA'
+            habilidade1 = 7
+            energia1 = 8
+
+            CriaCriatura = funções.criarCriatura(habilidade1,energia1,nomeMonstro1)
+            Combate1 = funções.Combate(nomeMonstro1)
+
+            if Combate1:
+                print('Você venceu os dois CÃO DE GUARDA! Vá para 175')
+                decisao_175()
+
+            else:
+                print(' Você perdeu o segundo combate! Você morreu!')
+                arte.GameOver()
+    else:
+        print('Você perdeu o primeiro combate! Você Morreu!')
+        arte.GameOver()
+
+def decisao_175():
+    H175 = historia.item_175()
+
+    funções.GanhaStatus(2,'sorte')
+
+    input("Vá para 315")
+    decisao_315()
+
+def decisao_315():
+    H315 = historia.item_315()
+
+    if escolha_171_feita:
+        input("Vá para 129")
+        decisao_129()
+    
+    else:
+        input("Vá para 245")
+        decisao_245()
+
+def decisao_129():
+    H129 = historia.item_129()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 349:
+        decisao_349()
+
+    elif decisao == 361:
+        decisao_361()
+
+    elif decisao == 167:
+        decisao_167()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_245():
+    H245 = historia.item_245()
+
+    #info do monstro 1
+    nomeMonstro = 'DIABO DO POÇO'
+    habilidade = 12
+    energia = 15
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
+
+    if Combate:
+        print('Você venceu o DIABO DO POÇO!!')
+        decisao_258()
+    
+    else:
+        print('Você perdeu o combate! Você Morreu!')
+        arte.GameOver()
+
+
 def decisao_328():
     H328 = historia.item_328()
 
@@ -3368,7 +3537,10 @@ def decisao_168():
 
 def decisao_94():
     H94 = historia.item_94()
-    
+
+    global escolha_94_feita
+    escolha_94_feita = True
+
     input('Aperte ENTER para seguir para 174')
 
     decisao_174()
