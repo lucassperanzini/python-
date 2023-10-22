@@ -2438,10 +2438,55 @@ def decisao_209():
 def decisao_356():
     H356 = historia.item_356()
 
+    decisao = int(input('decisao :'))
+
+    if decisao == 192:
+        decisao_192()
+
+    elif decisao == 170:
+        decisao_170()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_170():
+    H170 = historia.item_170()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 192:
+        decisao_192()
+
+    elif decisao == 281:
+        decisao_281()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_281():
+    H281 = historia.item_281()
+
+    decisao = int(input('decisao :'))
+
+    if decisao == 399:
+        decisao_399()
+
+    elif decisao == 192:
+        decisao_192()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_399():
+    H399 = historia.item_399()
+
+    funções.GanhaStatus(3,'energia')
+
     input("Vá para 192")
-
     decisao_192()
-
 
 def decisao_192():
     H192 = historia.item_192()
@@ -4833,20 +4878,6 @@ def decisao_261():
     input('Volte para 239')
 
     decisao_239()
-
-
-def decisao_134():
-    H134 = historia.item_134()
-
-    decisao = int(input('decisão : '))
-
-    if decisao == 222:
-        decisao_222()
-    elif decisao == 247:
-        decisao_247()
-    else:
-        print(opção_incorreta)
-        arte.GameOver()
 
 
 def decisao_222():
