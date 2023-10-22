@@ -49,7 +49,7 @@ def CriarPersonagem():
            return pocaoFortuna
     
     pocaoHabilidade = 'Pocao Habilidade'
-    pocaoForça = 'Pocao Habilidade'
+    pocaoForça = 'Pocao Força'
     pocaoFortuna = 'Pocao Sorte'
 
     
@@ -825,3 +825,24 @@ def ComparaHabilidadeEEnergia():
     
     else:
         return False
+    
+
+def Provisoes():
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
+        StatusGerais = json.load(f)
+
+    provisao =  StatusGerais['FolhaDeAventura']['provisoes']
+
+    print(f'Provisoes  : {provisao}')
+    resposta = input('Quer usar provisão para recuperar 4 de energia? (Sim/Não)').lower()
+
+    if resposta == 'sim':
+        provisao -= 1
+        print(f'Provisoes atuais {provisao}')
+    else:
+        print('Provisão nao ultilizada.')
+
+
+    with open(caminhoFolhaDeAventuraAtual,'w') as f:
+        StatusGerais['FolhaDeAventura']['provisoes'] = provisao
+        json.dump(StatusGerais,f)

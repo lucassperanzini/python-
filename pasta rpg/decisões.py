@@ -460,12 +460,11 @@ def decisao_105():
 def decisao_235():
     H235 = historia.item_235()
 
-    SobreviveuPerdaEnergia = funções.PerdeEnergia(2)
+    funções.PerdeEnergia(2)
 
-    if SobreviveuPerdaEnergia:
-        decisao_73()
-    else:
-        arte.GameOver()
+    input('Siga para 73')
+    decisao_73()
+  
 
 
 def decisao_73():
@@ -499,43 +498,42 @@ def decisao_135():
 def decisao_189():
     H189 = historia.item_189()
 
-    SobreviveuPerdaEnergia = funções.PerdeEnergia(3)
+    funções.PerdeEnergia(3)
 
-    if SobreviveuPerdaEnergia:
 
-        #info do monstro 1
-        nomeMonstro = 'ORCA'
-        habilidade = 5
-        energia = 5
 
-        CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
-        Combate = funções.Combate(nomeMonstro)
+    #info do monstro 1
+    nomeMonstro = 'ORCA'
+    habilidade = 5
+    energia = 5
 
-        if Combate:
-            print('Você venceu o primeiro ORCA!!')
-            print('Agora enfrenará o segundo ORCA!')
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
 
-            #info do monstro 2
-            nomeMonstro2 = 'ORCA2'
-            habilidade2 = 6
-            energia2 = 4
+    if Combate:
+        print('Você venceu o primeiro ORCA!!')
+        print('Agora enfrenará o segundo ORCA!')
 
-            CriaCriatura = funções.criarCriatura(habilidade2,energia2,nomeMonstro2)
-            Combate1 = funções.Combate(nomeMonstro2)
+        #info do monstro 2
+        nomeMonstro2 = 'ORCA2'
+        habilidade2 = 6
+        energia2 = 4
 
-            if Combate1:
-                print('Você venceu os dois ORCA! Vá para 257')
-                decisao_257()
+        CriaCriatura = funções.criarCriatura(habilidade2,energia2,nomeMonstro2)
+        Combate1 = funções.Combate(nomeMonstro2)
 
-            else:
-                print(' Você perdeu o segundo combate! Você morreu!')
-                arte.GameOver()
+        if Combate1:
+            print('Você venceu os dois ORCA! Vá para 257')
+            decisao_257()
+
         else:
-            print('Você perdeu o primeiro combate! Você Morreu!')
+            print(' Você perdeu o segundo combate! Você morreu!')
             arte.GameOver()
-
     else:
+        print('Você perdeu o primeiro combate! Você Morreu!')
         arte.GameOver()
+
+
 
 
     
@@ -623,14 +621,11 @@ def decisao_176():
 def decisao_384():
     H384 = historia.item_384()
 
-    SobreviveuPerdaEnergia = funções.PerdeEnergia(2)
+    funções.PerdeEnergia(2)
 
-    if SobreviveuPerdaEnergia:
-        input('Volte para 277')
-        decisao_277()
-    else:
-        print(opção_incorreta)
-        arte.GameOver()
+    input('Volte para 277')
+    decisao_277()
+    
 
 def decisao_277():
     H277 = historia.item_277()
@@ -769,13 +764,11 @@ def decisao_353():
 
     PerdaHabilidade = funções.PerdeHabilidade(1)
 
-    SobreviveuPerdaEnergia = funções.PerdeEnergia(4)
-
-    if SobreviveuPerdaEnergia:
-        input('Vá para 325')
-        decisao_325()
-    else:
-        arte.GameOver()
+    funções.PerdeEnergia(4)
+    
+    input('Vá para 325')
+    decisao_325()
+   
 
 
 
@@ -3658,6 +3651,7 @@ def decisao_223():
 
     if SobreviveuFarpas:
         print('Você sobreviveu!')
+        input('Siga para 313')
         decisao_313()
     else:
         print('Acabou sua energia!')
@@ -4325,6 +4319,7 @@ def decisao_39():
         Combate = funções.Combate(nomeMonstro)
         if Combate:
             print('Você venceu!!')
+            input('Siga para 111')
             decisao_111()
         else:
             print('Perdeu o combate, Você MORREU!')
@@ -4508,26 +4503,22 @@ def decisao_196():
 def decisao_6():
     H6 = historia.item_6()
 
-    SobreviveuPerdaEnergia = funções.PerdeEnergia(2)
+    funções.PerdeEnergia(2)
+   
+    nomeMonstro = 'MANTECORA'
+    habilidade = 11
+    energia = 11
 
-    if SobreviveuPerdaEnergia:
-        nomeMonstro = 'MANTECORA'
-        habilidade = 11
-        energia = 11
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate(nomeMonstro)
 
-        CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
-        Combate = funções.Combate(nomeMonstro)
-
-        if Combate:
-            print(f'Você venceu a {nomeMonstro}!!')
-        
-        else:
-            print('Você perdeu o combate! Você Morreu!')
-            arte.GameOver()
+    if Combate:
+        print(f'Você venceu a {nomeMonstro}!!')
+    
     else:
-        print('Acabou sua energia! Você Morreu!')
+        print('Você perdeu o combate! Você Morreu!')
         arte.GameOver()
-
+  
 
 
 
@@ -4645,13 +4636,11 @@ def decisao_140():
 def decisao_358():
     H358 = historia.item_358()
 
-    SobreviveuPerdaEnergia = funções.PerdeEnergia(2)
+    funções.PerdeEnergia(2)
 
-    if SobreviveuPerdaEnergia:
-        input('volte para 239')
-        decisao_239()
-    else:
-        arte.GameOver()
+    input('volte para 239')
+    decisao_239()
+   
 
 
 def decisao_275():
@@ -4676,23 +4665,19 @@ def decisao_231():
 
 
 def decisao_309():
-  H309 = historia.item_309()
+    H309 = historia.item_309()
 
-  SobreviveuPerdaEnergia = funções.PerdeEnergia(3)
+    funções.PerdeEnergia(3)
 
+    Sorte = funções.Sorte()
+    print('----------------------------------------------')
+    if Sorte:
+        print('Você foi redirecionado para 231!')
+        decisao_231()
+    else:
+        print('Você foi redirecionado para 193!')
+        decisao_193()
 
-  if SobreviveuPerdaEnergia:
-      Sorte = funções.Sorte()
-      print('----------------------------------------------')
-      if Sorte:
-          print('Você foi redirecionado para 231!')
-          decisao_231()
-      else:
-          print('Você foi redirecionado para 193!')
-          decisao_193()
-  else:
-    print('Acabou sua energia!')
-    arte.GameOver()
       
 
 

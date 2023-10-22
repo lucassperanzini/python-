@@ -24,7 +24,7 @@ if aceita_desafio =='sim':
 
     CriaPersonagem = funções.CriarPersonagem()
 
-    decisões.decisao_1()
+    decisões.decisao_247()
 
     
 

@@ -2162,7 +2162,8 @@ A Mosca Gigante mergulha na sua direção e agarra-o com quatro patas. Rapidamen
 def item_351():
     print('''
           
-Não muito adiante, o túnel chega a uma porta fechada à sua esquerda. Colocando o ouvido na porta, você escuta, mas não ouve nada. Se você quiser abrir a porta, volte para 102. Se desejar prosseguir para o norte, vá para 344.
+O ídolo é muito liso, e a escalada será difícil. Você tem corda? Se tiver, vá para 396. Se não tiver, volte para 186.
+
 
 ''')
 
@@ -2175,7 +2176,7 @@ Você ouve o som de rochas sendo trituradas e esmagadas à sua frente. O ruído 
 
 def item_353():
     print('''
-Você ouve o som de rochas sendo trituradas e esmagadas à sua frente. O ruído cresce e, subitamente, você se dá conta de que a parede do seu lado direito começa a desabar. Apavorado, você vê uma enorme e horrorosa criatura, com mandíbulas incrivelmente poderosas, deslizar por um buraco na parede. A enorme boca da criatura mastiga rocha enquanto ela vira a cabeça devagar de um lado para outro, sentindo o ar fresco do túnel. O VERME DA ROCHA parece ser cego, mas dá a impressão de estar ciente de sua presença, talvez sentindo o calor de seu corpo. Ele se arrasta na sua direção com as mandíbulas bem abertas, pronto para o ataque. Se você quiser lutar contra o Verme da Rocha, volte para 254. Se preferir correr de volta pelo túnel para o cruzamento e depois se dirigir para o leste, volte para 68.
+Antes que você possa sair do caminho, o rochedo se choca contra seu ombro. Você perde 1 ponto de HABILIDADE e 4 pontos de ENERGIA. Se ainda estiver vivo, volte para 325.
 
 ''')
 
