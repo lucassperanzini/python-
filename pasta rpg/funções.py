@@ -49,7 +49,7 @@ def CriarPersonagem():
            return pocaoFortuna
     
     pocaoHabilidade = 'Pocao Habilidade'
-    pocaoForça = 'Pocaoo Habilidade'
+    pocaoForça = 'Pocao Habilidade'
     pocaoFortuna = 'Pocao Sorte'
 
     
@@ -244,6 +244,7 @@ def Sorte():
         return tiveSorte
     
 def Combate(nomeMonstro):
+    fugiu = False
 
     # numero de rounds
     contadorBatalhas = 1
@@ -354,16 +355,14 @@ def Combate(nomeMonstro):
             print('Que começe a próxima série de ataque!')
 
         print('-------------------------------------------')
-        
+
         contadorBatalhas +=1
 
-    
 
-    
     if EnergiaPersonagem > EnergiaCriatura:
-        return True
+         return True
     else:
-        return False
+         return False
 
           
 ############# Funções específicas da história ###############################

@@ -1,51 +1,62 @@
+#RM98297 Lucas Speranzini
+
 from tkinter.ttk import *
 from tkinter import *
 
 def MudaImagem():
 
     dic = [
-
-        lanche = {
-            'burger':30,
-            'noodles':10,
-            'pizza':40
-         },
-
-       porcao = {
-            'fritas':15,
-            'nuggets':12,
-            'milho':8
+        {   
+            'Escolha':0,
+            'burger': 34.90,
+            'noodles': 44.50,
+            'pizza': 49
+        },
+        {   'Escolha':0,
+            'fritas': 14.90,
+            'nuggets': 9.50,
+            'milho': 12.30
         },
 
-
-        Bebida =  {
-           'Suco',
-           'Shake',
+        {   'Escolha':0,
+            'Suco': 14.90,
+            'Shake': 19.90
         }
     ]
        
-    
-
-
     lanche = combo.get()
     porcao = combo2.get()
     bebida= combo3.get()
 
+    valorTotal = 0
+
     if lanche:
         nova_imagem = "cardapio/" + combo.get() + '.png'
         imagem1['file'] = nova_imagem
-        return PrecoLanche
+        preçoLanche = dic[0][lanche]
+        valorTotal += preçoLanche 
+        
 
     if porcao:
         nova_imagem = "cardapio/" + combo2.get() + '.png'
         imagem2['file'] = nova_imagem
-        return PrecoPorcao
+        preçoPorcao= dic[1][porcao]
+        valorTotal += preçoPorcao
+      
 
     if bebida:
         nova_imagem = "cardapio/" + combo3.get() + '.png'
         imagem3['file'] = nova_imagem
-        return PrecoBebida
- 
+        preçoBebida= dic[2][bebida] 
+        valorTotal += preçoBebida
+
+    else:
+        pass
+        
+    
+    valor_total_label.config(text=f'Valor Total: R${valorTotal}')
+
+
 
 
 fonte = ("Copper Black","14")
@@ -118,6 +129,14 @@ botao = Button(window, text='Fazer Pedido', pady=5, padx=10, font=fonte)
 
 botao['command'] = MudaImagem
 botao.pack()
+
+
+###################################
+
+
+valor_total_label = Label(window, text='', font=fonte)
+valor_total_label.pack()
+
 
 
 

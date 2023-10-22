@@ -100,7 +100,7 @@ def decisao_56():
 
     if decisao == 373:
         decisao_373()
-    elif decisao == 215():
+    elif decisao == 215:
         decisao_215()
     else:
         print(opção_incorreta)
@@ -119,13 +119,12 @@ def decisao_215():
 
     H215 = historia.item_215()
 
-    SobreviveuPerdaEnergia = funções.PerdeEnergia(2)
+    funções.PerdeEnergia(2)
 
-    if SobreviveuPerdaEnergia:
-        input('Aperte ENTER para seguir para 13')
-        decisao_13()
-    else:
-        arte.GameOver()
+    
+    input('Aperte ENTER para seguir para 13')
+    decisao_13()
+    
 
 def decisao_13():
     H13 = historia.item_13()
@@ -1150,6 +1149,9 @@ def decisao_55():
     else:
         print(opção_incorreta)
         arte.GameOver()
+
+
+
 
 
 def decisao_347():
@@ -3519,12 +3521,10 @@ def decisao_298():
 def decisao_304():
     H304 = historia.item_304()
 
-    SobreviveuPerdaEnergia = funções.PerdeEnergia(6)
+    funções.PerdeEnergia(6)
 
-    if SobreviveuPerdaEnergia:
-        decisao_20()
-    else:
-        arte.GameOver()
+    decisao_20()
+   
 
 def decisao_20():
     H20 = historia.item_20()
@@ -3686,12 +3686,9 @@ def decisao_158():
     PerdeHabilidade = funções.PerdeHabilidade(1)
     SobreviveuPerdeEnergia = funções.PerdeEnergia(4)
 
-    if SobreviveuPerdeEnergia:
-        #se tiver energia vai para 275
-        decisao_275()
-    else:
-        print('Acabou sua Energia!')
-        arte.GameOver()
+    input('Vá para 275')
+    decisao_275()
+   
 
 def decisao_32():
     H32 = historia.item_32()
@@ -3717,7 +3714,7 @@ def decisao_37():
 
 def decisao_239():
 
-    H239 = funções.item_239()
+    H239 = historia.item_239()
 
     decisao = int(input('decisão : '))
 
@@ -3760,11 +3757,11 @@ def decisao_133():
     ComparaHabilidade = funções.ComparaHabilidade()
 
     if ComparaHabilidade:
-        print("Vá para 178")
+        input("Vá para 178")
         decisao_178()
     
     else:
-        print("Vá para 17")
+        input("Vá para 17")
         decisao_17()
 
 
@@ -3905,6 +3902,94 @@ def decisao_12():
         print(opção_incorreta)
         arte.GameOver()
 
+
+def decisao_382():
+    H382 = historia.item_382()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 144:
+        decisao_144()
+    
+    elif decisao == 227:
+        decisao_227()
+    
+    elif decisao == 391:
+        decisao_391()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_144():
+    H144 = historia.item_144()
+
+    input('volte para 85')
+
+    decisao_85()
+
+def decisao_227():
+    H227 = historia.item_227()
+
+    input('volte para 85')
+
+    decisao_85()
+
+def decisao_391():
+    H391 = historia.item_391()
+
+    funções.GanhaStatus(1,'energia')
+    funções.GanhaStatus(1,'habilidade')
+    funções.GanhaStatus(1,'sorte')
+
+    input('Volte para 100')
+
+    decisao_100()
+
+    
+     
+def decisao_85():
+    H85 = historia.item_85()
+
+    arte.GameOver()
+
+    
+
+def decisao_195():
+    H195 = historia.item_195()
+
+    funções.PerdeEnergia(1)
+
+    input('Vá para 382')
+
+    decisao_382()
+
+
+def decisao_250():
+    H250 = historia.item_250()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 44:
+        decisao_44()
+    
+    elif decisao == 195:
+        decisao_195()
+    
+    elif decisao == 382:
+        decisao_382()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_44():
+    H44 = historia.item_44()
+
+    arte.GameOver()
+
+
 def decisao_100():
     H100 = historia.item_100()
 
@@ -4008,6 +4093,14 @@ def decisao_333():
     H333 = historia.item_333()
 
     arte.GameOver()
+
+def decisao_124():
+    H124 = historia.item_124()
+################dÚVIDA####################3333333333333333333333333333333
+    arte.GameOver()
+
+
+
 
 def decisao_331():
     H331 = historia.item_331()
@@ -4190,9 +4283,11 @@ def decisao_174():
     Sorte = funções.Sorte()
 
     if Sorte:
+        input('Vá para 39')
         decisao_39()
     
     else:
+        input('Vá para 350')
         decisao_350()
 
 
@@ -4203,6 +4298,7 @@ def decisao_350():
     PerdeEnergia = funções.PerdeEnergiaNoDado()
 
     if PerdeEnergia:
+        input('va para 39')
         decisao_39()
     
     else:
@@ -4564,9 +4660,10 @@ def decisao_275():
     #checagem de sorte
 
     if funções.Sorte():
+        input('Vá para 231')
         decisao_231()
     else:
-        #Não feito
+        input('Vá para 309')
         decisao_309()
 
 
