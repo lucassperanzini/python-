@@ -393,7 +393,7 @@ def decisao_126():
 def decisao_226():
     H226 = historia.item_226()
 
-    GanhaEnergia = funções.GanhaStatus(3,'energia')
+    GanhaEnergia = funções.GanhaStatus(3,'energia','⚡')
 
     decisao = int(input('decisao :'))
 
@@ -654,9 +654,9 @@ def decisao_338():
 def decisao_123():
     H123 = historia.item_123()
 
-    funções.GanhaStatus(1,'habilidade')
+    funções.GanhaStatus(1,'habilidade','👊')
 
-    funções.GanhaStatus(1,'energia')
+    funções.GanhaStatus(1,'energia','⚡')
 
     input('Vá para 282')
 
@@ -856,7 +856,7 @@ def decisao_138():
 def decisao_397():
     H397 = historia.item_397()
 
-    funções.GanhaStatus(2,'sorte')
+    funções.GanhaStatus(2,'sorte','🍀')
 
     decisao = int(input('decisao :'))
 
@@ -873,7 +873,7 @@ def decisao_397():
 def decisao_75():
     H75 = historia.item_75()
 
-    funções.GanhaStatus(2,'sorte')
+    funções.GanhaStatus(2,'sorte','🍀')
 
     decisao = int(input('decisao :'))
 
@@ -1197,7 +1197,7 @@ def decisao_163():
 def decisao_363():
     H363 = historia.item_363()
 
-    funções.GanhaStatus(2,'energia')
+    funções.GanhaStatus(2,'energia','⚡')
 
     input("Vá para 302")
     decisao_302()
@@ -1261,7 +1261,7 @@ def decisao_145():
 def decisao_28():
     H28 = historia.item_18()
 
-    funções.GanhaStatus(1,'habilidade')
+    funções.GanhaStatus(1,'habilidade','👊')
 
     input("Vá para 213")
     decisao_213()
@@ -1338,7 +1338,7 @@ def decisao_262():
 def decisao_337():
     H337 = historia.item_337()
 
-    funções.GanhaStatus(1,'energia')
+    funções.GanhaStatus(1,'energia','⚡')
     funções.PerdeSorte(2)
 
     decisao = int(input('decisao :'))
@@ -1875,7 +1875,7 @@ def decisao_303():
 def decisao_157():
     H157 = historia.item_157()
 
-    funções.GanhaStatus(1,'sorte')
+    funções.GanhaStatus(1,'sorte','🍀')
 
     input("Vá para 310")
     decisao_310()
@@ -2149,7 +2149,7 @@ def decisao_359():
 def decisao_238():
     H238 = historia.item_238()
 
-    funções.GanhaStatus(1,'habilidade')
+    funções.GanhaStatus(1,'habilidade','👊')
 
     input("Vá para 291")
 
@@ -2309,7 +2309,7 @@ def decisao_162():
     global escolha_162_feita
     escolha_162_feita = True
 
-    funções.GanhaStatus(1,'sorte')
+    funções.GanhaStatus(1,'sorte','🍀')
 
     input("Vá para 142")
 
@@ -2687,7 +2687,7 @@ def decisao_148():
 def decisao_175():
     H175 = historia.item_175()
 
-    funções.GanhaStatus(2,'sorte')
+    funções.GanhaStatus(2,'sorte','🍀')
 
     input("Vá para 315")
     decisao_315()
@@ -2758,7 +2758,7 @@ def decisao_258():
 def decisao_95():
     H95 = historia.item_95()
 
-    funções.GanhaStatus(1,'habilidade')
+    funções.GanhaStatus(1,'habilidade','👊')
 
     input("Vá para 248")
     decisao_248()
@@ -2860,7 +2860,7 @@ def decisao_232():
 def decisao_286():
     H286 = historia.item_286()
 
-    funções.GanhaStatus(4,'habilidade')
+    funções.GanhaStatus(4,'habilidade','👊')
 
     input("Vá para 320")
     decisao_320()
@@ -2889,7 +2889,7 @@ def decisao_269():
     global escolha_269_feita
     escolha_269_feita = True
 
-    funções.GanhaStatus(3,'energia')
+    funções.GanhaStatus(3,'energia','⚡')
 
     if escolha_330_feita:
         input("Vá para 127")
@@ -2916,7 +2916,7 @@ def decisao_330():
     global escolha_330_feita
     escolha_330_feita = True
 
-    funções.GanhaStatus(1,'energia')
+    funções.GanhaStatus(1,'energia','⚡')
 
     if escolha_269_feita:
         input("Vá para 127")
@@ -3317,7 +3317,7 @@ def decisao_64():
 def decisao_115():
     H115 = historia.item_115()
 
-    funções.GanhaStatus(3,'energia')
+    funções.GanhaStatus(3,'energia','⚡')
     
     input("Vá para 221")
     decisao_221()
@@ -3360,7 +3360,7 @@ def decisao_23():
 
 
 def decisao_154():
-    H154 = historia.item_22()
+    H154 = historia.item_154()
 
     input('Volte para 22')
 
@@ -3574,7 +3574,8 @@ def decisao_130():
 
 def decisao_9():
     H9 = historia.item_9()
-    decisao = int(input('decisao : '))
+    decisao = int(input('decisao :'))
+    
 
     if decisao == 158:
         decisao_158()
@@ -3932,9 +3933,9 @@ def decisao_227():
 def decisao_391():
     H391 = historia.item_391()
 
-    funções.GanhaStatus(1,'energia')
-    funções.GanhaStatus(1,'habilidade')
-    funções.GanhaStatus(1,'sorte')
+    funções.GanhaStatus(1,'energia','⚡')
+    funções.GanhaStatus(1,'habilidade','👊')
+    funções.GanhaStatus(1,'sorte','🍀')
 
     input('Volte para 100')
 
@@ -4008,6 +4009,8 @@ def decisao_87():
 
 def decisao_217():
     H217 = historia.item_217()
+
+    funções.PerdeHabilidade(1)
 
     input('Va para 36')
 
@@ -4088,7 +4091,7 @@ def decisao_333():
 
     arte.GameOver()
 
-def decisao_124():
+def decisao_DUVIDA124():
     H124 = historia.item_124()
 ################dÚVIDA####################3333333333333333333333333333333
     arte.GameOver()
@@ -4538,6 +4541,8 @@ def decisao_247():
 
         if Combate:
             print(f'Você venceu a {nomeMonstro}!!')
+            input('Vá para 364')
+            decisao_364()
         
         else:
             print('Você perdeu o combate! Você Morreu!')
@@ -4545,6 +4550,279 @@ def decisao_247():
     else:
         print('Acabou sua energia! Você Morreu!')
         arte.GameOver()
+
+
+def decisao_364():
+
+    H364 = historia.item_364()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 31:
+        decisao_31()
+    elif decisao == 3:
+        decisao_3()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_31():
+
+    H31 = historia.item_31()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 376:
+        decisao_376()
+    elif decisao == 3:
+        decisao_3()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
+def decisao_376():
+
+    H376 = historia.item_376()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 62:
+        decisao_62()
+    elif decisao == 3:
+        decisao_3()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_62():
+
+    H62 = historia.item_62()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 16:
+        decisao_16()
+    elif decisao == 392:
+        decisao_392()
+    elif decisao == 177:
+        decisao_177()
+    
+    elif decisao == 287:
+        decisao_287()
+
+    elif decisao == 132:
+        decisao_132()
+
+    elif decisao == 249:
+        decisao_249()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
+def decisao_16():
+
+    H16 = historia.item_16()
+
+    funções.PerdeEnergiaNoDado(1,1)
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 16:
+        decisao_16()
+    elif decisao == 392:
+        decisao_392()
+    elif decisao == 177:
+        decisao_177()
+    
+    elif decisao == 287:
+        decisao_287()
+
+    elif decisao == 132:
+        decisao_132()
+
+    elif decisao == 249:
+        decisao_249()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+    
+
+def decisao_392():
+
+    H392 = historia.item_392()
+
+    funções.PerdeEnergiaNoDado(1,1)
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 16:
+        decisao_16()
+    elif decisao == 392:
+        decisao_392()
+    elif decisao == 177:
+        decisao_177()
+    
+    elif decisao == 287:
+        decisao_287()
+
+    elif decisao == 132:
+        decisao_132()
+
+    elif decisao == 249:
+        decisao_249()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
+def decisao_177():
+    H177 = historia.item_177()
+
+    TesteSorte = funções.Sorte()
+
+    if TesteSorte:
+        input('Va para 243')
+        decisao_243()
+    else:
+        input('va para 103')
+        decisao_103()
+
+    
+ 
+def decisao_243():
+    H177 = historia.item_243()
+
+    input('Vá para 400')
+
+    decisao_400()
+
+
+def decisao_103():
+    H177 = historia.item_103()
+
+    funções.PerdeEnergia(3)
+
+    input('volte para 77')
+
+    decisao_77()
+
+    
+def decisao_77():
+    H177 = historia.item_77()
+
+    input('Vá para 400')
+
+    decisao_400() 
+
+
+       
+def decisao_400():
+    H400 = historia.item_400()  
+
+    arte.Winner()
+
+
+def decisao_287():
+    H287 = historia.item_287()
+
+    funções.PerdeEnergiaNoDado(1,1)
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 16:
+        decisao_16()
+    elif decisao == 392:
+        decisao_392()
+    elif decisao == 177:
+        decisao_177()
+    
+    elif decisao == 287:
+        decisao_287()
+
+    elif decisao == 132:
+        decisao_132()
+
+    elif decisao == 249:
+        decisao_249()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+    
+   
+def decisao_132():
+    H132 = historia.item_132()
+
+    funções.PerdeEnergiaNoDado(1,1)
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 16:
+        decisao_16()
+    elif decisao == 392:
+        decisao_392()
+    elif decisao == 177:
+        decisao_177()
+    
+    elif decisao == 287:
+        decisao_287()
+
+    elif decisao == 132:
+        decisao_132()
+
+    elif decisao == 249:
+        decisao_249()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+
+def decisao_249():
+    H249 = historia.item_249()
+
+    funções.PerdeEnergiaNoDado(1,1)
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 16:
+        decisao_16()
+    elif decisao == 392:
+        decisao_392()
+    elif decisao == 177:
+        decisao_177()
+    
+    elif decisao == 287:
+        decisao_287()
+
+    elif decisao == 132:
+        decisao_132()
+
+    elif decisao == 249:
+        decisao_249()
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_3():
+
+    H3 = historia.item_3()
+
+    arte.GameOver()
+
+
+
+
 
 def decisao_186():
     H186 = historia.item_186()

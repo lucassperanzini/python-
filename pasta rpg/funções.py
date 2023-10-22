@@ -636,13 +636,13 @@ def PerdeHabilidade(valor):
         json.dump(StatusGerais,f)
 
 
-def GanhaStatus(valor,elemento):
+def GanhaStatus(valor,elemento,emoji):
     with open(caminhoFolhaDeAventuraAtual,'r') as f:
         StatusGerais = json.load(f) 
                     
     ValorElemento = StatusGerais['FolhaDeAventura'][elemento]
 
-    print(f'\n{elemento} anterior ⚡',ValorElemento)
+    print(f'\n{elemento} anterior {emoji}',ValorElemento)
 
     ValorElemento += valor
 
@@ -657,7 +657,7 @@ def GanhaStatus(valor,elemento):
         print(f'{elemento} ultrapassou valor Inicial.')
         ValorElemento = Elementoinicial
         
-    print(f'{elemento} atual ⚡',ValorElemento)
+    print(f'{elemento} atual {emoji} ',ValorElemento)
 
     with open(caminhoFolhaDeAventuraAtual,'w') as f:
         json.dump(StatusGerais,f)
@@ -697,13 +697,13 @@ def PerdeSorte(valor):
     #Pegando do Json sorte
     sorte = StatusGerais['FolhaDeAventura']['sorte']
 
-    print('Sorte anterior',sorte)
+    print(f'Sorte anterior :🍀 {sorte}')
 
     sorte -= valor
 
     StatusGerais['FolhaDeAventura']['sorte'] = sorte
 
-    print('Sorte atual',sorte)
+    print(f'Sorte atual 🍀 {sorte}')
 
     with open(caminhoFolhaDeAventuraAtual,'w') as f:
         json.dump(StatusGerais,f)
@@ -774,7 +774,7 @@ def ComparaHabilidade():
    
 
 
-def PerdeEnergiaNoDado(multiplicador=None):
+def PerdeEnergiaNoDado(multiplicador=None,maisum=None):
     Jogada = jogaDADOS.jogaDados(dado)
 
     print(F'\n🎲 : {Jogada}')
@@ -789,6 +789,8 @@ def PerdeEnergiaNoDado(multiplicador=None):
 
     if multiplicador:
         energia -= (Jogada * multiplicador)
+    elif maisum:
+         energia -= Jogada + 1 
     else:
         energia -= Jogada
 
@@ -810,7 +812,7 @@ def ComparaHabilidadeEEnergia():
     jogada2 = jogaDADOS.jogaDados(dado)
 
     print(F'\n🎲 : {jogada}')
-    print(F'\n🎲 : {jogada2}')
+    print(F'\n🎲 : {jogada2}\n')
 
     total = jogada + jogada2
 
@@ -819,6 +821,11 @@ def ComparaHabilidadeEEnergia():
     
     energia = StatusGerais['FolhaDeAventura']['energia']
     habilidade = StatusGerais['FolhaDeAventura']['habilidade']
+
+    print(f'Energia Atual:⚡{energia}')
+    print(f'Habilidade Atual: 👊 {habilidade}')
+    
+    print(f'Total dos 🎲 Dados  : {total}  ')
 
     if total <= energia and total <= habilidade:
         return True
