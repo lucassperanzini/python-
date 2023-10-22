@@ -192,7 +192,11 @@ Ele pega uma cesta de vime e lhe diz que ela contém uma serpente. Vira a cesta 
 Você se agacha, tensionando os músculos para o momento decisivo. Jogue dois dados. Se o total for igual ou menor que sua HABILIDADE, vá para 55. Se o total for maior que sua HABILIDADE, vá para 202.
 ''')
 
-
+def item_27():
+    print('''
+Você caminha até o apavorado homem e corta a corrente com sua espada. Ele cai de joelhos e se inclina, agradecendo, repetidamente. Diz que, há quatro anos, entrou na Prova dos Campeões, mas fracassou. Ele caiu em um poço e teve que ser resgatado por um Juiz da Prova, um dos administradores do calabouço do Barão Sukumvit. Foi-lhe, então, oferecida a opção de morrer ou servir como lacaio no Calabouço da Morte. Para sobreviver, ele trabalhou como escravo, até que não pôde mais suportar e tentou escapar. Lástima, não teve êxito e foi capturado pelos Orcas, os guardas volantes do Juiz da Prova. Como corretivo, cortaram-lhe uma das mãos e condenaram-no a um ano de prisão nessa cela. Você pergunta se ele tem alguma informação que lhe possa ser útil. Ele coça a cabeça: “Bem, não cheguei a me sair exatamente bem aqui, mas, de fato, sei que você precisa juntar gemas e pedras preciosas, se espera escapar. Não sei por que, mas é isso.” Sem mais dizer, o esfarrapado prisioneiro dispara para fora do aposento, virando à esquerda no túnel. Você resolve prosseguir para o norte e vira à direita no túnel. Vá para 78.
+''')
+    
 def item_28():
     
     print('''

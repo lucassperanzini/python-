@@ -7,11 +7,10 @@ import json
 dado=0
 opção_incorreta = print('opção incorreta, você perdeu!')
 
-escolha_171_feita = escolha_330_feita = escolha_269_feita = escolha_389_feita = escolha_367_feita = escolha_345_feita = escolha_257_feita = escolha_162_feita = escolha_201_feita = escolha_75_feita = escolha_94_feita = False
+escolha_171_feita = escolha_251_feita = escolha_330_feita = escolha_269_feita = escolha_389_feita = escolha_367_feita = escolha_345_feita = escolha_257_feita = escolha_162_feita = escolha_201_feita = escolha_75_feita = escolha_94_feita = False
 
 
-
-#### Decisões não feitas ainda (em aberto): 396, 186, 329, 135, 30, 212, 271, 176, 384
+## decisões 124, 143
 
 
 def decisao_1():
@@ -19,11 +18,9 @@ def decisao_1():
     decisao = int(input('decisão :'))
 
     if decisao == 270:
-        #FEITO
         decisao_270()
 
     elif decisao == 66:
-        #FEITO
         decisao_66()
 
     else:
@@ -37,11 +34,10 @@ def decisao_66():
     decisao = int(input('decisao :'))
 
     if decisao == 293:
-        #FEITO
+        
         decisao_293()
        
     elif decisao == 119:
-        #FEITO
         decisao_119()
 
 
@@ -49,7 +45,13 @@ def decisao_66():
         print(opção_incorreta)
         arte.GameOver()
 
+def decisao_147():
+    H147 = historia.item_147()
 
+    funções.GanhaStatus(1,'energia')
+
+    input("Vá para 182")
+    decisao_182()
 
 def decisao_270():
     H270 = historia.item_270()
@@ -63,11 +65,9 @@ def decisao_293():
     decisao = int(input('decisao :'))
 
     if decisao == 137:
-        #FEITO
         decisao_137()
 
     elif decisao == 387:
-        #FEITO
         decisao_387()
 
     else:
@@ -81,11 +81,9 @@ def decisao_119():
     decisao = int(input('decisao :'))
 
     if decisao == 56:
-        #feito
         decisao_56()
 
     elif decisao == 293:
-        #feito
         decisao_293()
     
     else:
@@ -146,7 +144,7 @@ def decisao_141():
 
     
     ComparaHabilidade = funções.ComparaHabilidade()
-    # Se habilidade for menor que a soma dos dados, sege 71 se nao segue 96
+    # Se habilidade for menor que a soma dos dados, sege 72 se nao segue 96
     if ComparaHabilidade:
         input('Siga para 72:')
         decisao_72()
@@ -1159,6 +1157,12 @@ def decisao_347():
 ##### DÚVIDA Combate duplo contra 1 escorpião gigante
 
 
+def decisao_2():
+    H2 = historia.item_2()
+
+    arte.GameOver()
+
+
 def decisao_40():
     H40 = historia.item_40()
 
@@ -1751,7 +1755,7 @@ def decisao_348():
     H348 = historia.item_348()
 
     ComparaHabilidade = funções.ComparaHabilidade()
-    # Se habilidade for menor que a soma dos dados, sege 71 se nao segue 96
+
     if ComparaHabilidade:
         input('Siga para 225:')
         decisao_225()
@@ -2241,9 +2245,11 @@ def decisao_24():
     decisao = int(input('decisao :'))
 
     if decisao == 324:
+        input("Vá para 324")
         decisao_324()
 
     elif decisao == 188:
+        input("Vá para 188")
         decisao_188()
 
     else:
@@ -2254,11 +2260,43 @@ def decisao_324():
     H324 = historia.item_324()
 
     if escolha_367_feita:
+        input("Vá para 256")
+
         decisao_256()
     
     else:
-        decisao_78()
+        input("Vá para 79")
 
+        decisao_79()
+
+def decisao_79():
+    H79 = historia.item_79()
+
+    sorte = funções.Sorte()
+
+    if sorte:
+        input("Vá para 106")
+
+        decisao_106()
+    
+    else:
+        input("Vá para 383")
+
+        decisao_383()
+
+def decisao_383():
+    H383 = historia.item_383()
+
+    input("Vá para 188")
+
+    decisao_188()
+
+def decisao_106():
+    H106 = historia.item_106()
+
+    input("Vá para 188")
+
+    decisao_188()
 
 def decisao_256():
     H256 = historia.item_256()
@@ -2550,10 +2588,59 @@ def decisao_47():
     H47 = historia.item_47()
 
     if escolha_257_feita:
+        input("Vá para 10")
         decisao_10()
     
     else:
-        decisao_197()
+        input("Vá para 335")
+        decisao_335()
+
+def decisao_335():
+    H335 = historia.item_335()
+
+    sorte = funções.Sorte()
+
+    if sorte:
+        input("Vá para 67")
+        decisao_67()
+    
+    else:
+        input("Vá para 101")
+        decisao_101()
+
+
+def decisao_67():
+    H67 = historia.item_67()
+
+    sorte = funções.Sorte()
+
+    if sorte:
+        input("Vá para 146")
+        decisao_146()
+    
+    else:
+        input("Vá para 219")
+        decisao_219()
+
+def decisao_219():
+    H219 = historia.item_219()
+
+    arte.GameOver()
+
+def decisao_146():
+    H146 = historia.item_146()
+
+    if escolha_257_feita:
+        decisao_86()
+    
+    else:
+        decisao_276()
+
+def decisao_101():
+    H101 = historia.item_101()
+
+    arte.GameOver()
+
 
 def decisao_187():
     H187 = historia.item_187()
@@ -2824,8 +2911,17 @@ def decisao_181():
         decisao_312()
     
     else:
-        input("Vá para 272")
-        decisao_272()
+        input("Vá para 45")
+        decisao_45()
+
+def decisao_45():
+    H45 = historia.item_45()
+
+    funções.PerdeEnergia(4)
+    funções.PerdeHabilidade(1)
+
+    input("Vá para 312")
+    decisao_312()
 
 def decisao_312():
     H312 = historia.item_312()
@@ -3372,11 +3468,9 @@ def decisao_137():
     decisao = int(input('decisao :'))
 
     if decisao == 220:
-        #feito
         decisao_220()
 
     elif decisao == 362:
-        #feito
         decisao_362()
       
     else:
@@ -3401,7 +3495,6 @@ def decisao_220():
 
 
 def decisao_61():
-    #F
     H61 = historia.item_61()
 
     print("Foi de comes e bebes")
@@ -3562,7 +3655,6 @@ def decisao_130():
 
         if Combate1:
             print('Você venceu os dois HOBGOBLIN! Vá para 9')
-            #CONTINUACAO NAO FEITA
             decisao_9()
 
         else:
@@ -3612,8 +3704,6 @@ def decisao_110():
 def decisao_58():
     H58 = historia.item_58()
     
-    #Compara: se soma dos dados <= habilidade vai para 80, senão vai para 246
-    #Corrigir função
     ComparaHabilidade = funções.ComparaHabilidade()
 
     if ComparaHabilidade:
@@ -3622,7 +3712,6 @@ def decisao_58():
     
     else:
         print("Vá para 246")
-        #Feito
         decisao_246()
     
     
@@ -3739,6 +3828,9 @@ def decisao_102():
 
 def decisao_251():
     H251 = historia.item_251()
+
+    global escolha_251_feita
+    escolha_251_feita = True
 
     input('Aperte ENTER para seguir para 344')
 
@@ -4097,7 +4189,294 @@ def decisao_DUVIDA124():
     arte.GameOver()
 
 
+def decisao_81():
+    H81 = historia.item_81()
 
+    decisao = int(input('decisão : '))
+
+    if decisao == 307:
+        decisao_307()
+    
+    elif decisao == 263:
+        decisao_263()
+    
+    elif decisao == 136:
+        decisao_136()
+    
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_263():
+    H263 = historia.item_263()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 153:
+        decisao_153()
+    
+    elif decisao == 74:
+        decisao_74()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_153():
+    H153 = historia.item_153()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 390:
+        decisao_390()
+    
+    elif decisao == 371:
+        decisao_371()
+    
+    elif decisao == 74:
+        decisao_74()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_371():
+    H371 = historia.item_371()
+
+    comparaHab = funções.ComparaHabilidade
+
+    if comparaHab:
+        input("Vá para 273")
+        decisao_273()
+
+    else:
+        input("Vá para 113")
+        decisao_113()
+
+def decisao_113():
+    H113 = historia.item_113()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 371:
+        decisao_371()
+    
+    elif decisao == 74:
+        decisao_74()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_273():
+    H273 = historia.item_273()
+    
+    decisao = int(input('decisão : '))
+
+    if decisao == 15:
+        decisao_15()
+    
+    elif decisao == 204:
+        decisao_204()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_204():
+    H204 = historia.item_204()
+
+    sorte = funções.Sorte()
+
+    if sorte:
+        input("Vá para 131")
+        decisao_131()
+    
+    else:
+        input("Vá para 199")
+        decisao_199()
+
+def decisao_131():
+    H131 = historia.item_131()
+
+    input("Vá para 74")
+
+    decisao_74()
+
+def decisao_15():
+    H15 = historia.item_15()
+
+    input("Vá para 74")
+
+    decisao_74()
+
+def decisao_199():
+    H199 = historia.item_199()
+
+    funções.PerdeEnergia(2)
+    funções.PerdeSorte(1)
+
+    input("Vá para 74")
+
+    decisao_74()
+
+def decisao_390():
+    H390 = historia.item_390()
+    
+    funções.GanhaStatus(1,'sorte')
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 15:
+        decisao_15()
+    
+    elif decisao == 204:
+        decisao_204()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+
+def decisao_74():
+    H74 = historia.item_74()
+
+    if escolha_251_feita: 
+        print("\n--- você possui o anel dos desejos, pode seguir para 265, se quiser ---\n")
+        decisao = int(input('decisão : '))
+
+        if decisao == 265:
+            decisao_265()
+        
+        elif decisao == 300:
+            decisao_300()
+        
+        elif decisao == 327:
+            decisao_327()
+
+        else:
+            print(opção_incorreta)
+            arte.GameOver()
+    else:
+        print("\n--- você não possui o anel dos desejos, o caminho 265 está bloqueado ---\n")
+        decisao = int(input('decisão : '))
+        
+        if decisao == 300:
+            decisao_300()
+        
+        elif decisao == 327:
+            decisao_327()
+
+        else:
+            print(opção_incorreta)
+            arte.GameOver()
+
+def decisao_265():
+    H265 = historia.item_265()
+
+    input("Vá para 122")
+    decisao_122()
+
+
+def decisao_300():
+    H300 = historia.item_300()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 141:
+        decisao_141()
+    
+    elif decisao == 327:
+        decisao_327()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_327():
+    H327 = historia.item_327()
+
+    #info do monstro 
+    nomeMonstro = 'DEMÔNIO DO ESPELHO'
+    habilidade = 8
+    energia = 6
+
+    CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
+    Combate = funções.Combate_327(nomeMonstro)
+
+    if Combate == 1:
+        print('Você perdeu uma série, vá para 8!')
+        decisao_8()
+
+    elif Combate == 2:
+        print('Você venceu o combate sem perder nenhuma série, vá para 92!')
+        decisao_92()
+    
+    else:
+        print("Você perdeu o combate!")
+        arte.GameOver()
+
+def decisao_8():
+    H8 = historia.item_8()
+
+    arte.GameOver()
+
+def decisao_92():
+    H92 = historia.item_92()
+
+    input("Vá para 122")
+    decisao_122()
+
+def decisao_307():
+    H307 = historia.item_307()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 263:
+        decisao_263()
+    
+    elif decisao == 136:
+        decisao_136()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_136():
+    H136 = historia.item_136()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 210:
+        decisao_210()
+    
+    elif decisao == 78:
+        decisao_78()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_210():
+    H210 = historia.item_210()
+
+    decisao = int(input('decisão : '))
+
+    if decisao == 27:
+        decisao_27()
+    
+    elif decisao == 78:
+        decisao_78()
+
+    else:
+        print(opção_incorreta)
+        arte.GameOver()
+
+def decisao_27():
+    H27 = historia.item_27()
+
+    input("Vá para 78")
+    decisao_78()
 
 def decisao_331():
     H331 = historia.item_331()
@@ -4979,7 +5358,6 @@ def decisao_51():
 
     if Combate:
         print('Você venceu!')
-        #feito
         decisao_9()
     else:
           print('Você perdeu o Combate!')

@@ -490,7 +490,7 @@ def Combate_254(nomeMonstro):
 
     # numero de rounds
     contadorBatalhas = 0
-    x = y = 0
+    y = 0
 
     #Valor do dano
     DanoCrítico = 4
@@ -599,15 +599,143 @@ def Combate_254(nomeMonstro):
             fuga = Fuga()
 
             if fuga:
-                x = 1
                 break
 
     #Se ele estiver vivo e decidir fugir
-    if EnergiaPersonagem > 0 and x == 1:
+    if EnergiaPersonagem > 0 and fuga:
         y = 1
     
     #Se ele continuou e sobreviveu
     elif EnergiaPersonagem > 0:
+        y = 2
+
+    #Se ele morreu
+    else: 
+        y = 0
+    
+    return y
+
+def Combate_327(nomeMonstro):
+    # numero de rounds
+    contadorBatalhas = 1
+    y = 0
+
+    #Valor do dano
+    DanoCrítico = 4
+    DanoCríticoP = 3
+    DanoComum = 2
+    DanoReduzido = 1
+
+    # fazer o load do json com Status
+    with open(caminhoFolhaDeAventuraAtual,'r') as f:
+        StatusGerais = json.load(f)
+
+    # energia do personagem / criatura
+    EnergiaPersonagem = StatusGerais['FolhaDeAventura']['energia']
+    EnergiaCriatura = StatusGerais['EncontrosMonstros'][nomeMonstro]['energia']
+
+    #Variável para controlar se criatura ganhou alguma série
+    criatura_ganhou_serie = False
+
+    # enquanto ou a energia do personagem ou da criatura diferente de 0 continua a batalha
+    while EnergiaPersonagem > 0 and EnergiaCriatura > 0: 
+
+        input('\nVamos comçar o combate? Aperte ENTER para iniciar ')
+
+        print('\n\n--------Início do Combate-----------')
+        print(f'\nRound {contadorBatalhas}')
+        print('\nPersonagem :')
+
+        #Função que determina a força do personagem
+        ForçaPersonagem = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'FolhaDeAventura')
+
+        print(f'\nForça do Personagem : 👊 {ForçaPersonagem}')
+        print('------------------------------------------------')
+            
+        print(nomeMonstro)
+
+
+        #Função que determina a força da criatura
+        ForçaCriatura = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'EncontrosMonstros',nomeMonstro)
+
+        print(f'\nForça {nomeMonstro}: 👊 {ForçaCriatura}')
+        print('------------------------------------------------')
+
+        # Se a força for maior que da criatura : criatura perde pontos
+        if ForçaPersonagem > ForçaCriatura:
+            print('Você feriu a Criatura!😀\n')
+
+            resposta = input('Você quer Testar sua sorte? (Sim/Não)').lower()
+
+            if resposta == 'sim':
+
+                testeSorte = Sorte()
+
+                if testeSorte:
+                    EnergiaCriatura -= DanoCrítico
+                    print(f'Dano Crítico! -4 pontos de energia da {nomeMonstro}| Energia atual {nomeMonstro}⚡{EnergiaCriatura}')
+                    print(f'Energia do Personagem : ⚡{EnergiaPersonagem}')
+                else:
+                    EnergiaCriatura -= DanoReduzido
+                    print(f'Dano reduzido! -1 ponto de energia | Energia atual {nomeMonstro}⚡{EnergiaCriatura}')
+                    print(f'Energia do Personagem : ⚡{EnergiaPersonagem}')
+
+            else:
+                 EnergiaCriatura -= DanoComum
+                 print(f' {nomeMonstro} sofreu -2 pontos de energia | Energia atual⚡{EnergiaCriatura}')
+                 print(f'Energia do Personagem : ⚡{EnergiaPersonagem}')
+
+            
+        # se a força for menor que da criatura, personagem perde pontos
+        elif ForçaPersonagem < ForçaCriatura:
+            print('Você foi ferido pela Criatura!😨')
+
+            resposta = input('Você quer Testar sua sorte para ter chance de reduzir o dano? (Sim/Não)').lower()
+
+
+            if resposta == 'sim':
+                testeSorte = Sorte()
+
+
+                if testeSorte:
+                    EnergiaPersonagem -= DanoReduzido
+                    print(f'Minimizou o ferimento! -1 pontos de energia do personagem | Energia atual⚡{EnergiaPersonagem}')
+                    print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
+                else:
+                    EnergiaPersonagem -= DanoCríticoP
+                    print(f'Ferimento grave! -3 ponto de energia | Energia atual⚡{EnergiaPersonagem}')
+                    print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
+
+            else:
+                EnergiaPersonagem -= DanoComum
+                print(f' Você sofreu -2 pontos de energia | Energia atual⚡{EnergiaPersonagem}')
+                print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
+
+
+             # mando para json energia do personagem atualizada
+            with open(caminhoFolhaDeAventuraAtual,'w') as f:
+                 StatusGerais['FolhaDeAventura']['energia'] = EnergiaPersonagem
+                 json.dump(StatusGerais,f)
+
+            criatura_ganhou_serie = True
+            break
+
+            
+        # se for igual, nao acontece nada
+        elif ForçaPersonagem == ForçaCriatura:
+            print('Golpé Neutralizado, forças iguais!')
+            print('Que começe a próxima série de ataque!')
+
+        print('-------------------------------------------')
+
+        contadorBatalhas +=1
+
+    #Se ele não perdeu nenhuma série
+    if EnergiaPersonagem > 0:
+        y = 1
+    
+    #Se ele predeu uma série, mas continua vivo
+    elif EnergiaPersonagem > 0 and criatura_ganhou_serie:
         y = 2
 
     #Se ele morreu
