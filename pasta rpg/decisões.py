@@ -5,7 +5,7 @@ import arte
 import json
 
 dado=0
-opção_incorreta = print('opção incorreta, você perdeu!')
+opção_incorreta ='opção inválida, você perdeu!'
 
 escolha_171_feita = escolha_251_feita = escolha_330_feita = escolha_269_feita = escolha_389_feita = escolha_367_feita = escolha_345_feita = escolha_257_feita = escolha_162_feita = escolha_201_feita = escolha_75_feita = escolha_94_feita = False
 
@@ -48,7 +48,7 @@ def decisao_66():
 def decisao_147():
     H147 = historia.item_147()
 
-    funções.GanhaStatus(1,'energia')
+    funções.GanhaStatus(1,'energia','⚡')
 
     input("Vá para 182")
     decisao_182()
@@ -3558,6 +3558,7 @@ def decisao_387():
 
 def decisao_114():
     H114 = historia.item_114()
+    funções.Provisoes()
     decisao = int(input('decisao :'))
 
     if decisao == 336:
@@ -4323,7 +4324,7 @@ def decisao_199():
 def decisao_390():
     H390 = historia.item_390()
     
-    funções.GanhaStatus(1,'sorte')
+    funções.GanhaStatus(1,'sorte','🍀')
 
     decisao = int(input('decisão : '))
 
@@ -4744,8 +4745,8 @@ def decisao_396():
 
     if decisao == 151:
         decisao_151()
-    elif decisao == 134:
-        decisao_134()
+    elif decisao == 34:
+        decisao_34()
     else:
         print(opção_incorreta)
         arte.GameOver()
