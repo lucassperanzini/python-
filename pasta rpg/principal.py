@@ -17,6 +17,7 @@ print(f'''       {print(arte.BemVindo())}
         
             \n''')
 
+
 aceita_desafio = input('Você quer desafiar a morte? ').lower()
 
 
@@ -26,31 +27,6 @@ if aceita_desafio =='sim':
 
     decisões.decisao_387()
 
-    
-
-   
-   
-
-
-
 
 else:
     print('Fracassado!! está com medinho?')
-
-
-
-
-
-
-
-
-
-    # CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
-
-    # Combate = funções.Combate(nomeMonstro)
-
-    # Sorte = funções.Sorte()
-
-
-
-
