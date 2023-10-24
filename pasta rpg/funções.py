@@ -216,7 +216,7 @@ def Sorte():
     else:
 
         print('Vamos ver se você tem sorte ou não!!')
-        print(f'Sorte Atual: {Sorte}')
+        print(f'Sorte Atual: {sorte}')
 
         print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
 
@@ -976,23 +976,27 @@ def Provisoes():
     provisao =  StatusGerais['FolhaDeAventura']['provisoes']
     energia =  StatusGerais['FolhaDeAventura']['energia']
 
-
-    print(f'Provisoes  : {provisao}')
-    resposta = input(f'Quer usar provisão uma das {provisao} para recuperar 4 de energia? (Sim/Não)').lower()
-
-    if resposta == 'sim':
-        energia += 4
-        provisao -= 1
-        print(f'Provisoes atuais {provisao}')
+    if provisao <= 0:
+        print('Você não te mais provisões')
     else:
-        print('Provisão nao ultilizada.')
 
 
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-        StatusGerais['FolhaDeAventura']['provisoes'] = provisao
-        StatusGerais['FolhaDeAventura']['energia'] = energia
+        print(f'Provisoes  : {provisao}')
+        print(f'Energia Atual ⚡{energia}')
+        resposta = input(f'Quer usar provisão uma das {provisao} para recuperar 4 de energia? (Sim/Não)').lower()
 
-        json.dump(StatusGerais,f)
+        if resposta == 'sim':
+            GanhaStatus(4,'energia','⚡')
+            provisao -= 1
+            print(f'Provisoes atuais {provisao}\n')
+        else:
+            print('Provisão nao ultilizada.\n')
+
+
+        with open(caminhoFolhaDeAventuraAtual,'w') as f:
+            StatusGerais['FolhaDeAventura']['provisoes'] = provisao
+
+            json.dump(StatusGerais,f)
 
 
 
