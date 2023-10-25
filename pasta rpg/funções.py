@@ -772,6 +772,8 @@ def PerdeHabilidade(valor):
 
 
 def GanhaStatus(valor,elemento,emoji):
+
+    #PROBLEMA NA FUNÇÃO STATUS
     with open(caminhoFolhaDeAventuraAtual,'r') as f:
         StatusGerais = json.load(f) 
                     
@@ -792,7 +794,10 @@ def GanhaStatus(valor,elemento,emoji):
         print(f'{elemento} ultrapassou valor Inicial.')
         ValorElemento = Elementoinicial
         
-    print(f'{elemento} atual {emoji} ',ValorElemento)
+    
+    StatusGerais['FolhaDeAventura'][elemento] = ValorElemento
+    print(f'{elemento} atual {emoji} ', ValorElemento)
+    
 
     with open(caminhoFolhaDeAventuraAtual,'w') as f:
         json.dump(StatusGerais,f)
@@ -983,6 +988,8 @@ def Provisoes():
 
         print(f'Provisoes  : {provisao}')
         print(f'Energia Atual ⚡{energia}')
+
+
         resposta = input(f'Quer usar provisão uma das {provisao} para recuperar 4 de energia? (Sim/Não)').lower()
 
         if resposta == 'sim':
