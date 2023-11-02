@@ -247,6 +247,8 @@ def Sorte():
         #Retorna True ou False se ele teve sorte
         return tiveSorte
     
+    
+    
 def Combate(nomeMonstro):
 
     # numero de rounds
