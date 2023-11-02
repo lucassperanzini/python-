@@ -1,19 +1,16 @@
 import jogaDADOS
-import json
 import arte
-
 
 dado = 0
 
-
-caminhoFolhaDeAventura = 'D:/DadosPersonagemInicial.json'
-caminhoFolhaDeAventuraAtual = 'D:/DadosPersonagemAtual.json'
-
-
-    
+# Dicionários que mantêm o estado do personagem e das criaturas
+StatusIniciais = {}
+StatusAtuais = {}
 
 
-#Função para criar os status do personagem
+
+
+
 def CriarPersonagem():
 
     def funcHabilidade():
@@ -61,6 +58,8 @@ def CriarPersonagem():
 
 
     # dicionario que guarda Status do personagem
+    global StatusIniciais
+
     StatusIniciais = {
 
         'FolhaDeAventura':{
@@ -72,17 +71,23 @@ def CriarPersonagem():
             
         }
         
+    }
+    global StatusAtuais
 
+    StatusAtuais = {
+
+        'FolhaDeAventura':{
+            'habilidade': funcHabilidade(),
+            'energia':funcEnergia(),
+            'sorte':funcSorte(),
+            'provisoes':10,
+            TipoPoção:1
+            
+        }
+        
     }
 
-    #mandando o dicionario com o status para json imutável(inicial)
-    with open(caminhoFolhaDeAventura,'w') as f:
-        json.dump(StatusIniciais,f)
 
-    # mandando dicionario com status inicial que mudará durante a partida
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-        json.dump(StatusIniciais,f)
-        
 
     # print das informações do dicionario
     print('\n-------------------INFORMAÇÕES INICIAIS--------------------------')
@@ -101,59 +106,47 @@ def CriarPersonagem():
 
 --------------------------------------------------------------------------------
 ''')
+
+
+
+
+# Função para criar uma criatura
+def criarCriatura(habilidade, energia, nomeMonstro):
+    global StatusAtuais
+
+    if 'EncontrosMonstros' not in StatusAtuais:
+        StatusAtuais['EncontrosMonstros'] = {}
     
+    StatusAtuais['EncontrosMonstros'][nomeMonstro] = {
+        'habilidade': habilidade,
+        'energia': energia,
+        'energiaAtual':energia
+    }
 
+    print(StatusAtuais)
+
+
+
+# Função para medir força de ataque
+def ForçaDeAtaque(nomeMonstro=None):
+    Jogada = jogaDADOS.jogaDados(dado)
+    Jogada2 = jogaDADOS.jogaDados(dado)
+
+    print(f'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
+
+    global StatusAtuais
     
+    if nomeMonstro:
+        força = StatusAtuais['EncontrosMonstros'][nomeMonstro]['habilidade'] + (Jogada + Jogada2)
+    else:
+        força = StatusAtuais['FolhaDeAventura']['habilidade'] + (Jogada + Jogada2)
+
+    return força
+
+# Aqui você pode atualizar as funções Fuga, Sorte e Combate seguindo o mesmo princípio
+# de manter o estado do jogo em variáveis do Python ao invés de usar arquivos JSON.
 
 
-def criarCriatura(habilidade,energia,nomeMonstro):
-
-    #LOAD em todo o json personagem/ vai cria criatura
-    with open(caminhoFolhaDeAventuraAtual, 'r') as f:
-         StatusIniciaisCriatura = json.load(f)
-
-    # SE nao encontra a chave dentro do json, vai cria uma chave EncontrosMonstros
-    if 'EncontrosMonstros' not in StatusIniciaisCriatura:
-         StatusIniciaisCriatura['EncontrosMonstros'] = {}
-    
-
-    # Dentro da chave EncontrosMonstros vou criar a key 'nome monstro' e add suas caractertisticas
-    StatusIniciaisCriatura['EncontrosMonstros'][nomeMonstro] = {
-
-            'habilidade':habilidade ,
-            'energia':energia,
-           
-
-         }
-    
-    
-
-    # Enviando para folha de aventura as informações da criatura
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-         json.dump(StatusIniciaisCriatura,f)
-
-
-#funcao para medir força de ataque de acordo com a habilidade, verificando quem tem mais força
-def ForçaDeAtaque(Caminho,setor,nomeMonstro=None):
-        
-        Jogada = jogaDADOS.jogaDados(dado)
-        Jogada2 = jogaDADOS.jogaDados(dado)
-
-
-        print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
-
-
-        with open(Caminho,'r') as f:
-          Status = json.load(f)
-
-        #verificacao se quando eu chamar funcao tiver nome monstro como parametro a força sera da criatura
-        #se nao a funcao sera para o personagem
-        if nomeMonstro:
-            força = Status[setor][nomeMonstro]['habilidade'] + (Jogada + Jogada2)
-        else:
-            força = Status[setor]['habilidade'] + (Jogada + Jogada2)
-
-        return força
 
 
 
@@ -181,13 +174,13 @@ def Fuga():
             else:
                 print("hahaha parece que a sorte não está do seu lado\nPerdeu 2 de Energia!!")
 
-                PerdeEnergia(2)
+                PerdeStatus(2,'energia',"⚡")
 
         
         else:
             print("Fugiu do combate, medroso!!\n Perdeu 2 de Energia!!")
 
-            PerdeEnergia(2)
+            PerdeStatus(2,'energia',"⚡")
 
         
         return True
@@ -197,19 +190,16 @@ def Fuga():
     
 
 
-
 def Sorte():
     tiveSorte = False
 
-    #Jogada dados
     Jogada = jogaDADOS.jogaDados(dado)
     Jogada2 = jogaDADOS.jogaDados(dado)
 
-    #Load do json com todos Status
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f)
+ 
+    global StatusAtuais
 
-    sorte = StatusGerais['FolhaDeAventura']['sorte']
+    sorte = StatusAtuais['FolhaDeAventura']['sorte']
 
     if sorte <= 0:
         print('Acabou sua Sorte')
@@ -233,20 +223,18 @@ def Sorte():
            
 
         sorte -= 1
-      
-  
 
-        with open(caminhoFolhaDeAventuraAtual,'w') as f:
-            StatusGerais['FolhaDeAventura']['sorte'] = sorte
-            json.dump(StatusGerais,f)
-
-            
+           
         print(f'\nComo usou o recurso Sorte perde 1 ponto | Sorte ATUAL: {sorte} ')
 
+        StatusAtuais['FolhaDeAventura']['sorte'] = sorte
 
         #Retorna True ou False se ele teve sorte
         return tiveSorte
     
+
+
+
 def Combate(nomeMonstro):
 
     # numero de rounds
@@ -258,13 +246,11 @@ def Combate(nomeMonstro):
     DanoComum = 2
     DanoReduzido = 1
 
-    # fazer o load do json com Status
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f)
-
+    global StatusAtuais
+    
     # energia do personagem / criatura
-    EnergiaPersonagem = StatusGerais['FolhaDeAventura']['energia']
-    EnergiaCriatura = StatusGerais['EncontrosMonstros'][nomeMonstro]['energia']
+    EnergiaPersonagem = StatusAtuais['FolhaDeAventura']['energia']
+    EnergiaCriatura = StatusAtuais['EncontrosMonstros'][nomeMonstro]['energiaAtual']
 
 
     # enquanto ou a energia do personagem ou da criatura diferente de 0 continua a batalha
@@ -277,7 +263,7 @@ def Combate(nomeMonstro):
         print('\nPersonagem :')
 
         #Função que determina a força do personagem
-        ForçaPersonagem = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'FolhaDeAventura')
+        ForçaPersonagem = ForçaDeAtaque()
 
         print(f'\nForça do Personagem : 👊 {ForçaPersonagem}')
         print('------------------------------------------------')
@@ -285,7 +271,7 @@ def Combate(nomeMonstro):
         print(nomeMonstro)
 
         #Função que determina a força da criatura
-        ForçaCriatura = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'EncontrosMonstros',nomeMonstro)
+        ForçaCriatura = ForçaDeAtaque(nomeMonstro)
 
         print(f'\nForça {nomeMonstro}: 👊 {ForçaCriatura}')
         print('------------------------------------------------')
@@ -315,10 +301,6 @@ def Combate(nomeMonstro):
                  print(f'Energia do Personagem : ⚡{EnergiaPersonagem}')
 
             
-            
-
-
-
         # se a força for menor que da criatura, personagem perde pontos
         elif ForçaPersonagem < ForçaCriatura:
             print('Você foi ferido pela Criatura!😨')
@@ -345,11 +327,6 @@ def Combate(nomeMonstro):
                 print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
 
 
-             # mando para json energia do personagem atualizada
-            with open(caminhoFolhaDeAventuraAtual,'w') as f:
-                 StatusGerais['FolhaDeAventura']['energia'] = EnergiaPersonagem
-                 json.dump(StatusGerais,f)
-
            
             
         # se for igual, nao acontece nada
@@ -361,6 +338,11 @@ def Combate(nomeMonstro):
 
         contadorBatalhas +=1
 
+        StatusAtuais['FolhaDeAventura']['energia'] = EnergiaPersonagem
+
+        print(StatusAtuais)
+
+
 
     if EnergiaPersonagem > EnergiaCriatura:
          return True
@@ -368,14 +350,202 @@ def Combate(nomeMonstro):
          return False
 
 
-
-
-
-
-          
 ############# Funções específicas da história ###############################
 
-        
+def GanhaStatus(valor,elemento,emoji):
+
+    #PROBLEMA NA FUNÇÃO STATUS    
+    global StatusAtuais, StatusIniciais
+
+    ValorElemento = StatusAtuais['FolhaDeAventura'][elemento]
+
+    print(f'\n{elemento} anterior {emoji}',ValorElemento)
+
+    
+    Elementoinicial =  StatusIniciais['FolhaDeAventura'][elemento]
+    
+
+    if ValorElemento + valor > Elementoinicial:
+        print(f'{elemento} ultrapassou valor Inicial.')
+        ValorElemento = Elementoinicial
+
+    else:
+        print(f'{elemento} aumentou em {valor}.')
+        ValorElemento += valor
+    
+    StatusAtuais['FolhaDeAventura'][elemento] = ValorElemento 
+    
+    print(f'{elemento} atual {emoji} ', ValorElemento)
+
+
+
+
+def PerdeStatus(valor,elemento,emoji):
+
+    #PROBLEMA NA FUNÇÃO STATUS    
+    global StatusAtuais, StatusIniciais
+
+    ValorElemento = StatusAtuais['FolhaDeAventura'][elemento]
+
+    print(f'\n{elemento} anterior {emoji}',ValorElemento)
+    
+
+    if elemento == "energia" and ValorElemento - valor <= 0:
+        print("\n---Sua energia acabou!!--- \nSua aventura termina aqui!")
+        arte.GameOver()
+        exit()
+
+    else:
+        print(f'{elemento} diminuiu em {valor}.')
+        ValorElemento -= valor
+    
+    StatusAtuais['FolhaDeAventura'][elemento] = ValorElemento 
+    
+    print(f'{elemento} atual {emoji} ', ValorElemento)
+
+
+
+def farpasMenosEnergia():
+
+    global StatusAtuais
+           
+    energia = StatusAtuais['FolhaDeAventura']['energia']
+
+    print(f"Você estava com {energia}⚡ de energia ! ")
+
+
+    Jogada = jogaDADOS.jogaDados(dado)
+    Jogada2 = jogaDADOS.jogaDados(dado)
+
+    somaDados = Jogada + Jogada2
+
+
+    print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
+    
+    print(f'A soma dos Dados é {somaDados}')
+
+    EnergiaPerdida = somaDados
+
+    energia = (energia - EnergiaPerdida)
+
+    print(f'Agora Você perdeu {EnergiaPerdida} de energia⚡')
+    print(f'Engergia Atual: {energia} ⚡')
+
+    StatusAtuais['FolhaDeAventura']['energia'] = energia
+
+    if energia > 0:
+        return True
+    else:
+        return False
+
+
+def ComparaHabilidade():
+
+    global StatusAtuais
+
+    habilidade = StatusAtuais['FolhaDeAventura']['habilidade']
+
+    Jogada =jogaDADOS.jogaDados(dado)
+    Jogada2 = jogaDADOS.jogaDados(dado)
+                    
+    print(f"Você esta com 👊 {habilidade} de habilidade! ")
+
+    print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
+
+    somaDados = Jogada + Jogada2
+
+    if somaDados <= habilidade:
+        print(f'soma de dados é : {somaDados} que é menor que sua habilidade : 👊 {habilidade} ')
+        return True
+    else:
+        print(f'soma de dados maior que sua habilidade : 👊 {habilidade} ')
+        return False
+
+
+def PerdeEnergiaNoDado(multiplicador=None,maisum=None):
+    Jogada = jogaDADOS.jogaDados(dado)
+    
+    global StatusAtuais
+
+    print(F'\n🎲 : {Jogada}')
+                    
+    #perde energia
+    energia = StatusAtuais['FolhaDeAventura']['energia']
+
+    print('Energia anterior ⚡',energia)
+
+    if multiplicador:
+        energia -= (Jogada * multiplicador)
+    elif maisum:
+         energia -= Jogada + 1 
+    else:
+        energia -= Jogada
+
+    StatusAtuais['FolhaDeAventura']['energia'] = energia
+
+    print('Energia atual ⚡',energia)
+
+    if energia <= 0:
+        return False
+    else:
+        return True
+
+
+def ComparaHabilidadeEEnergia():
+    jogada = jogaDADOS.jogaDados(dado)
+    jogada2 = jogaDADOS.jogaDados(dado)
+
+    global StatusAtuais
+
+    print(F'\n🎲 : {jogada}')
+    print(F'\n🎲 : {jogada2}\n')
+
+    total = jogada + jogada2
+    
+    energia = StatusAtuais['FolhaDeAventura']['energia']
+    habilidade = StatusAtuais['FolhaDeAventura']['habilidade']
+
+    print(f'Energia Atual:⚡{energia}')
+    print(f'Habilidade Atual: 👊 {habilidade}')
+    
+    print(f'Total dos 🎲 Dados  : {total}  ')
+
+    if total <= energia and total <= habilidade:
+        return True
+    
+    else:
+        return False
+
+
+def Provisoes():
+    global StatusAtuais
+
+    provisao = StatusAtuais['FolhaDeAventura']['provisoes']
+    energia = StatusAtuais['FolhaDeAventura']['energia']
+
+    if provisao <= 0:
+        print('Você não te mais provisões')
+    else:
+        print(f'\nProvisoes : {provisao}')
+        print(f'Energia Atual ⚡{energia}')
+
+        resposta = input(f'Quer usar provisão uma das {provisao} para recuperar 4 de energia? (Sim/Não)').lower()
+
+        if resposta == 'sim':
+            GanhaStatus(4,'energia','⚡')
+            provisao -= 1                
+            StatusAtuais['FolhaDeAventura']['provisoes'] = provisao
+            energia = StatusAtuais['FolhaDeAventura']['energia']
+            print(f'Provisoes atuais {provisao}\n')
+
+        else:
+            print('Provisão nao ultilizada.\n')
+
+
+
+
+################################################################################################
+#################################################################################################
 def Combate_294(nomeMonstro):
 
     # numero de rounds
@@ -388,12 +558,14 @@ def Combate_294(nomeMonstro):
     DanoReduzido = 1
 
     # fazer o load do json com Status
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f)
+    # with open(caminhoFolhaDeAventuraAtual,'r') as f:
+    #     StatusGerais = json.load(f)
+
+    global StatusAtuais
 
     # energia do personagem / criatura
-    EnergiaPersonagem = StatusGerais['FolhaDeAventura']['energia']
-    EnergiaCriatura = StatusGerais['EncontrosMonstros'][nomeMonstro]['energia']
+    EnergiaPersonagem = StatusAtuais['FolhaDeAventura']['energia']
+    EnergiaCriatura = StatusAtuais['EncontrosMonstros'][nomeMonstro]['energiaAtual']
 
 
     # enquanto ou a energia do personagem ou da criatura diferente de 0 continua a batalha
@@ -406,7 +578,7 @@ def Combate_294(nomeMonstro):
         print('\nPersonagem :')
 
         #Função que determina a força do personagem
-        ForçaPersonagem = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'FolhaDeAventura')
+        ForçaPersonagem = ForçaDeAtaque()
 
         print(f'\nForça do Personagem : 👊 {ForçaPersonagem}')
         print('------------------------------------------------')
@@ -414,7 +586,7 @@ def Combate_294(nomeMonstro):
         print(nomeMonstro)
 
         #Função que determina a força da criatura
-        ForçaCriatura = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'EncontrosMonstros',nomeMonstro)
+        ForçaCriatura = ForçaDeAtaque(nomeMonstro)
 
         print(f'\nForça {nomeMonstro}: 👊 {ForçaCriatura}')
         print('------------------------------------------------')
@@ -472,10 +644,8 @@ def Combate_294(nomeMonstro):
                 print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
 
 
-             # mando para json energia do personagem atualizada
-            with open(caminhoFolhaDeAventuraAtual,'w') as f:
-                 StatusGerais['FolhaDeAventura']['energia'] = EnergiaPersonagem
-                 json.dump(StatusGerais,f)
+            # mando para json energia do personagem atualizada
+            StatusAtuais['FolhaDeAventura']['energia'] = EnergiaPersonagem
 
            
             
@@ -505,13 +675,12 @@ def Combate_254(nomeMonstro):
     DanoComum = 2
     DanoReduzido = 1
 
-    # fazer o load do json com Status
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f)
+
+    global StatusAtuais
 
     # energia do personagem / criatura
-    EnergiaPersonagem = StatusGerais['FolhaDeAventura']['energia']
-    EnergiaCriatura = StatusGerais['EncontrosMonstros'][nomeMonstro]['energia']
+    EnergiaPersonagem = StatusAtuais['FolhaDeAventura']['energia']
+    EnergiaCriatura = StatusAtuais['EncontrosMonstros'][nomeMonstro]['energiaAtual']
 
 
     # enquanto ou a energia do personagem ou da criatura diferente de 0 continua a batalha
@@ -586,10 +755,8 @@ def Combate_254(nomeMonstro):
                 print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
 
 
-             # mando para json energia do personagem atualizada
-            with open(caminhoFolhaDeAventuraAtual,'w') as f:
-                 StatusGerais['FolhaDeAventura']['energia'] = EnergiaPersonagem
-                 json.dump(StatusGerais,f)
+            # mando para json energia do personagem atualizada
+            StatusAtuais['FolhaDeAventura']['energia'] = EnergiaPersonagem
 
            
             
@@ -750,260 +917,6 @@ def Combate_327(nomeMonstro):
         y = 0
     
     return y
-
-
-def PerdeHabilidade(valor):
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f) 
-                    
-    #perde habilidade
-    habilidade = StatusGerais['FolhaDeAventura']['habilidade']
-
-    print(f'Habilidade anterior 👊{habilidade}')
-
-    habilidade -= valor
-
-    StatusGerais['FolhaDeAventura']['habilidade'] = habilidade
-
-    print(f'Habilidade atual 👊{habilidade}')
-
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-        json.dump(StatusGerais,f)
-
-
-def GanhaStatus(valor,elemento,emoji):
-
-    #PROBLEMA NA FUNÇÃO STATUS
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f) 
-                    
-    ValorElemento = StatusGerais['FolhaDeAventura'][elemento]
-
-    print(f'\n{elemento} anterior {emoji}',ValorElemento)
-
-    ValorElemento += valor
-
-    StatusGerais['FolhaDeAventura'][elemento] = ValorElemento
-
-    with open(caminhoFolhaDeAventura,'r') as f:
-        StatusInicias = json.load(f)
-        Elementoinicial =  StatusInicias['FolhaDeAventura'][elemento]
-    
-
-    if ValorElemento > Elementoinicial :
-        print(f'{elemento} ultrapassou valor Inicial.')
-        ValorElemento = Elementoinicial
-        
-    
-    StatusGerais['FolhaDeAventura'][elemento] = ValorElemento
-    print(f'{elemento} atual {emoji} ', ValorElemento)
-    
-
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-        json.dump(StatusGerais,f)
-
-
-
-
-def PerdeEnergia(valor):
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f) 
-                    
-    #perde energia
-    energia = StatusGerais['FolhaDeAventura']['energia']
-
-    print('Energia anterior ⚡',energia)
-
-    energia -= valor
-
-    StatusGerais['FolhaDeAventura']['energia'] = energia
-
-    print('Energia atual ⚡',energia)
-
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-        json.dump(StatusGerais,f)
-
-    if energia <= 0:
-        print("\n---Sua energia acabou!!--- \nSua aventura termina aqui!")
-        arte.GameOver()
-        exit()
-
-
-   
-def PerdeSorte(valor):
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f) 
-                    
-    #Pegando do Json sorte
-    sorte = StatusGerais['FolhaDeAventura']['sorte']
-
-    print(f'Sorte anterior :🍀 {sorte}')
-
-    sorte -= valor
-
-    StatusGerais['FolhaDeAventura']['sorte'] = sorte
-
-    print(f'Sorte atual 🍀 {sorte}')
-
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-        json.dump(StatusGerais,f)
-
-
-
-def farpasMenosEnergia():
-
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f) 
-                    
-    energia = StatusGerais['FolhaDeAventura']['energia']
-
-    print(f"Você estava com {energia}⚡ de energia ! ")
-
-
-    Jogada =jogaDADOS.jogaDados(dado)
-    Jogada2 = jogaDADOS.jogaDados(dado)
-
-    somaDados = Jogada + Jogada2
-
-
-    print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
-    
-    print(f'A soma dos Dados é {somaDados}')
-
-    EnergiaPerdida = somaDados
-
-    energia = (energia - EnergiaPerdida)
-
-    print(f'Agora Você perdeu {EnergiaPerdida} de energia⚡')
-    print(f'Engergia Atual: {energia} ⚡')
-
-    StatusGerais['FolhaDeAventura']['energia'] = energia
-
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-        json.dump(StatusGerais,f)
-
-    if energia > 0:
-        return True
-    else:
-        return False
-
-
-def ComparaHabilidade():
-
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f) 
-
-    habilidade = StatusGerais['FolhaDeAventura']['habilidade']
-
-    Jogada =jogaDADOS.jogaDados(dado)
-    Jogada2 = jogaDADOS.jogaDados(dado)
-                    
-
-    print(f"Você esta com 👊 {habilidade} de habilidade! ")
-
-    print(F'\n🎲 : {Jogada}\n\n🎲 : {Jogada2}')
-
-    somaDados = Jogada + Jogada2
-
-    if somaDados <= habilidade:
-        print(f'soma de dados é : {somaDados} que é menor que sua habilidade : 👊 {habilidade} ')
-        return True
-    else:
-        print(f'soma de dados maior que sua habilidade : 👊 {habilidade} ')
-        return False
-   
-
-
-def PerdeEnergiaNoDado(multiplicador=None,maisum=None):
-    Jogada = jogaDADOS.jogaDados(dado)
-
-    print(F'\n🎲 : {Jogada}')
-
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f)
-                    
-    #perde energia
-    energia = StatusGerais['FolhaDeAventura']['energia']
-
-    print('Energia anterior ⚡',energia)
-
-    if multiplicador:
-        energia -= (Jogada * multiplicador)
-    elif maisum:
-         energia -= Jogada + 1 
-    else:
-        energia -= Jogada
-
-    StatusGerais['FolhaDeAventura']['energia'] = energia
-
-    print('Energia atual ⚡',energia)
-
-    with open(caminhoFolhaDeAventuraAtual,'w') as f:
-        json.dump(StatusGerais,f)
-
-    if energia <= 0:
-        return False
-    else:
-        return True
-    
-
-def ComparaHabilidadeEEnergia():
-    jogada = jogaDADOS.jogaDados(dado)
-    jogada2 = jogaDADOS.jogaDados(dado)
-
-    print(F'\n🎲 : {jogada}')
-    print(F'\n🎲 : {jogada2}\n')
-
-    total = jogada + jogada2
-
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f)
-    
-    energia = StatusGerais['FolhaDeAventura']['energia']
-    habilidade = StatusGerais['FolhaDeAventura']['habilidade']
-
-    print(f'Energia Atual:⚡{energia}')
-    print(f'Habilidade Atual: 👊 {habilidade}')
-    
-    print(f'Total dos 🎲 Dados  : {total}  ')
-
-    if total <= energia and total <= habilidade:
-        return True
-    
-    else:
-        return False
-    
-
-def Provisoes():
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f)
-
-    provisao =  StatusGerais['FolhaDeAventura']['provisoes']
-    energia =  StatusGerais['FolhaDeAventura']['energia']
-
-    if provisao <= 0:
-        print('Você não te mais provisões')
-    else:
-
-
-        print(f'Provisoes  : {provisao}')
-        print(f'Energia Atual ⚡{energia}')
-
-
-        resposta = input(f'Quer usar provisão uma das {provisao} para recuperar 4 de energia? (Sim/Não)').lower()
-
-        if resposta == 'sim':
-            GanhaStatus(4,'energia','⚡')
-            provisao -= 1
-            print(f'Provisoes atuais {provisao}\n')
-        else:
-            print('Provisão nao ultilizada.\n')
-
-
-        with open(caminhoFolhaDeAventuraAtual,'w') as f:
-            StatusGerais['FolhaDeAventura']['provisoes'] = provisao
-
-            json.dump(StatusGerais,f)
 
 
 

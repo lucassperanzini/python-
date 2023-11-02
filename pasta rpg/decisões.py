@@ -2,7 +2,7 @@ import historia
 import funções
 import jogaDADOS
 import arte
-import json
+
 
 dado=0
 opção_incorreta ='opção inválida, você perdeu!'
@@ -16,6 +16,7 @@ escolha_171_feita = escolha_251_feita = escolha_330_feita = escolha_269_feita = 
 def decisao_1():
     H1 = historia.item_1()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao = int(input('decisão :'))
 
     if decisao == 270:
@@ -33,6 +34,7 @@ def decisao_1():
 def decisao_66():
     H66 = historia.item_66()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao = int(input('decisao :'))
 
     if decisao == 293:
@@ -51,6 +53,7 @@ def decisao_147():
     H147 = historia.item_147()
     funções.GanhaStatus(1,'energia','⚡')
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 182")
     decisao_182()
@@ -58,6 +61,7 @@ def decisao_147():
 def decisao_270():
     H270 = historia.item_270()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     
     decisao_66()
 
@@ -66,6 +70,7 @@ def decisao_270():
 def decisao_293():
     H293 = historia.item_293()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao = int(input('decisao :'))
 
     if decisao == 137:
@@ -82,6 +87,7 @@ def decisao_293():
 def decisao_119():
     H119 = historia.item_119()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -99,6 +105,7 @@ def decisao_119():
 def decisao_56():
     H56 = historia.item_56()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -115,6 +122,7 @@ def decisao_373():
 
     H373 = historia.item_373()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Aperte ENTER para seguir para 13')
 
@@ -125,8 +133,9 @@ def decisao_215():
 
     H215 = historia.item_215()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(2)
+    funções.PerdeStatus(2,'energia','⚡')
 
     
     input('Aperte ENTER para seguir para 13')
@@ -137,6 +146,7 @@ def decisao_13():
 
     H13 = historia.item_13()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -154,6 +164,7 @@ def decisao_141():
 
     H141 = historia.item_141()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     
     ComparaHabilidade = funções.ComparaHabilidade()
@@ -170,6 +181,7 @@ def decisao_182():
 
     H182 = historia.item_182()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -188,6 +200,7 @@ def decisao_25():
 
     H25 = historia.item_25()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input(' Aperte ENTER para seguir para 197')
 
@@ -198,6 +211,7 @@ def decisao_242():
 
     H242 = historia.item_242()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     ComparaHabilidade = funções.ComparaHabilidade()
 
@@ -212,6 +226,7 @@ def decisao_48():
 
     H48 = historia.item_48()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Siga para 197')
 
@@ -221,6 +236,7 @@ def decisao_366():
 
     H366 = historia.item_366()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
@@ -229,6 +245,7 @@ def decisao_197():
 
     H197 = historia.item_197()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -253,11 +270,12 @@ def decisao_171():
 
     H171 = historia.item_171()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     global escolha_171_feita
     escolha_171_feita = True
 
-    funções.PerdeEnergia(4)
+    funções.PerdeStatus(4,'energia','⚡')
 
     input('Siga para 326')
 
@@ -268,6 +286,7 @@ def decisao_156():
 
     H156 = historia.item_156()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -288,6 +307,7 @@ def decisao_208():
 
     H208 = historia.item_208()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Siga para 326')
 
@@ -298,6 +318,7 @@ def decisao_326():
 
     H326 = historia.item_326()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     
     ValorDado = jogaDADOS.jogaDados(dado)
 
@@ -315,7 +336,7 @@ def decisao_91():
 
     H91 = historia.item_91()
 
-    PerdeHabilidade = funções.PerdeHabilidade(4)
+    PerdeHabilidade = funções.PerdeStatus(4,'habilidade','👊')
 
 
     #info do monstro 1
@@ -353,6 +374,7 @@ def decisao_257():
 
     H257 = historia.item_257()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     global escolha_257_feita
     escolha_257_feita = True
@@ -366,6 +388,7 @@ def decisao_164():
 
     H164 = historia.item_164()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -384,6 +407,7 @@ def decisao_83():
 
     H83 = historia.item_83()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Volte para 37')
 
@@ -394,6 +418,7 @@ def decisao_299():
 
     H299 = historia.item_299()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -414,6 +439,7 @@ def decisao_126():
 
     H126 = historia.item_126()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     
     decisao = int(input('decisao :'))
@@ -436,6 +462,7 @@ def decisao_226():
 
     H226 = historia.item_226()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     GanhaEnergia = funções.GanhaStatus(3,'energia','⚡')
 
@@ -457,6 +484,7 @@ def decisao_41():
 
     H41 = historia.item_41()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -478,6 +506,7 @@ def decisao_98():
 
     H98 = historia.item_98()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     testeSorte = funções.Sorte()
 
@@ -494,6 +523,7 @@ def decisao_105():
 
     H105 = historia.item_105()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -511,8 +541,9 @@ def decisao_105():
     H235 = historia.item_235()
 def decisao_235():
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(2)
+    funções.PerdeStatus(2,'energia', '⚡')
 
     input('Siga para 73')
     decisao_73()
@@ -523,6 +554,7 @@ def decisao_73():
 
     H73 = historia.item_73()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -545,6 +577,7 @@ def decisao_135():
 
     H135 = historia.item_135()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Volte para 68')
 
@@ -555,8 +588,7 @@ def decisao_189():
 
     H189 = historia.item_189()
 
-    funções.PerdeEnergia(3)
-
+    funções.PerdeStatus(3,'energia', '⚡')
 
 
     #info do monstro 1
@@ -634,8 +666,10 @@ def decisao_72():
 
     H72 = historia.item_72()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    PerdeHabilidade = funções.PerdeHabilidade(2)
+    funções.PerdeStatus(2,'habilidade', '👊')
+
 
     energia = habilidade = 'DESCONHECIDA'
     nomeMonstro = 'Demonio do Espelho'
@@ -659,6 +693,7 @@ def decisao_122():
 
     H122 = historia.item_122()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -677,6 +712,7 @@ def decisao_176():
 
     H176 = historia.item_176()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 277')
 
@@ -687,8 +723,10 @@ def decisao_384():
 
     H384 = historia.item_384()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(2)
+    funções.PerdeStatus(2,'energia', '⚡')
+
 
     input('Volte para 277')
     decisao_277()
@@ -698,6 +736,7 @@ def decisao_277():
 
     H277 = historia.item_277()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 338')
 
@@ -708,6 +747,7 @@ def decisao_338():
 
     H338 = historia.item_338()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -726,6 +766,7 @@ def decisao_123():
 
     H123 = historia.item_123()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(1,'habilidade','👊')
 
@@ -741,6 +782,7 @@ def decisao_282():
 
     H282 = historia.item_282()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -758,6 +800,7 @@ def decisao_22():
 
     H22 = historia.item_22()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -778,6 +821,7 @@ def decisao_63():
 
     H63 = historia.item_63()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 194')
 
@@ -787,6 +831,7 @@ def decisao_184():
 
     H184 = historia.item_184()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -808,6 +853,7 @@ def decisao_323():
 
     H323 = historia.item_323()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Volte para 194')
 
@@ -819,6 +865,7 @@ def decisao_149():
 
     H149 = historia.item_149()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     energia = habilidade = 'DESCONHECIDA'
     nomeMonstro = 'BARBARO'
@@ -849,10 +896,11 @@ def decisao_353():
 
     H70 = historia.item_353()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    PerdaHabilidade = funções.PerdeHabilidade(1)
+    funções.PerdeStatus(1,'habilidade', '👊')
+    funções.PerdeStatus(4,'energia', '⚡')
 
-    funções.PerdeEnergia(4)
     
     input('Vá para 325')
     decisao_325()
@@ -866,6 +914,7 @@ def decisao_311():
 
     H311 = historia.item_311()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 325')
 
@@ -876,6 +925,7 @@ def decisao_325():
 
     H311 = historia.item_325()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver
 
@@ -885,6 +935,7 @@ def decisao_194():
 
     H194 = historia.item_194()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -909,6 +960,7 @@ def decisao_52():
 
     H52 = historia.item_52()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     energia = habilidade = 'DESCONHECIDA'
     nomeMonstro = 'BESTA SANGRENTA'
@@ -931,6 +983,7 @@ def decisao_138():
 
     H138 = historia.item_138()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -955,6 +1008,7 @@ def decisao_397():
 
     H397 = historia.item_397()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(2,'sorte','🍀')
 
@@ -974,6 +1028,7 @@ def decisao_75():
 
     H75 = historia.item_75()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(2,'sorte','🍀')
 
@@ -1016,6 +1071,7 @@ def decisao_288():
 
     H288 = historia.item_288()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1033,6 +1089,7 @@ def decisao_221():
 
     H221 = historia.item_221()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1051,6 +1108,7 @@ def decisao_374():
 
     H374 = historia.item_374()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -1067,17 +1125,18 @@ def decisao_295():
 
     H295 = historia.item_295()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    perdeenergia = funções.PerdeEnergia(5)
+    funções.PerdeStatus(5,'energia', '⚡')
 
-    if perdeenergia:
-        decisao_206()
+    decisao_206()
 
 
 def decisao_206():
 
     H206 = historia.item_206()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao_60()
 
@@ -1087,6 +1146,7 @@ def decisao_118():
 
     H118 = historia.item_118()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao_60()
 
@@ -1095,6 +1155,7 @@ def decisao_60():
 
     H60 = historia.item_60()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1113,8 +1174,10 @@ def decisao_179():
 
     H179 = historia.item_179()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(2)
+    funções.PerdeStatus(2,'energia', '⚡')
+
 
     decisao = int(input('decisao :'))
 
@@ -1136,6 +1199,7 @@ def decisao_84():
 
     H84 = historia.item_84()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     valorDado = jogaDADOS.jogaDados(dado)
     valorDado2 = jogaDADOS.jogaDados(dado)
@@ -1156,6 +1220,7 @@ def decisao_290():
 
     H290 = historia.item_290()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     valorDado = jogaDADOS.jogaDados(dado)
     valorDado2 = jogaDADOS.jogaDados(dado)
@@ -1176,6 +1241,7 @@ def decisao_191():
 
     H191 = historia.item_191()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     valorDado = jogaDADOS.jogaDados(dado)
     valorDado2 = jogaDADOS.jogaDados(dado)
@@ -1194,6 +1260,7 @@ def decisao_152():
 
     H152 = historia.item_152()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     ComparaHab = funções.ComparaHabilidade()
 
@@ -1210,6 +1277,7 @@ def decisao_202():
 
     H202 = historia.item_202()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -1226,6 +1294,7 @@ def decisao_18():
 
     H18 = historia.item_18()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     comparaHab = funções.ComparaHabilidade()
 
@@ -1241,8 +1310,10 @@ def decisao_42():
 
     H42 = historia.item_42()
 
-    funções.PerdeEnergia(5)
+    funções.PerdeStatus(5,'energia', '⚡')
+
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     comparaHab = funções.ComparaHabilidade()
 
@@ -1260,6 +1331,7 @@ def decisao_55():
 
     H55 = historia.item_55()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1324,6 +1396,7 @@ def decisao_163():
 
     H163 = historia.item_163()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1342,6 +1415,7 @@ def decisao_363():
 
     H363 = historia.item_363()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(2,'energia','⚡')
 
@@ -1373,6 +1447,7 @@ def decisao_379():
 
     H379 = historia.item_379()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1409,6 +1484,7 @@ def decisao_28():
 
     H28 = historia.item_18()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(1,'habilidade','👊')
 
@@ -1421,6 +1497,7 @@ def decisao_213():
 
     H213 = historia.item_213()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1439,6 +1516,7 @@ def decisao_14():
 
     H14 = historia.item_14()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     
     decisao = int(input('decisao :'))
 
@@ -1457,6 +1535,7 @@ def decisao_310():
 
     H310 = historia.item_310()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1475,6 +1554,7 @@ def decisao_262():
 
     H262 = historia.item_262()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1496,9 +1576,12 @@ def decisao_337():
 
     H337 = historia.item_337()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(1,'energia','⚡')
-    funções.PerdeSorte(2)
+    
+    funções.PerdeStatus(2,'sorte', '🍀')
+
 
     decisao = int(input('decisao :'))
 
@@ -1518,6 +1601,7 @@ def decisao_173():
 
     H173 = historia.item_173()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1536,6 +1620,7 @@ def decisao_368():
 
     H368 = historia.item_368()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1554,6 +1639,7 @@ def decisao_165():
     H165 = historia.item_165()
 
     funções.Provisoes()
+    funções.PocaoEscolhida()
     input('Vá para 234')
 
     decisao_234()
@@ -1564,6 +1650,7 @@ def decisao_234():
 
     H234 = historia.item_234()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1583,6 +1670,7 @@ def decisao_183():
 
     H183 = historia.item_183()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1600,8 +1688,10 @@ def decisao_207():
 
     H207 = historia.item_207()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(3)
+    funções.PerdeStatus(3,'energia', '⚡')
+
 
     decisao = int(input('decisao :'))
 
@@ -1619,8 +1709,9 @@ def decisao_386():
 
     H386 = historia.item_386()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(1)
+    funções.PerdeStatus(1,'energia','⚡')
 
     input('Volte para 218')
 
@@ -1631,6 +1722,7 @@ def decisao_218():
 
     H218 = historia.item_218()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1649,6 +1741,7 @@ def decisao_65():
 
     H218 = historia.item_65()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1667,6 +1760,7 @@ def decisao_345():
 
     H345 = historia.item_345()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     global escolha_345_feita
     escolha_345_feita = True
@@ -1689,6 +1783,7 @@ def decisao_252():
 
     H252 = historia.item_252()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Volte para 90')
 
@@ -1699,6 +1794,7 @@ def decisao_90():
 
     H90 = historia.item_90()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1735,6 +1831,7 @@ def decisao_357():
 
     H357 = historia.item_357()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1762,6 +1859,7 @@ def decisao_332():
 
     H332 = historia.item_332()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     testeSorte = funções.Sorte()
 
@@ -1777,6 +1875,7 @@ def decisao_180():
 
     H180 = historia.item_180()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     testeSorte = funções.Sorte()
 
@@ -1792,6 +1891,7 @@ def decisao_53():
 
     H53 = historia.item_53()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1810,6 +1910,7 @@ def decisao_370():
 
     H370 = historia.item_370()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     ComparaHabilidade = funções.ComparaHabilidade()
     # Se habilidade for menor que a soma dos dados, sege 104 se nao segue 342
@@ -1824,6 +1925,7 @@ def decisao_104():
 
     H104 = historia.item_104()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 134')
 
@@ -1836,6 +1938,7 @@ def decisao_342():
 
     H342 = historia.item_342()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1855,7 +1958,8 @@ def decisao_294():
 
     H294 = historia.item_294()
 
-    funções.PerdeHabilidade(2)
+    funções.PerdeStatus(2,'habilidade', '👊')
+
 
     #informações do Monstro
     nomeMonstro = 'BESTA SANGRENTA'
@@ -1885,6 +1989,7 @@ def decisao_97():
 
     H97 = historia.item_97()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 134')
 
@@ -1922,6 +2027,7 @@ def decisao_116():
 
     H116 = historia.item_116()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
    
@@ -1930,6 +2036,7 @@ def decisao_134():
 
     H134 = historia.item_134()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -1959,6 +2066,7 @@ def decisao_348():
 
     H348 = historia.item_348()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     ComparaHabilidade = funções.ComparaHabilidade()
 
@@ -2001,6 +2109,7 @@ def decisao_159():
 
     H159 = historia.item_159()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_94_feita:
         input("Vá para 294")
@@ -2014,6 +2123,7 @@ def decisao_272():
 
     H53 = historia.item_272()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
     
@@ -2023,6 +2133,7 @@ def decisao_278():
 
     H278 = historia.item_278()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Volte para 134')
 
@@ -2034,8 +2145,10 @@ def decisao_339():
 
     H339 = historia.item_339()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(1)
+    funções.PerdeStatus(1,'energia', '⚡')
+
 
     decisao = int(input('decisao :'))
 
@@ -2074,6 +2187,7 @@ def decisao_314():
 
     H314 = historia.item_314()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Volte para 262')
 
@@ -2085,6 +2199,7 @@ def decisao_303():
 
     H303 = historia.item_303()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     energia = habilidade = "DESCONHECIDA"
 
@@ -2099,6 +2214,7 @@ def decisao_157():
 
     H157 = historia.item_157()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(1,'sorte','🍀')
 
@@ -2111,6 +2227,7 @@ def decisao_59():
 
     H59 = historia.item_59()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2129,6 +2246,7 @@ def decisao_341():
 
     H341 = historia.item_344()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2149,8 +2267,10 @@ def decisao_38():
 
     H38 = historia.item_38()
     funções.Provisoes()
+    funções.PocaoEscolhida()
+    
+    funções.PerdeStatus(3,'energia', '⚡')
 
-    funções.PerdeEnergia(3)
 
     input('Vá para 109')
 
@@ -2160,6 +2280,7 @@ def decisao_169():
 
     H283 = historia.item_169()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 109')
 
@@ -2171,6 +2292,7 @@ def decisao_367():
 
     H367 = historia.item_367()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     global escolha_367_feita
 
@@ -2192,6 +2314,7 @@ def decisao_244():
 
     H283 = historia.item_244()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 109')
 
@@ -2201,6 +2324,7 @@ def decisao_283():
 
     H283 = historia.item_283()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Volte para 109')
 
@@ -2211,6 +2335,7 @@ def decisao_109():
 
     H109 = historia.item_109()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2230,6 +2355,7 @@ def decisao_43():
 
     H43 = historia.item_43()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2248,6 +2374,7 @@ def decisao_200():
 
     H200 = historia.item_200()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2266,6 +2393,7 @@ def decisao_321():
 
     H321 = historia.item_321()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2283,6 +2411,7 @@ def decisao_289():
 
     H289 = historia.item_289()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     energia = habilidade = 'DESCONHECIDA'
     funções.criarCriatura(energia,habilidade,'MEDUSA')
@@ -2301,6 +2430,7 @@ def decisao_19():
 
     H19 = historia.item_19()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
@@ -2309,6 +2439,7 @@ def decisao_216():
 
     H216 = historia.item_216()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2328,6 +2459,7 @@ def decisao_308():
 
     H216 = historia.item_308()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 316")
 
@@ -2339,6 +2471,7 @@ def decisao_316():
 
     H316 = historia.item_316()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2356,6 +2489,7 @@ def decisao_241():
 
     H216 = historia.item_241()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2373,6 +2507,7 @@ def decisao_393():
 
     H393 = historia.item_393()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2390,6 +2525,7 @@ def decisao_274():
 
     H274 = historia.item_274()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     ComparaHab = funções.ComparaHabilidade()
 
@@ -2414,6 +2550,7 @@ def decisao_238():
 
     H238 = historia.item_238()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(1,'habilidade','👊')
 
@@ -2425,6 +2562,7 @@ def decisao_291():
 
     H291 = historia.item_291()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 90")
 
@@ -2434,6 +2572,7 @@ def decisao_296():
 
     H216 = historia.item_296()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2452,6 +2591,7 @@ def decisao_49():
 
     H49 = historia.item_49()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2470,6 +2610,7 @@ def decisao_205():
 
     H205 = historia.item_205()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2487,8 +2628,10 @@ def decisao_306():
 
     H306 = historia.item_306()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeSorte(2)
+    funções.PerdeStatus(2,'sorte', '🍀')
+
 
     input("Vá para 29")
 
@@ -2499,6 +2642,7 @@ def decisao_161():
 
     H161 = historia.item_161()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 29")
 
@@ -2509,6 +2653,7 @@ def decisao_29():
 
     H29 = historia.item_29()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 90")
 
@@ -2519,6 +2664,7 @@ def decisao_24():
 
     H24 = historia.item_24()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2538,6 +2684,7 @@ def decisao_324():
 
     H324 = historia.item_324()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_367_feita:
         input("Vá para 256")
@@ -2553,6 +2700,7 @@ def decisao_79():
 
     H79 = historia.item_79()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -2570,6 +2718,7 @@ def decisao_383():
 
     H383 = historia.item_383()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 188")
 
@@ -2579,6 +2728,7 @@ def decisao_106():
 
     H106 = historia.item_106()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 188")
 
@@ -2588,6 +2738,7 @@ def decisao_256():
 
     H256 = historia.item_256()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 188")
 
@@ -2598,6 +2749,7 @@ def decisao_78():
 
     H78 = historia.item_78()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2615,6 +2767,7 @@ def decisao_301():
 
     H301 = historia.item_301()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2638,6 +2791,7 @@ def decisao_162():
 
     H162 = historia.item_162()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     global escolha_162_feita
     escolha_162_feita = True
@@ -2652,6 +2806,7 @@ def decisao_142():
 
     H142 = historia.item_142()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 338")
 
@@ -2661,6 +2816,7 @@ def decisao_188():
 
     H188 = historia.item_188()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2678,6 +2834,7 @@ def decisao_224():
 
     H224 = historia.item_224()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 43")
 
@@ -2687,6 +2844,7 @@ def decisao_155():
 
     H155 = historia.item_155()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2704,6 +2862,7 @@ def decisao_322():
 
     H322 = historia.item_322()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 43")
 
@@ -2714,6 +2873,7 @@ def decisao_378():
 
     H378 = historia.item_378()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -2730,6 +2890,7 @@ def decisao_112():
 
     H112 = historia.item_112()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 356")
 
@@ -2740,6 +2901,7 @@ def decisao_209():
 
     H209 = historia.item_209()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 356")
 
@@ -2750,6 +2912,7 @@ def decisao_356():
 
     H356 = historia.item_356()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2767,6 +2930,7 @@ def decisao_170():
 
     H170 = historia.item_170()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2784,6 +2948,7 @@ def decisao_281():
 
     H281 = historia.item_281()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2801,6 +2966,7 @@ def decisao_399():
 
     H399 = historia.item_399()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(3,'energia')
 
@@ -2811,6 +2977,7 @@ def decisao_192():
 
     H192 = historia.item_192()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2828,6 +2995,7 @@ def decisao_120():
 
     H120 = historia.item_120()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2845,6 +3013,7 @@ def decisao_292():
 
     H292 = historia.item_292()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2862,6 +3031,7 @@ def decisao_93():
 
     H93 = historia.item_93()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2879,6 +3049,7 @@ def decisao_284():
 
     H284 = historia.item_284()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_345_feita:
         decisao_398()
@@ -2890,6 +3061,7 @@ def decisao_398():
 
     H398 = historia.item_398()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 230")
 
@@ -2899,8 +3071,10 @@ def decisao_57():
 
     H57 = historia.item_57()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(4)
+    funções.PerdeStatus(4,'energia', '⚡')
+
 
     input("Vá para 198")
 
@@ -2910,6 +3084,7 @@ def decisao_198():
 
     H198 = historia.item_198()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 230")
 
@@ -2919,6 +3094,7 @@ def decisao_230():
 
     H230 = historia.item_230()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2939,6 +3115,7 @@ def decisao_385():
 
     H385 = historia.item_385()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -2956,6 +3133,7 @@ def decisao_318():
 
     H318 = historia.item_318()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_257_feita:
         decisao_86()
@@ -2967,6 +3145,7 @@ def decisao_86():
 
     H86 = historia.item_86()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 187")
 
@@ -2976,6 +3155,7 @@ def decisao_47():
 
     H47 = historia.item_47()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_257_feita:
         input("Vá para 10")
@@ -2989,6 +3169,7 @@ def decisao_335():
 
     H335 = historia.item_335()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -3005,6 +3186,7 @@ def decisao_67():
 
     H67 = historia.item_67()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -3020,6 +3202,7 @@ def decisao_219():
 
     H219 = historia.item_219()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
@@ -3027,6 +3210,7 @@ def decisao_146():
 
     H146 = historia.item_146()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_257_feita:
         decisao_86()
@@ -3038,6 +3222,7 @@ def decisao_101():
 
     H101 = historia.item_101()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
@@ -3046,6 +3231,7 @@ def decisao_187():
 
     H187 = historia.item_187()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3063,6 +3249,7 @@ def decisao_360():
 
     H360 = historia.item_360()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3102,6 +3289,7 @@ def decisao_201():
 
     H201 = historia.item_201()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     global escolha_201_feita
     escolha_201_feita = True
@@ -3115,8 +3303,10 @@ def decisao_297():
 
     H297 = historia.item_297()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeSorte(1)
+    funções.PerdeStatus(1,'sorte', '🍀')
+
 
     input("Vá para 305")
 
@@ -3126,6 +3316,7 @@ def decisao_305():
 
     H305 = historia.item_305()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_201_feita:
         decisao_253()
@@ -3137,6 +3328,7 @@ def decisao_253():
 
     H253 = historia.item_253()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 315")
 
@@ -3189,6 +3381,7 @@ def decisao_175():
 
     H175 = historia.item_175()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(2,'sorte','🍀')
 
@@ -3199,6 +3392,7 @@ def decisao_315():
 
     H315 = historia.item_315()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_171_feita:
         input("Vá para 129")
@@ -3212,6 +3406,7 @@ def decisao_129():
 
     H129 = historia.item_129()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3232,6 +3427,7 @@ def decisao_349():
 
     H349 = historia.item_349()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     #info do monstro 1
     nomeMonstro = 'DIABO DO POÇO'
@@ -3253,6 +3449,7 @@ def decisao_258():
 
     H258 = historia.item_258()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3270,6 +3467,7 @@ def decisao_95():
 
     H95 = historia.item_95()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(1,'habilidade','👊')
 
@@ -3280,6 +3478,7 @@ def decisao_248():
 
     H248 = historia.item_248()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 214")
     decisao_214()
@@ -3288,6 +3487,7 @@ def decisao_361():
 
     H361 = historia.item_361()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -3305,12 +3505,14 @@ def decisao_82():
 
     input("Vá para 214")
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao_214()
 
 def decisao_214():
 
     H214 = historia.item_214()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3328,11 +3530,13 @@ def decisao_389():
 
     H389 = historia.item_389()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     global escolha_389_feita
     escolha_389_feita = True
 
-    funções.PerdeHabilidade(4)
+    funções.PerdeStatus(4,'habilidade', '⚡')
+
 
     input("Vá para 181")
     decisao_181()
@@ -3341,6 +3545,7 @@ def decisao_181():
 
     H181 = historia.item_181()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -3356,9 +3561,10 @@ def decisao_45():
 
     H45 = historia.item_45()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(4)
-    funções.PerdeHabilidade(1)
+    funções.PerdeStatus(4,'energia','⚡')
+    funções.PerdeStatus(1,'habilidade','👊')
 
     input("Vá para 312")
     decisao_312()
@@ -3387,6 +3593,7 @@ def decisao_232():
 
     H232 = historia.item_232()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_389_feita:
         input("Vá para 286")
@@ -3400,6 +3607,7 @@ def decisao_286():
 
     H286 = historia.item_286()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(4,'habilidade','👊')
 
@@ -3410,6 +3618,7 @@ def decisao_320():
 
     H320 = historia.item_320()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
 
     decisao = int(input('decisao :'))
@@ -3431,6 +3640,7 @@ def decisao_269():
 
     H269 = historia.item_269()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     global escolha_269_feita
     escolha_269_feita = True
 
@@ -3453,6 +3663,7 @@ def decisao_127():
 
     H127 = historia.item_127()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 90")
     decisao_90()
@@ -3461,6 +3672,7 @@ def decisao_330():
 
     H330 = historia.item_330()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     global escolha_330_feita
     escolha_330_feita = True
@@ -3483,8 +3695,9 @@ def decisao_167():
 
     H167 = historia.item_167()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(4)
+    funções.PerdeStatus(4,'energia','⚡')
 
     input('Siga para 203')
 
@@ -3494,8 +3707,9 @@ def decisao_377():
 
     H377 = historia.item_377()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(5)
+    funções.PerdeStatus(5,'energia','⚡')
 
     input("Vá para 203")
     decisao_203()
@@ -3545,6 +3759,7 @@ def decisao_328():
 
     H328 = historia.item_328()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3562,6 +3777,7 @@ def decisao_99():
 
     H99 = historia.item_99()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3579,6 +3795,7 @@ def decisao_266():
 
     H266 = historia.item_266()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 305")
 
@@ -3588,6 +3805,7 @@ def decisao_125():
 
     H125 = historia.item_125()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -3603,6 +3821,7 @@ def decisao_69():
 
     H69 = historia.item_69()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 305")
     decisao_305()
@@ -3631,6 +3850,7 @@ def decisao_280():
 
     H280 = historia.item_280()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 218")
 
@@ -3640,6 +3860,7 @@ def decisao_276():
 
     H276 = historia.item_276()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
@@ -3647,6 +3868,7 @@ def decisao_10():
 
     H10 = historia.item_10()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_257_feita:
         decisao_86()
@@ -3656,6 +3878,7 @@ def decisao_10():
 
 def decisao_5():
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     H5 = historia.item_5()
 
@@ -3673,8 +3896,9 @@ def decisao_395():
 
     H395 = historia.item_395()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(3)
+    funções.PerdeStatus(3,'energia','⚡')
     
     input("Vá para 259")
     decisao_259()
@@ -3683,6 +3907,7 @@ def decisao_259():
 
     H259 = historia.item_259()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3700,6 +3925,7 @@ def decisao_185():
 
     H185 = historia.item_185()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3717,6 +3943,7 @@ def decisao_88():
 
     H88 = historia.item_88()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3734,6 +3961,7 @@ def decisao_268():
 
     H268 = historia.item_268()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
@@ -3741,8 +3969,10 @@ def decisao_343():
 
     H343 = historia.item_343()
 
-    funções.PerdeEnergia(1)
+    funções.PerdeStatus(1,'energia', '⚡')
+
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3760,6 +3990,7 @@ def decisao_228():
 
     H228 = historia.item_228()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -3775,8 +4006,10 @@ def decisao_150():
 
     H150 = historia.item_150()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeHabilidade(1)
+    funções.PerdeStatus(1,'habilidade', '👊')
+
 
     input("Vá para 292")
     decisao_292()
@@ -3785,8 +4018,9 @@ def decisao_33():
 
     H33 = historia.item_33()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeHabilidade(3)
+    funções.PerdeStatus(3,'habilidade', '👊')
 
     input("Vá para 292")
     decisao_292()
@@ -3795,12 +4029,15 @@ def decisao_394():
 
     H394 = historia.item_394()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     jogada = jogaDADOS.jogaDados(dado)
     print(f"🎲:{jogada}")
     jogada += 2
     print(f"Total: {jogada}")
-    funções.PerdeEnergia(jogada)
+
+    funções.PerdeStatus(jogada,'energia', '⚡')
+
 
     decisao = int(input('decisao :'))
 
@@ -3818,6 +4055,7 @@ def decisao_108():
 
     H108 = historia.item_108()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3839,6 +4077,7 @@ def decisao_121():
 
     H121 = historia.item_121()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3856,8 +4095,10 @@ def decisao_26():
 
     H26 = historia.item_26()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeHabilidade(2)
+    funções.PerdeStatus(2,'habilidade', '👊')
+
 
     comparaHab = funções.ComparaHabilidade()
 
@@ -3873,8 +4114,10 @@ def decisao_354():
 
     H354 = historia.item_354()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeSorte(2)
+    funções.PerdeStatus(2,'sorte', '👊')
+
 
     comparaHab = funções.ComparaHabilidade()
 
@@ -3890,6 +4133,7 @@ def decisao_365():
 
     H365 = historia.item_365()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3910,6 +4154,7 @@ def decisao_64():
 
     H64 = historia.item_64()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     ComparaHab = funções.ComparaHabilidade()
 
@@ -3924,6 +4169,7 @@ def decisao_115():
 
     H115 = historia.item_115()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(3,'energia','⚡')
     
@@ -3934,8 +4180,10 @@ def decisao_190():
 
     H190 = historia.item_190()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(3)
+    funções.PerdeStatus(3,'energia', '⚡')
+
     
     input("Vá para 50")
     decisao_50()
@@ -3944,6 +4192,7 @@ def decisao_50():
 
     H50 = historia.item_50()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 221")
     decisao_221()
@@ -3952,6 +4201,7 @@ def decisao_388():
 
     H388 = historia.item_388()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -3969,6 +4219,7 @@ def decisao_23():
 
     H23 = historia.item_23()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 154')
 
@@ -3979,6 +4230,7 @@ def decisao_154():
 
     H154 = historia.item_154()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Volte para 22')
 
@@ -3989,6 +4241,7 @@ def decisao_137():
 
     H137 = historia.item_137()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao = int(input('decisao :'))
 
     if decisao == 220:
@@ -4006,6 +4259,7 @@ def decisao_220():
 
     H220 = historia.item_220()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao = int(input('decisao :'))
 
     if decisao == 61:
@@ -4024,6 +4278,7 @@ def decisao_61():
 
     H61 = historia.item_61()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     print("Foi de comes e bebes")
     arte.GameOver()
@@ -4033,6 +4288,7 @@ def decisao_346():
 
     H346 = historia.item_346()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao_362()
 
@@ -4041,6 +4297,7 @@ def decisao_264():
 
     H264 = historia.item_264()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao = int(input('decisao :'))
 
     if decisao == 130:
@@ -4061,6 +4318,7 @@ def decisao_355():
 
     H355 = historia.item_355()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao_110()
 
@@ -4069,6 +4327,7 @@ def decisao_362():
 
     H362 = historia.item_362()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao_264()
 
@@ -4079,8 +4338,8 @@ def decisao_387():
     
     #informações do Monstro
     nomeMonstro = 'HOMEM DA CAVERNA'
-    habilidade = 7
-    energia = 7
+    habilidade = 14
+    energia = 14
 
     CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
     Combate = funções.Combate(nomeMonstro)
@@ -4097,6 +4356,7 @@ def decisao_114():
 
     H114 = historia.item_114()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao = int(input('decisao :'))
 
     if decisao == 336:
@@ -4115,8 +4375,10 @@ def decisao_336():
 
     H336 = historia.item_336()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    PerdeHabilidade  = funções.PerdeHabilidade(4)
+    funções.PerdeStatus(4,'habilidade', '👊')
+
 
     energia = habilidade = "DESCONHECIDA"
 
@@ -4131,6 +4393,7 @@ def decisao_298():
 
     H298= historia.item_298()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -4150,8 +4413,9 @@ def decisao_304():
 
     H304 = historia.item_304()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(6)
+    funções.PerdeStatus(6,'energia',"⚡")
 
     decisao_20()
    
@@ -4160,8 +4424,10 @@ def decisao_20():
 
     H20 = historia.item_20()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    PerdeHabilidade = funções.PerdeHabilidade(1)
+    funções.PerdeStatus(1,'habilidade', '👊')
+
 
     input('Siga para 279')
 
@@ -4173,6 +4439,7 @@ def decisao_279():
 
     H279 = historia.item_279()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Volte para 32')
 
@@ -4217,6 +4484,7 @@ def decisao_9():
 
     H9 = historia.item_9()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao = int(input('decisao :'))
     
 
@@ -4235,6 +4503,7 @@ def decisao_375():
 
     H375 = historia.item_375()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     
     decisao_110()
 
@@ -4243,6 +4512,7 @@ def decisao_110():
 
     H110 = historia.item_110()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao = int(input('decisao : '))
 
     if decisao == 58:
@@ -4260,6 +4530,7 @@ def decisao_58():
 
     H58 = historia.item_58()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     
     ComparaHabilidade = funções.ComparaHabilidade()
 
@@ -4276,8 +4547,10 @@ def decisao_246():
 
     H246 = historia.item_246()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    PerdeSorte = funções.PerdeSorte(2)
+    funções.PerdeStatus(2,'sorte', '🍀')
+
 
     SobreviveuFarpas = funções.farpasMenosEnergia()
 
@@ -4294,9 +4567,11 @@ def decisao_223():
 
     H223 = historia.item_223()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
 
-    PerdeSorte = funções.PerdeSorte(2)
+    funções.PerdeStatus(2,'sorte', '🍀')
+
 
     SobreviveuFarpas = funções.farpasMenosEnergia()
 
@@ -4312,6 +4587,7 @@ def decisao_313():
 
     H313 =  historia.item_313()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Aperte ENTER para seguir para 32')
 
@@ -4321,6 +4597,7 @@ def decisao_80():
 
     H80 = historia.item_80()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao_313()
 
@@ -4333,9 +4610,12 @@ def decisao_158():
     # PERDE 1 de habilidade e 4 de energia
     H158 = historia.item_158()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    PerdeHabilidade = funções.PerdeHabilidade(1)
-    SobreviveuPerdeEnergia = funções.PerdeEnergia(4)
+    funções.PerdeStatus(1,'habilidade', '👊')
+    funções.PerdeStatus(4,'energia', '⚡')
+
+
 
     input('Vá para 275')
     decisao_275()
@@ -4345,6 +4625,7 @@ def decisao_32():
 
     H32 = historia.item_32()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Aperte ENTER para seguir para 37')
 
@@ -4356,6 +4637,7 @@ def decisao_37():
 
     H37 = historia.item_37()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisao :'))
 
@@ -4371,6 +4653,7 @@ def decisao_239():
 
     H239 = historia.item_239()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4388,6 +4671,7 @@ def decisao_102():
 
     H102 = historia.item_102()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4403,6 +4687,7 @@ def decisao_251():
 
     H251 = historia.item_251()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     global escolha_251_feita
     escolha_251_feita = True
@@ -4417,6 +4702,7 @@ def decisao_133():
 
     H133 = historia.item_133()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     ComparaHabilidade = funções.ComparaHabilidade()
 
@@ -4433,6 +4719,7 @@ def decisao_178():
 
     H178 = historia.item_178()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Aperte ENTER para seguir para 344')
 
@@ -4443,6 +4730,7 @@ def decisao_17():
 
     H17 = historia.item_17()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
@@ -4452,6 +4740,7 @@ def decisao_344():
 
     H344 = historia.item_344()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4469,6 +4758,7 @@ def decisao_107():
 
     H107 = historia.item_107()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4487,6 +4777,7 @@ def decisao_267():
 
     H267 = historia.item_267()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4505,6 +4796,7 @@ def decisao_352():
 
     H352 = historia.item_352()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4523,6 +4815,7 @@ def decisao_68():
 
     H68 = historia.item_68()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4543,8 +4836,10 @@ def decisao_271():
 
     H271 = historia.item_271()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeHabilidade(1)
+    funções.PerdeStatus(1,'habilidade', '👊')
+
 
     input("Vá para 237")
     decisao_237()
@@ -4553,6 +4848,7 @@ def decisao_237():
 
     H237 = historia.item_237()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4570,6 +4866,7 @@ def decisao_12():
 
     H12 = historia.item_12()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4591,6 +4888,7 @@ def decisao_382():
 
     H382 = historia.item_382()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4611,6 +4909,7 @@ def decisao_144():
 
     H144 = historia.item_144()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('volte para 85')
 
@@ -4620,6 +4919,7 @@ def decisao_227():
 
     H227 = historia.item_227()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('volte para 85')
 
@@ -4629,6 +4929,7 @@ def decisao_391():
 
     H391 = historia.item_391()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.GanhaStatus(1,'energia','⚡')
     funções.GanhaStatus(1,'habilidade','👊')
@@ -4652,8 +4953,10 @@ def decisao_195():
 
     H195 = historia.item_195()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(1)
+    funções.PerdeStatus(1,'energia', '⚡')
+
 
     input('Vá para 382')
 
@@ -4664,6 +4967,7 @@ def decisao_250():
 
     H250 = historia.item_250()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4692,6 +4996,7 @@ def decisao_100():
 
     H100 = historia.item_100()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4709,6 +5014,7 @@ def decisao_87():
 
     H87 = historia.item_87()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Va para 381')
 
@@ -4718,8 +5024,10 @@ def decisao_217():
 
     H217 = historia.item_217()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeHabilidade(1)
+    funções.PerdeStatus(1,'habilidade', '👊')
+
 
     input('Va para 36')
 
@@ -4729,6 +5037,7 @@ def decisao_36():
 
     H36 = historia.item_36()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     comparaHabeEnergia = funções.ComparaHabilidadeEEnergia()
 
@@ -4744,6 +5053,7 @@ def decisao_340():
 
     H340 = historia.item_340()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Va para 381')
 
@@ -4753,6 +5063,7 @@ def decisao_381():
 
     H381 = historia.item_381()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4770,6 +5081,7 @@ def decisao_128():
 
     H128 = historia.item_128()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4793,6 +5105,7 @@ def decisao_35():
 
     H35 = historia.item_35()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4822,6 +5135,7 @@ def decisao_81():
 
     H81 = historia.item_81()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4842,6 +5156,7 @@ def decisao_263():
 
     H263 = historia.item_263()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4859,6 +5174,7 @@ def decisao_153():
 
     H153 = historia.item_153()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4879,6 +5195,7 @@ def decisao_371():
 
     H371 = historia.item_371()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     comparaHab = funções.ComparaHabilidade
 
@@ -4894,6 +5211,7 @@ def decisao_113():
 
     H113 = historia.item_113()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4911,6 +5229,7 @@ def decisao_273():
 
     H273 = historia.item_273()
     funções.Provisoes()
+    funções.PocaoEscolhida()
     
     decisao = int(input('decisão : '))
 
@@ -4928,6 +5247,7 @@ def decisao_204():
 
     H204 = historia.item_204()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     sorte = funções.Sorte()
 
@@ -4943,6 +5263,7 @@ def decisao_131():
 
     H131 = historia.item_131()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 74")
 
@@ -4952,6 +5273,7 @@ def decisao_15():
 
     H15 = historia.item_15()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 74")
 
@@ -4961,9 +5283,12 @@ def decisao_199():
 
     H199 = historia.item_199()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(2)
-    funções.PerdeSorte(1)
+    funções.PerdeStatus(2,'energia', '⚡')
+    funções.PerdeStatus(1,'sorte', '🍀')
+
+
 
     input("Vá para 74")
 
@@ -4975,6 +5300,7 @@ def decisao_390():
     
     funções.GanhaStatus(1,'sorte','🍀')
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -4993,6 +5319,7 @@ def decisao_74():
 
     H74 = historia.item_74()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     if escolha_251_feita: 
         print("\n--- você possui o anel dos desejos, pode seguir para 265, se quiser ---\n")
@@ -5028,6 +5355,7 @@ def decisao_265():
 
     H265 = historia.item_265()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 122")
     decisao_122()
@@ -5037,6 +5365,7 @@ def decisao_300():
 
     H300 = historia.item_300()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5077,6 +5406,7 @@ def decisao_8():
 
     H8 = historia.item_8()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
@@ -5084,6 +5414,7 @@ def decisao_92():
 
     H92 = historia.item_92()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 122")
     decisao_122()
@@ -5092,6 +5423,7 @@ def decisao_307():
 
     H307 = historia.item_307()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5109,6 +5441,7 @@ def decisao_136():
 
     H136 = historia.item_136()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5126,6 +5459,7 @@ def decisao_210():
 
     H210 = historia.item_210()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5143,6 +5477,7 @@ def decisao_27():
 
     H27 = historia.item_27()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input("Vá para 78")
     decisao_78()
@@ -5169,6 +5504,7 @@ def decisao_71():
 
     H71 = historia.item_71()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Va para 128')
 
@@ -5178,6 +5514,7 @@ def decisao_7():
 
     H7 = historia.item_7()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
@@ -5185,6 +5522,7 @@ def decisao_30():
 
     H30 = historia.item_30()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     testeSorte = funções.Sorte()
 
@@ -5199,6 +5537,7 @@ def decisao_160():
 
     H160 = historia.item_160()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Va para 237')
 
@@ -5209,6 +5548,7 @@ def decisao_319():
 
     H319 = historia.item_319()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Va para 285')
 
@@ -5218,6 +5558,7 @@ def decisao_212():
 
     H212 = historia.item_212()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Va para 285')
 
@@ -5229,9 +5570,12 @@ def decisao_285():
 
     H285 = historia.item_285()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(2)
-    funções.PerdeHabilidade(1)
+    funções.PerdeStatus(2,'energia', '⚡')
+    funções.PerdeStatus(1,'habilidade', '👊')
+
+
 
     input('Va para 237')
 
@@ -5265,6 +5609,7 @@ def decisao_254():
 def decisao_76():
     H76 = historia.item_76()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5281,6 +5626,7 @@ def decisao_76():
 def decisao_117():
     H117 = historia.item_117()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5297,12 +5643,14 @@ def decisao_117():
 def decisao_329():
     H329 = historia.item_329()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
 def decisao_317():
     H317 = historia.item_317()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     energia = habilidade = 'DESCONHECIDA'
     nomeMonstro = 'VERME DA ROCHA'
@@ -5316,6 +5664,7 @@ def decisao_317():
 def decisao_168():
     H168 = historia.item_168()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5333,6 +5682,7 @@ def decisao_168():
 def decisao_94():
     H94 = historia.item_94()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     global escolha_94_feita
     escolha_94_feita = True
@@ -5345,6 +5695,7 @@ def decisao_94():
 def decisao_174():
     H174 = historia.item_174()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     Sorte = funções.Sorte()
 
@@ -5361,6 +5712,7 @@ def decisao_174():
 def decisao_350():
     H350 = historia.item_350()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     PerdeEnergia = funções.PerdeEnergiaNoDado()
 
@@ -5402,6 +5754,7 @@ def decisao_39():
 def decisao_111():
     H111 = historia.item_111()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Aperte ENTER para seguir para 267')
 
@@ -5411,6 +5764,7 @@ def decisao_111():
 def decisao_229():
     H229 = historia.item_229()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Aperte ENTER para seguir para 107')
 
@@ -5419,6 +5773,7 @@ def decisao_229():
 def decisao_351():
     H351 = historia.item_351()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5435,6 +5790,7 @@ def decisao_396():
     H396 =  historia.item_396()
 
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5485,6 +5841,7 @@ def decisao_151():
 def decisao_240():
     H240 = historia.item_240()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5500,6 +5857,7 @@ def decisao_240():
 def decisao_34():
     H34 = historia.item_34()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
@@ -5507,6 +5865,7 @@ def decisao_34():
 def decisao_89():
     H89 = historia.item_89()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     testeSorte = funções.Sorte()
 
@@ -5521,6 +5880,7 @@ def decisao_89():
 def decisao_54():
     H54 = historia.item_54()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 239')
 
@@ -5530,6 +5890,7 @@ def decisao_54():
 def decisao_261():
     H261 = historia.item_261()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Volte para 239')
 
@@ -5573,7 +5934,7 @@ def decisao_196():
 def decisao_6():
     H6 = historia.item_6()
 
-    funções.PerdeEnergia(2)
+    funções.PerdeStatus(2,'energia','⚡')
    
     nomeMonstro = 'MANTECORA'
     habilidade = 11
@@ -5595,6 +5956,7 @@ def decisao_6():
 def decisao_247():
     H247 = historia.item_247()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     SobreviveuPerdeEnergiaDado = funções.PerdeEnergiaNoDado(2)
 
@@ -5624,6 +5986,7 @@ def decisao_364():
     H364 = historia.item_364()
 
     funções.Provisoes()
+    funções.PocaoEscolhida()
     decisao = int(input('decisão : '))
 
     if decisao == 31:
@@ -5638,6 +6001,7 @@ def decisao_364():
 def decisao_31():
     H31 = historia.item_31()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5654,6 +6018,7 @@ def decisao_31():
 def decisao_376():
     H376 = historia.item_376()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5669,6 +6034,7 @@ def decisao_376():
 def decisao_62():
     H62 = historia.item_62()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5698,6 +6064,7 @@ def decisao_16():
 
     funções.PerdeEnergiaNoDado(1,1)
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5727,6 +6094,7 @@ def decisao_392():
 
     funções.PerdeEnergiaNoDado(1,1)
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5754,6 +6122,7 @@ def decisao_392():
 def decisao_177():
     H177 = historia.item_177()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     TesteSorte = funções.Sorte()
 
@@ -5769,6 +6138,7 @@ def decisao_177():
 def decisao_243():
     H177 = historia.item_243()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 400')
 
@@ -5778,8 +6148,9 @@ def decisao_243():
 def decisao_103():
     H177 = historia.item_103()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(3)
+    funções.PerdeStatus(3,'energia','⚡')
 
     input('volte para 77')
 
@@ -5789,6 +6160,7 @@ def decisao_103():
 def decisao_77():
     H177 = historia.item_77()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Vá para 400')
 
@@ -5799,6 +6171,7 @@ def decisao_77():
 def decisao_400():
     H400 = historia.item_400()  
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.Winner()
 
@@ -5806,6 +6179,7 @@ def decisao_400():
 def decisao_287():
     H287 = historia.item_287()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.PerdeEnergiaNoDado(1,1)
 
@@ -5836,6 +6210,7 @@ def decisao_287():
 def decisao_132():
     H132 = historia.item_132()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.PerdeEnergiaNoDado(1,1)
 
@@ -5865,6 +6240,7 @@ def decisao_132():
 def decisao_249():
     H249 = historia.item_249()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     funções.PerdeEnergiaNoDado(1,1)
 
@@ -5903,6 +6279,7 @@ def decisao_3():
 def decisao_186():
     H186 = historia.item_186()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     TesteSorte = funções.Sorte()
 
@@ -5917,6 +6294,7 @@ def decisao_186():
 def decisao_260():
     H260 = historia.item_260()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5930,8 +6308,9 @@ def decisao_260():
 
 def decisao_166():
     H166 = historia.item_166()
+    
+    funções.PerdeStatus(3,'habilidade', '👊')
 
-    funções.PerdeHabilidade(3)
 
     #info do monstro 1
     nomeMonstro = 'GUARDIÃO VOADOR'
@@ -5967,6 +6346,7 @@ def decisao_166():
 def decisao_11():
     H11 = historia.item_11()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     decisao = int(input('decisão : '))
 
@@ -5982,6 +6362,7 @@ def decisao_11():
 def decisao_46():
     H46 = historia.item_46()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('volte para 239')
     decisao_239()
@@ -5994,8 +6375,10 @@ def decisao_140():
 def decisao_358():
     H358 = historia.item_358()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(2)
+    funções.PerdeStatus(2,'energia', '⚡')
+
 
     input('volte para 239')
     decisao_239()
@@ -6005,6 +6388,7 @@ def decisao_358():
 def decisao_275():
     H275 = historia.item_275()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     #checagem de sorte
 
@@ -6019,6 +6403,7 @@ def decisao_275():
 def decisao_231():
     H231 = historia.item_231()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     input('Aperte ENTER para seguir para 110')
 
@@ -6028,8 +6413,9 @@ def decisao_231():
 def decisao_309():
     H309 = historia.item_309()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
-    funções.PerdeEnergia(3)
+    funções.PerdeStatus(3,'energia','⚡')
 
     Sorte = funções.Sorte()
     print('----------------------------------------------')
@@ -6046,6 +6432,7 @@ def decisao_309():
 def decisao_193():
     H193  = historia.item_193()
     funções.Provisoes()
+    funções.PocaoEscolhida()
 
     arte.GameOver()
 
