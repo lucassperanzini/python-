@@ -8,6 +8,26 @@ StatusIniciais = {}
 StatusAtuais = {}
 
 
+def funcPocao():
+       
+    pocaoHabilidade = 'Pocao Habilidade'
+    pocaoForça = 'Pocao Forca'
+    pocaoFortuna = 'Pocao Sorte'
+
+    Escolha_Pocao = int(input('''
+
+           (1) Poção da Habilidade - repõe os pontos de HABILIDADE. Poção da Força - repõe os pontos de ENERGIA.
+           (2) Poção da Força - repõe os pontos de ENERGIA
+           (3)Poção da Fortuna - repõe os pontos de SORTE e acrescenta 1 ponto à SORTE Inicial.
+
+            '''))
+    if Escolha_Pocao == 1:
+        return pocaoHabilidade
+    elif Escolha_Pocao == 2:
+        return pocaoForça
+    elif Escolha_Pocao == 3:
+        return pocaoFortuna
+    
 
 
 
@@ -28,33 +48,14 @@ def CriarPersonagem():
 
         return sorte
     
-    def funcPocao():
-       
-
-       Escolha_Pocao = int(input('''
-
-           (1) Poção da Habilidade - repõe os pontos de HABILIDADE. Poção da Força - repõe os pontos de ENERGIA.
-           (2) Poção da Força - repõe os pontos de ENERGIA
-           (3)Poção da Fortuna - repõe os pontos de SORTE e acrescenta 1 ponto à SORTE Inicial.
-
-            '''))
-       if Escolha_Pocao == 1:
-           return pocaoHabilidade
-       elif Escolha_Pocao == 2:
-           return pocaoForça
-       elif Escolha_Pocao == 3:
-           return pocaoFortuna
-    
-    pocaoHabilidade = 'Pocao Habilidade'
-    pocaoForça = 'Pocao Forca'
-    pocaoFortuna = 'Pocao Sorte'
 
     
     Jogada = jogaDADOS.jogaDados(dado)
     Jogada2 = jogaDADOS.jogaDados(dado)
 
     TipoPoção = funcPocao()
-    print(TipoPoção)
+
+    print(f" o opção ESCOLHIDA foi : {TipoPoção}")
 
 
     # dicionario que guarda Status do personagem
@@ -81,7 +82,7 @@ def CriarPersonagem():
             'energia':funcEnergia(),
             'sorte':funcSorte(),
             'provisoes':10,
-            TipoPoção:1
+             TipoPoção:1
             
         }
         
@@ -100,7 +101,7 @@ def CriarPersonagem():
 
     Provisões: {StatusIniciais['FolhaDeAventura']['provisoes']} 
 
-    {TipoPoção} : {StatusIniciais['FolhaDeAventura'][TipoPoção]}
+    Poção : {TipoPoção} : {StatusIniciais['FolhaDeAventura'][TipoPoção]}
 
     
 
@@ -142,12 +143,6 @@ def ForçaDeAtaque(nomeMonstro=None):
         força = StatusAtuais['FolhaDeAventura']['habilidade'] + (Jogada + Jogada2)
 
     return força
-
-# Aqui você pode atualizar as funções Fuga, Sorte e Combate seguindo o mesmo princípio
-# de manter o estado do jogo em variáveis do Python ao invés de usar arquivos JSON.
-
-
-
 
 
 def Fuga():
@@ -340,7 +335,7 @@ def Combate(nomeMonstro):
 
         StatusAtuais['FolhaDeAventura']['energia'] = EnergiaPersonagem
 
-        print(StatusAtuais)
+        
 
 
 
@@ -542,6 +537,22 @@ def Provisoes():
             print('Provisão nao ultilizada.\n')
 
 
+def PocaoEscolhida():
+    global StatusAtuais
+    
+    pass
+
+
+    # usarPocao = input(f'você deseja usar a sua poção escolhida {StatusAtuais["FolhaDeAventura"][]}').lower()
+
+    # if usarPocao == 'sim':
+    #     pass
+
+
+
+
+
+
 
 
 ################################################################################################
@@ -693,7 +704,7 @@ def Combate_254(nomeMonstro):
         print('\nPersonagem :')
 
         #Função que determina a força do personagem
-        ForçaPersonagem = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'FolhaDeAventura')
+        ForçaPersonagem = ForçaDeAtaque()
 
         print(f'\nForça do Personagem : 👊 {ForçaPersonagem}')
         print('------------------------------------------------')
@@ -701,7 +712,7 @@ def Combate_254(nomeMonstro):
         print(nomeMonstro)
 
         #Função que determina a força da criatura
-        ForçaCriatura = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'EncontrosMonstros',nomeMonstro)
+        ForçaCriatura = ForçaDeAtaque(nomeMonstro)
 
         print(f'\nForça {nomeMonstro}: 👊 {ForçaCriatura}')
         print('------------------------------------------------')
@@ -755,7 +766,7 @@ def Combate_254(nomeMonstro):
                 print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
 
 
-            # mando para json energia do personagem atualizada
+            # mando para dicionario energia do personagem atualizada
             StatusAtuais['FolhaDeAventura']['energia'] = EnergiaPersonagem
 
            
@@ -800,13 +811,13 @@ def Combate_327(nomeMonstro):
     DanoComum = 2
     DanoReduzido = 1
 
-    # fazer o load do json com Status
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f)
+    
+    global StatusAtuais
+   
 
     # energia do personagem / criatura
-    EnergiaPersonagem = StatusGerais['FolhaDeAventura']['energia']
-    EnergiaCriatura = StatusGerais['EncontrosMonstros'][nomeMonstro]['energia']
+    EnergiaPersonagem = StatusAtuais['FolhaDeAventura']['energia']
+    EnergiaCriatura = StatusAtuais['EncontrosMonstros'][nomeMonstro]['energiaAtual']
 
     #Variável para controlar se criatura ganhou alguma série
     criatura_ganhou_serie = False
@@ -821,7 +832,7 @@ def Combate_327(nomeMonstro):
         print('\nPersonagem :')
 
         #Função que determina a força do personagem
-        ForçaPersonagem = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'FolhaDeAventura')
+        ForçaPersonagem = ForçaDeAtaque()
 
         print(f'\nForça do Personagem : 👊 {ForçaPersonagem}')
         print('------------------------------------------------')
@@ -830,7 +841,7 @@ def Combate_327(nomeMonstro):
 
 
         #Função que determina a força da criatura
-        ForçaCriatura = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'EncontrosMonstros',nomeMonstro)
+        ForçaCriatura = ForçaDeAtaque(nomeMonstro)
 
         print(f'\nForça {nomeMonstro}: 👊 {ForçaCriatura}')
         print('------------------------------------------------')
@@ -886,10 +897,10 @@ def Combate_327(nomeMonstro):
                 print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
 
 
-             # mando para json energia do personagem atualizada
-            with open(caminhoFolhaDeAventuraAtual,'w') as f:
-                 StatusGerais['FolhaDeAventura']['energia'] = EnergiaPersonagem
-                 json.dump(StatusGerais,f)
+             # mando para dicionario energia do personagem atualizada
+           
+            StatusAtuais['FolhaDeAventura']['energia'] = EnergiaPersonagem
+                 
 
             criatura_ganhou_serie = True
             break
@@ -932,12 +943,11 @@ def Combate_escorpiao(nomeMonstro):
     DanoReduzido = 1
 
     # fazer o load do json com Status
-    with open(caminhoFolhaDeAventuraAtual,'r') as f:
-        StatusGerais = json.load(f)
+    global StatusAtuais
 
     # energia do personagem / criatura
-    EnergiaPersonagem = StatusGerais['FolhaDeAventura']['energia']
-    EnergiaCriatura = StatusGerais['EncontrosMonstros'][nomeMonstro]['energia']
+    EnergiaPersonagem = StatusAtuais['FolhaDeAventura']['energia']
+    EnergiaCriatura = StatusAtuais['EncontrosMonstros'][nomeMonstro]['energia']
 
 
     # enquanto ou a energia do personagem ou da criatura diferente de 0 continua a batalha
@@ -958,7 +968,7 @@ def Combate_escorpiao(nomeMonstro):
         print('\nPersonagem :')
 
         #Função que determina a força do personagem
-        ForçaPersonagem = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'FolhaDeAventura')
+        ForçaPersonagem = ForçaDeAtaque()
 
         print(f'\nForça do Personagem : 👊 {ForçaPersonagem}')
         print('------------------------------------------------')
@@ -966,7 +976,7 @@ def Combate_escorpiao(nomeMonstro):
         print(nomeMonstro)
 
         #Função que determina a força da criatura
-        ForçaCriatura = ForçaDeAtaque(caminhoFolhaDeAventuraAtual,'EncontrosMonstros',nomeMonstro)
+        ForçaCriatura = ForçaDeAtaque(nomeMonstro)
 
         print(f'\nForça {nomeMonstro}: 👊 {ForçaCriatura}')
         print('------------------------------------------------')
@@ -1019,9 +1029,9 @@ def Combate_escorpiao(nomeMonstro):
                 print(f'Energia de {nomeMonstro}: ⚡{EnergiaCriatura}')
 
              # mando para json energia do personagem atualizada
-            with open(caminhoFolhaDeAventuraAtual,'w') as f:
-                 StatusGerais['FolhaDeAventura']['energia'] = EnergiaPersonagem
-                 json.dump(StatusGerais,f)
+           
+            StatusAtuais['FolhaDeAventura']['energia'] = EnergiaPersonagem
+                
 
         # se for igual, nao acontece nada
         elif ForçaPersonagem == ForçaCriatura:

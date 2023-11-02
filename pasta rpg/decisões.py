@@ -4338,8 +4338,8 @@ def decisao_387():
     
     #informações do Monstro
     nomeMonstro = 'HOMEM DA CAVERNA'
-    habilidade = 14
-    energia = 14
+    habilidade = 7
+    energia = 7
 
     CriaCriatura = funções.criarCriatura(habilidade,energia,nomeMonstro)
     Combate = funções.Combate(nomeMonstro)

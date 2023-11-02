@@ -5,7 +5,6 @@ import arte
 
 
 
-
 print(f'''       {print(arte.BemVindo())}
       
                 Bem vindo ao CALABOUÇO DA MORTE!
@@ -25,8 +24,10 @@ if aceita_desafio =='sim':
 
     CriaPersonagem = funções.CriarPersonagem()
 
+    pocao = funções.PocaoEscolhida()
+
    
-    decisões.decisao_387()
+    decisões.decisao_1()
     
 
 
